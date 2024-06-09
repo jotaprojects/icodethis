@@ -1,0 +1,74 @@
+.toggle {
+  --_toggle-bg: var(--clr-primary-300, #fff);
+  --_toggle-circle-bg: var(--clr-blue-600, green);
+  --_toggle-w: 2rem;
+  --_toggle-h: 1rem;
+  --_toggle-circle-w: 1rem;
+  --_toggle-circle-h: 1rem;
+
+  position: relative;
+  display: block;
+  width: var(--_toggle-w);
+  height: var(--_toggle-h);
+  background-color: var(--_toggle-bg);
+  border-radius: 100vw;
+}
+
+.toggle::before {
+  content: "";
+  height: var(--_toggle-circle-h);
+  width: var(--_toggle-circle-w);
+  display: block;
+  border: 2px solid var(--_toggle-bg);
+  position: absolute;
+  top: 0;
+  border-radius: 50%;
+  background-color: var(--_toggle-circle-bg);
+  transform: translateX(var(--_toggle-position, 0));
+  transition: transform 200ms ease;
+}
+
+.theme .toggle::before {
+  background: var(--t-toggle-bg, red);
+  transform: translateX(var(--t-toggle-position));
+}
+
+.rounded .toggle::before {
+  background: var(--r-toggle-bg, red);
+  transform: translateX(var(--r-toggle-position));
+}
+
+.progress .toggle::before {
+  background: var(--p-toggle-bg, red);
+  transform: translateX(var(--p-toggle-position));
+}
+
+[data-theme="light"] {
+  --t-toggle-bg: green;
+  --t-toggle-position: 100%;
+}
+
+[data-rounded="true"] {
+  --r-toggle-bg: green;
+  --r-toggle-position: 100%;
+}
+
+[data-progress="true"] {
+  --p-toggle-bg: green;
+  --p-toggle-position: 100%;
+}
+
+/* Checkbox version*/
+
+/**
+ * <input type="checkbox" />
+ * <label for=""><span class="toggle"></span> Label text</label>
+ */
+
+.input-checkbox:checked + label .toggle::before {
+  --_toggle-position: 100%;
+}
+
+.input-checkbox + label .toggle {
+  margin-right: 0.5rem;
+}

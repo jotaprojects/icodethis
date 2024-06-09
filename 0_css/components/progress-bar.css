@@ -1,0 +1,36 @@
+.progress-bar {
+  width: 100%;
+  background-color: hsl(186, 70%, 12%);
+  height: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar::before,
+.progress-bar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  animation: progress 1s ease-out forwards;
+}
+
+.progress-bar::before {
+  content: attr(data-progress) "%";
+  z-index: 1;
+  color: var(--clr-primary-900);
+  text-align: right;
+  padding-right: 0.5rem;
+}
+
+.progress-bar::after {
+  background-color: var(--clr-light-yellow);
+  z-index: 0;
+  border-radius: 0 100vw 100vw 0;
+}
+
+@keyframes progress {
+  100% {
+    transform: translateX(-60%);
+  }
+}

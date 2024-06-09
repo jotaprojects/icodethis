@@ -1,0 +1,41 @@
+button,
+.btn {
+  --_btn-base-bg: #fff;
+  --_btn-base-color: #000;
+  --_btn-padding: 0.5rem 1.5rem;
+  --_btn-cursor: pointer;
+  --_btn-radius: 0;
+  --_btn-border: 1px solid #000;
+
+  --_btn-hover-bg: #000;
+  --_btn-hover-color: #fff;
+
+  --_btn-focus-outline: 1px solid #fff;
+
+  background-color: var(--_btn-base-bg);
+  border-radius: var(--_btn-radius);
+  border: var(--_btn-border);
+  color: var(--_btn-base-color);
+  padding: var(--_btn-padding);
+  cursor: var(--_btn-cursor);
+  transition: background-color 250ms ease;
+}
+
+button:hover,
+.btn:hover {
+  background-color: var(--_btn-hover-bg);
+  color: var(--_btn-hover-color);
+}
+
+button:focus-visible,
+.btn:focus-visible {
+  outline: var(--_btn-focus-outline);
+}
+
+.btn-invisible {
+  --_btn-base-bg: transparent;
+  --_btn-border: 0;
+  --_btn-padding: 0.2rem 0.5rem;
+
+  --_btn-hover-bg: transparent;
+}

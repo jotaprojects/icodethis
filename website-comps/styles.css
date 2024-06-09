@@ -1,0 +1,324 @@
+@import "../0_css/base/normalize.css";
+@import "../0_css/base/button.css";
+@import "../0_css/utils/grid.css";
+
+:root {
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-900: hsl(0, 0%, 0%);
+
+  --clr-neutral-100-hsl: 0, 0%, 100%;
+  --clr-neutral-900-hsl: 0, 0%, 0%;
+
+  --clr-green-100: hsl(52, 94%, 94%);
+  --clr-green-400: hsl(67, 50%, 86%);
+  --clr-green-600: hsl(74, 32%, 76%);
+  --clr-green-800: hsl(74, 32%, 27%);
+
+  --clr-brown-100: hsl(43, 82%, 89%);
+  --clr-brown-400: hsl(30, 53%, 64%);
+
+  --body-bg: var(--clr-brown-100);
+  --clr-text: var(--clr-neutral-900);
+
+  --ff-base: system-ui, sans-serif;
+  --ff-alt: "Nunito", sans-serif;
+
+  --fs-sm: 0.8rem;
+  --fs-md: 1.2rem;
+
+  --fw-normal: 400;
+  --fw-bold: 700;
+
+  --space-50: 0.5rem;
+  --space-100: 1rem;
+  --space-200: 2rem;
+
+  --space-fluid-100: 1rem;
+  --space-fluid-200: 2rem;
+
+  --border-radius: 1rem;
+  --border-rounded: 50%;
+  --border-pill: 100vw;
+
+  --i-arrow: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"/></svg>');
+}
+
+body {
+  background-color: var(--body-bg);
+  color: var(--clr-text);
+  margin: 0;
+  padding: var(--space-fluid-100);
+  font-family: var(--ff-alt);
+  font-weight: var(--fw-normal);
+  font-style: normal;
+  font-optical-sizing: auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+h2 {
+  font-size: clamp(1.2rem, 1.5vw, 1.8rem);
+  margin: 0 0 var(--space-100) 0;
+}
+
+.flex-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-100);
+}
+
+.wrapper {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: auto;
+  gap: var(--space-fluid-100);
+}
+
+.box {
+  background-color: hsla(var(--clr-neutral-100-hsl), 0.6);
+  box-shadow: 0 0.5rem 0.4rem -0.2rem var(--clr-green-600);
+  padding: var(--space-200);
+}
+
+.box:nth-child(1) {
+  transform: translateY(-100%);
+  animation: slide-down 1s ease-in-out forwards;
+}
+
+.box:nth-child(2) {
+  transform: translateX(-100%);
+  animation: slide-right 1s ease-in-out forwards;
+  animation-delay: 1s;
+}
+
+.box:nth-child(3) {
+  transform: translateX(100%);
+  animation: slide-left 1s ease-in-out forwards;
+  animation-delay: 2s;
+}
+
+.box--rounded {
+  border-radius: var(--border-radius);
+}
+
+.box--center {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.box--lg {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.box--lg .box__title {
+  font-size: clamp(1.6rem, 1.5vw, 2.2rem);
+}
+
+.box--lg .box__desc {
+  font-size: clamp(1.2rem, 1.6vw, 1.8rem);
+}
+
+.box__img {
+  width: 4em;
+  aspect-ratio: 1;
+  margin-bottom: var(--space-100);
+}
+
+.box__desc {
+  margin-top: 0;
+  margin-bottom: var(--space-100);
+}
+
+.grid__item {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: var(--space-100) var(--space-200);
+  border-radius: var(--border-radius);
+  transition: background-color 250ms ease-in-out;
+
+  /* reset a style */
+  text-decoration: none;
+  color: var(--clr-green-800);
+}
+
+.grid__item:hover {
+  background-color: hsl(67, 50%, 86%, 0.8);
+  color: var(--clr-neutral-900);
+}
+
+.grid__item::before {
+  --_space-inline: calc(var(--space-100) - 4px);
+
+  content: "";
+  position: absolute;
+  inset: var(--_space-inline) auto var(--_space-inline)
+    calc(var(--space-100) - 2px);
+  width: 4px;
+  background-image: linear-gradient(
+    180deg,
+    var(--clr-green-600),
+    var(--clr-green-800)
+  );
+  border-radius: var(--border-pill);
+}
+
+.arrow {
+  --_size: 1.2em;
+
+  padding-right: calc(var(--space-100) + var(--_size));
+  position: relative;
+}
+
+.btn.arrow:hover::after,
+.arrow:hover::after {
+  background-color: var(--clr-neutral-900);
+  transform: translateY(-50%);
+}
+
+.btn.arrow::after,
+.arrow::after {
+  content: "";
+  mask: var(--i-arrow) no-repeat 50% 50%;
+  background-color: var(--clr-green-600);
+  width: var(--_size);
+  aspect-ratio: 1;
+  position: absolute;
+  right: calc(var(--space-100) - 0.6em);
+  top: 50%;
+  left: auto;
+  bottom: auto;
+  transform: translateY(-50%);
+  z-index: 1;
+  transition: background-color 250ms ease-in-out;
+}
+
+button,
+.btn {
+  --_btn-base-bg: transparent;
+  --_btn-base-color: var(--clr-neutral-100);
+  --_btn-border: 0;
+  --_btn-radius: var(--border-pill);
+  --_btn-hover-bg: transparent;
+  --_btn-hover-color: var(--clr-neutral-100);
+
+  background-image: linear-gradient(
+    90deg,
+    var(--clr-green-600) 0%,
+    var(--clr-green-800) 100%
+  );
+  display: inline-block;
+  text-decoration: none;
+  font-weight: var(--fw-bold);
+  position: relative;
+  transition: color 250ms ease, transform 250ms ease,
+    background-color 250ms ease;
+}
+
+button::after,
+.btn::after {
+  content: "";
+  position: absolute;
+  inset: 0 0.2rem;
+  filter: blur(4px);
+  background-color: var(--clr-green-600);
+  z-index: -1;
+  border-radius: var(--border-pill);
+
+  transform: translateY(0.5rem);
+  transition: transform 250ms ease;
+}
+
+button:hover::after,
+.btn:hover::after {
+  transform: translateY(0);
+}
+
+.btn-invisible {
+  --_btn-padding: 0.5rem 1.8rem 0.5rem 1.5rem;
+  --_btn-hover-bg: hsl(67, 50%, 86%, 0.8);
+  --_btn-hover-color: var(--clr-neutral-900);
+
+  background-image: none;
+  color: var(--clr-green-800);
+}
+
+.btn-invisible::after {
+  content: none;
+  filter: none;
+}
+
+.btn--lg {
+  --_btn-padding: 1rem 2.2rem;
+}
+
+@media screen and (min-width: 60em) {
+  :root {
+    --space-fluid-100: 2rem;
+    --space-fluid-200: 4rem;
+  }
+
+  .wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .box:first-of-type {
+    grid-column: span 2;
+  }
+
+  .md-grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .flex-group {
+    flex-direction: row;
+  }
+
+  .box--lg {
+    text-align: left;
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-right {
+  0% {
+    transform: translateX(-100%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
