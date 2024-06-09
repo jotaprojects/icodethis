@@ -19,6 +19,7 @@ export default defineConfig({
         subscribe: resolve(__dirname, "subscribe/index.html"),
         "pricing-table": resolve(__dirname, "pricing-table/index.html"),
         "sign-up-2": resolve(__dirname, "sign-up-2/index.html"),
+        "project-card": resolve(__dirname, "project-card/index.html"),
         "website-comps": resolve(__dirname, "website-comps/index.html"),
       },
     },
