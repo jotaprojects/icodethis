@@ -8,10 +8,11 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        main: resolve(__dirname, 'index.html'),
-        "website-comps": resolve(__dirname, 'website-comps/index.html')
-      }
+        main: resolve(__dirname, "index.html"),
+        "movie-card": resolve(__dirname, "movie-card/index.html"),
+        "website-comps": resolve(__dirname, "website-comps/index.html"),
+      },
     },
-    outDir: "dist/"
-  }
+    outDir: "dist/",
+  },
 });

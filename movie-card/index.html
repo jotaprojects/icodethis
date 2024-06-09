@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>iCodethis - Movie card</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="image-wrapper">
+        <picture>
+          <source
+            srcset="
+              https://fastly.picsum.photos/id/227/400/700.jpg?hmac=GJ-eu7pVeat2ixnNujVc0bUDHVyUS5MQMyt9sqL3d1U
+            "
+            media="(min-width: 40em)"
+          />
+          <img
+            src="https://fastly.picsum.photos/id/227/200/200.jpg?hmac=_HAD3ZQuIUMd1tjQfU5i21RCLHRDH_r_Xuq0q6iRN-o"
+          />
+        </picture>
+      </div>
+      <div class="col">
+        <div class="content">
+          <h1>Star Wars: The Last Jedi</h1>
+          <div class="flex">
+            <div class="genre">Action & Adventure</div>
+            <div class="score"><span>7.4</span>/10</div>
+          </div>
+          <p class="synopsis">
+            Jedi Master-in-hiding Luke Skywalker unwillingly attempts to guide
+            young hopeful Rey in the ways of the force, while Leia, former
+            princess turned general, attempts to lead what is left of the
+            Resistance away from the ruthless tyrannical grip of the First
+            Order.
+          </p>
+          <div class="extra">
+            <div class="extra-box">
+              <div class="extra__title">Actors</div>
+              <ul class="extra__list">
+                <li>Oscar Isaac</li>
+                <li>Mark Hamill</li>
+                <li>Daisy Ridley</li>
+                <li>John Boyega</li>
+                <li>Kelly Marie Tran</li>
+              </ul>
+            </div>
+            <div class="extra-box">
+              <div class="extra__title">Director</div>
+              <ul class="extra__list">
+                <li>Rian Johnson</li>
+              </ul>
+            </div>
+            <div class="extra-box">
+              <div class="extra__title">Screenwriter</div>
+              <ul class="extra__list">
+                <li>Rian Johnson</li>
+              </ul>
+            </div>
+            <div class="extra-box">
+              <div class="extra__title">Producers</div>
+              <ul class="extra__list">
+                <li>Kathleen Kennedy</li>
+                <li>Ram Bergman</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex">
+            <div><a class="btn">More</a></div>
+            <div><a class="btn">Watch trailer</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
