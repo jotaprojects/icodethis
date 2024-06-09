@@ -27,6 +27,7 @@ export default defineConfig({
         "password-field": resolve(__dirname, "password-field/index.html"),
         "profile-header": resolve(__dirname, "profile-header/index.html"),
         "blog-cards-4": resolve(__dirname, "blog-cards-4/index.html"),
+        "friend-request": resolve(__dirname, "friend-request/index.html"),
         "website-comps": resolve(__dirname, "website-comps/index.html"),
       },
     },
