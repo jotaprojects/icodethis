@@ -1,0 +1,164 @@
+@import "../0_css/base/normalize.css";
+@import "../0_css/base/button.css";
+@import "../0_css/utils/grid.css";
+@import "../0_css/utils/helpers.css";
+
+:root {
+  --clr-primary-100: hsl(0, 0%, 100%);
+  --clr-primary-200: hsl(57, 90%, 92%);
+  --clr-primary-700: hsl(217, 10%, 25%);
+  --clr-primary-800: hsl(206, 33%, 26%);
+  --clr-primary-900: hsl(0, 0%, 0%);
+
+  --clr-green-100: hsl(116, 14%, 56%);
+  --clr-green-200: hsl(118, 14%, 36%);
+  --clr-yellow: hsl(56, 33%, 74%);
+
+  --body-bg: var(--clr-primary-800);
+  --clr-text: var(--clr-primary-100);
+
+  --ff-base: "Poppins", sans-serif;
+  --ff-alt: "PT Serif", serif;
+
+  --fw-normal: 400;
+  --fw-bold: 700;
+
+  --space-100: 1rem;
+
+  --border-radius: 1.5rem;
+}
+
+body {
+  background-color: var(--body-bg);
+  color: var(--clr-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: var(--space-100);
+  font-family: var(--ff-base);
+  font-weight: var(--fw-normal);
+  font-style: normal;
+  font-optical-sizing: auto;
+  background-image: radial-gradient(
+      50% 60% at 75% 82%,
+      var(--clr-green-100) 0%,
+      #00000000 100%
+    ),
+    radial-gradient(50% 60% at 95% 20%, var(--clr-yellow) 0%, #00000000 100%),
+    radial-gradient(
+      21% 37% at 79% 18%,
+      var(--clr-green-100) 24%,
+      #00000000 100%
+    ),
+    radial-gradient(74% 86% at -1% 0%, var(--clr-green-100) 24%, #00000000 100%),
+    linear-gradient(
+      125deg,
+      var(--clr-primary-800) 1%,
+      var(--clr-green-100) 100%
+    );
+  background-repeat: no-repeat;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+form {
+  margin: calc(var(--space-100) * 2) 0;
+  position: relative;
+}
+
+input {
+  padding: var(--space-100);
+  padding-right: calc(var(--space-100) * 4);
+  border: 1px solid var(--clr-green-100);
+  background-color: hsla(0, 0%, 0%, 0.1);
+  color: var(--clr-primary-100);
+  border-radius: 100vw;
+  width: 100%;
+  transition: box-shadow 300ms ease;
+}
+
+input::placeholder {
+  color: var(--clr-primary-100);
+}
+
+input:focus-visible {
+  box-shadow: 0 0 0.5rem 0.5rem hsla(116, 14%, 56%, 1);
+}
+
+button {
+  --_btn-radius: 50%;
+  --_btn-padding: 0.5rem;
+  --_btn-border: 1px solid var(--clr-green-200);
+  --_btn-base-color: var(--clr-green-200);
+  --_btn-hover-bg: var(--clr-green-200);
+
+  position: absolute;
+  right: var(--space-100);
+  top: 50%;
+  transform: translateY(-50%);
+  transition: background-color 300ms ease;
+}
+
+button:hover svg {
+  fill: var(--clr-primary-100);
+}
+
+button svg {
+  width: 1.5em;
+  fill: var(--clr-green-200);
+}
+
+.wrapper {
+  padding: 2rem 1.5rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 0.5rem 1rem 0.5rem hsla(0, 0%, 0%, 0.2);
+  border: 2px solid hsla(57, 90%, 92%, 0.5);
+  text-align: center;
+  position: relative;
+}
+
+.list--team {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: static;
+  bottom: -3rem;
+  right: 0;
+  left: 0;
+}
+
+.list--team img {
+  width: 5.5em;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 5px solid var(--clr-primary-100);
+  box-shadow: 0 0.2rem 0.5rem 0.2rem hsla(0, 0%, 0%, 0.2);
+}
+
+.list--team li:nth-child(2),
+.list--team li:nth-child(4) {
+  display: none;
+}
+
+@media screen and (min-width: 40em) {
+  form {
+    margin-bottom: 0;
+  }
+
+  .wrapper {
+    padding: 4rem 6rem;
+  }
+
+  .list--team {
+    position: absolute;
+  }
+
+  .list--team li:nth-child(2),
+  .list--team li:nth-child(4) {
+    display: block;
+  }
+}

@@ -22,6 +22,7 @@ export default defineConfig({
         "project-card": resolve(__dirname, "project-card/index.html"),
         "apps-card": resolve(__dirname, "apps-card/index.html"),
         "collections-list": resolve(__dirname, "collections-list/index.html"),
+        "social-login": resolve(__dirname, "social-login/index.html"),
         "website-comps": resolve(__dirname, "website-comps/index.html"),
       },
     },
