@@ -1,0 +1,157 @@
+@import "../0_css/base/normalize.css";
+@import "../0_css/base/button.css";
+
+:root {
+  --clr-primary-100: hsl(0, 0%, 100%);
+  --clr-primary-200: hsl(30, 20%, 80%);
+  --clr-primary-900: hsl(0, 0%, 0%);
+
+  --clr-dark-red: hsl(3, 96%, 30%);
+  --clr-calpoly-green: hsl(143, 53%, 20%);
+
+  --body-bg: var(--clr-calpoly-green);
+  --clr-text: var(--clr-primary-200);
+
+  --ff-base: "Open Sans", sans-serif;
+  --ff-alt: "Galada", cursive;
+
+  --fw-normal: 400;
+  --fw-bold: 700;
+}
+
+body {
+  background-color: var(--body-bg);
+  color: var(--clr-text);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  font-family: var(--ff-base);
+  font-weight: var(--fw-normal);
+  font-style: normal;
+  font-optical-sizing: auto;
+  text-align: center;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--ff-alt);
+}
+
+.box {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--clr-calpoly-green);
+  padding: 2rem;
+  box-shadow: inset 0 0 0.6rem 0.1rem hsla(0, 0%, 0%, 0.5),
+    0 0 1rem 0.1rem hsla(0, 0%, 0%, 0.5);
+  border-radius: 1rem;
+  background-image: radial-gradient(
+    122% 78% at 109% -8%,
+    hsla(139, 37%, 40%, 0.361) 98%,
+    hsla(0, 100%, 50%, 0) 99%
+  );
+
+  transform: translateY(-180%) rotate(-25deg);
+  animation: slide-down 3s cubic-bezier(0, 0, 0.29, 1.53) forwards;
+}
+
+@keyframes slide-down {
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.box::before,
+.box::after {
+  content: "";
+  position: absolute;
+  width: 20rem;
+  height: 4rem;
+  transform: rotate(45deg);
+  background: hsl(46, 81%, 61%);
+  box-shadow: 0 0 1rem 0 hsla(0, 0%, 0%, 0.5);
+}
+
+.box::before {
+  top: 35px;
+  right: -75px;
+  background: linear-gradient(
+    0,
+    hsl(46, 81%, 61%) 0%,
+    hsl(27, 92%, 34%) 8%,
+    hsl(2, 57%, 46%) 8%,
+    hsl(2, 57%, 46%) 16%,
+    hsl(41, 75%, 42%) 16%,
+    hsl(46, 100%, 74%) 70%,
+    hsl(41, 75%, 42%) 85%,
+    hsl(2, 57%, 46%) 85%,
+    hsl(2, 57%, 46%) 92%,
+    hsl(27, 92%, 34%) 92%,
+    hsl(46, 81%, 61%) 100%
+  );
+}
+
+.box::after {
+  bottom: -40px;
+  left: -75px;
+  background: linear-gradient(
+    0,
+    hsl(46, 81%, 61%) 0%,
+    hsl(27, 92%, 34%) 8%,
+    hsl(2, 57%, 46%) 8%,
+    hsl(2, 57%, 46%) 16%,
+    hsl(41, 75%, 42%) 16%,
+    hsl(46, 100%, 74%) 28%,
+    hsl(41, 75%, 42%) 85%,
+    hsl(2, 57%, 46%) 85%,
+    hsl(2, 57%, 46%) 92%,
+    hsl(27, 92%, 34%) 92%,
+    hsl(46, 81%, 61%) 100%
+  );
+}
+
+h1 {
+  font-size: 4rem;
+  color: var(--clr-dark-red);
+  text-shadow: 0 0.06rem 0.1rem hsl(46, 81%, 61%),
+    0 -0.1rem 0.1rem hsl(46, 81%, 61%), 0.2rem 0rem 1.2rem hsla(0, 0%, 0%, 0.8);
+}
+
+.text {
+  padding: 1rem 2rem;
+}
+
+/* Credits to https://codepen.io/kvasheilds/pen/MqOaMm?editors=1100 */
+
+button {
+  --_btn-base-bg: hsl(46, 65%, 52%);
+  --_btn-padding: 1rem 2rem;
+
+  box-shadow: 0 3px 6px hsla(0, 0%, 0%, 0.16), 0 3px 6px hsla(40, 69%, 25%, 0.4),
+    inset 0 -2px 5px 1px hsl(27, 89%, 29%),
+    inset 0 -1px 1px 3px hsl(48, 92%, 75%);
+  background-image: linear-gradient(
+    35deg,
+    hsl(27, 92%, 34%),
+    hsl(40, 83%, 39%),
+    hsl(52, 98%, 82%),
+    hsl(41, 75%, 42%),
+    hsl(27, 92%, 34%)
+  );
+  background-size: 100% 100%;
+  background-position: center;
+  border: 0;
+  text-shadow: 0 2px 2px hsl(48, 92%, 75%);
+  transition: background-size 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+button:hover {
+  background-size: 150% 150%;
+  box-shadow: 0 3px 6px hsla(0, 0%, 0%, 0.2), 0 3px 6px hsla(0, 0%, 0%, 0.2),
+    inset 0 -2px 5px 1px hsl(41, 83%, 38%),
+    inset 0 -1px 1px 3px hsl(48, 92%, 75%);
+}
