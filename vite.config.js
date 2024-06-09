@@ -18,6 +18,7 @@ export default defineConfig({
         "christmas-promo": resolve(__dirname, "christmas-promo/index.html"),
         subscribe: resolve(__dirname, "subscribe/index.html"),
         "pricing-table": resolve(__dirname, "pricing-table/index.html"),
+        "sign-up-2": resolve(__dirname, "sign-up-2/index.html"),
         "website-comps": resolve(__dirname, "website-comps/index.html"),
       },
     },
