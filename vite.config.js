@@ -29,6 +29,7 @@ export default defineConfig({
         "blog-cards-4": resolve(__dirname, "blog-cards-4/index.html"),
         "friend-request": resolve(__dirname, "friend-request/index.html"),
         "mobile-menu": resolve(__dirname, "mobile-menu/index.html"),
+        "article-page": resolve(__dirname, "article-page/index.html"),
         "website-comps": resolve(__dirname, "website-comps/index.html"),
 
         joburgers: resolve(__dirname, "joburgers/index.html"),

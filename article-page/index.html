@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Article page - iCodeThis</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <a href="#" class="logo"><span class="sr-only">Home</span></a>
+        <button
+          aria-haspopup="true"
+          aria-expanded="false"
+          data-trigger="nav"
+          aria-label="Open menu"
+        >
+          <span></span><span></span><span></span>
+        </button>
+        <div class="nav-container">
+          <nav aria-label="Main menu">
+            <ul class="menu">
+              <li class="menu__item menu__item--has-child">
+                <button
+                  id="product-menu-btn"
+                  class="top-level-item menu-toggle btn--invisible"
+                  data-trigger="nav-child"
+                  aria-controls="product-menu"
+                  aria-expanded="false"
+                >
+                  Product
+                </button>
+                <a href="#" class="top-level-item">Product</a>
+                <ul
+                  id="product-menu"
+                  aria-labelledby="product-menu-btn"
+                  class="menu menu--secondary"
+                >
+                  <li><a href="#">Product 1</a></li>
+                  <li><a href="#">Product 2</a></li>
+                  <li><a href="#">Product 3</a></li>
+                </ul>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="top-level-item">Pricing</a>
+              </li>
+              <li class="menu__item menu__item--has-child">
+                <button
+                  id="case-menu-btn"
+                  class="top-level-item menu-toggle"
+                  data-trigger="nav-child"
+                  aria-controls="case-menu"
+                  aria-expanded="false"
+                >
+                  Use Cases
+                </button>
+                <a href="#" class="top-level-item">Use Cases</a>
+                <ul
+                  id="case-menu"
+                  aria-labelledby="case-menu-btn"
+                  class="menu menu--secondary"
+                >
+                  <li><a href="#">Case 1</a></li>
+                  <li><a href="#">Case 2</a></li>
+                  <li><a href="#">Case 3</a></li>
+                </ul>
+              </li>
+              <li class="menu__item">
+                <a href="#" class="top-level-item">Blog</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="actions">
+            <a href="#" class="btn btn--secondary btn--link">Log In</a>
+            <a href="#" class="btn btn--link">Getting started</a>
+          </div>
+        </div>
+      </header>
+      <section class="">
+        <div class="search">
+          <form>
+            <input type="text" placeholder="Search" />
+          </form>
+        </div>
+        <ul class="categories">
+          <li><a href="#">Project</a></li>
+          <li><a href="#">Remote</a></li>
+          <li><a href="#">Teamwork</a></li>
+          <li><a href="#">Productivity</a></li>
+          <li><a href="#">Marketing</a></li>
+        </ul>
+      </section>
+      <main>
+        <h1>Productivity</h1>
+        <div class="grid md-grid-cols-2 gap-2">
+          <article>
+            <img
+              src="https://picsum.photos/id/27/600/345"
+              alt="Human on a beach looking out over the sea"
+              class="full-width"
+            />
+            <h2>Little things do make a difference</h2>
+            <p>
+              Why do you want to motivate yourself? Actually, just answering
+              that question fully can be one of the better ways to get your
+              daily motiviation.
+            </p>
+            <div class="author">
+              <img
+                class="author__img"
+                src="https://i.pravatar.cc/60?img=49"
+                alt="Profile image for Kathryn Shelton"
+              />
+              <span class="author__name">Kathryn Shelton</span>
+            </div>
+          </article>
+          <aside>
+            <h2>Recent articles</h2>
+            <div class="articles">
+              <article>
+                <a href="#">
+                  <div class="post__img-wrapper">
+                    <img
+                      src="https://picsum.photos/id/155/170"
+                      alt="Picture taken from the middle of a traintrack."
+                    />
+                  </div>
+                  <div class="post__content">
+                    <h3>Common symbols and their meanings</h3>
+                    <div class="author author--small">
+                      <img
+                        class="author__img"
+                        src="https://i.pravatar.cc/60?img=48"
+                        alt="Profile image for Susie Russel"
+                      />
+                      <span class="author__name">Susie Russel</span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+              <article>
+                <a href="#">
+                  <div class="post__img-wrapper">
+                    <img
+                      src="https://picsum.photos/id/7/170"
+                      alt="Two persons sitting at a table, taking notes in a notebook and on a tablet."
+                    />
+                  </div>
+                  <div class="post__content">
+                    <h3>Success steps for your business</h3>
+                    <div class="author author--small">
+                      <img
+                        class="author__img"
+                        src="https://i.pravatar.cc/60?img=68"
+                        alt="Profile image for Connor Parsons"
+                      />
+                      <span class="author__name">Connor Parsons</span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+              <article>
+                <a href="#">
+                  <div class="post__img-wrapper">
+                    <img
+                      src="https://picsum.photos/id/38/170"
+                      alt="Picture of a blue sky with a cloud."
+                    />
+                  </div>
+                  <div class="post__content">
+                    <h3>The Strength of your belief</h3>
+                    <div class="author author--small">
+                      <img
+                        class="author__img"
+                        src="https://i.pravatar.cc/60?img=67"
+                        alt="Profile image for Jonathan Yates"
+                      />
+                      <span class="author__name">Jonathan Yates</span>
+                    </div>
+                  </div>
+                </a>
+              </article>
+            </div>
+          </aside>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
