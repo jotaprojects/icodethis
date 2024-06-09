@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JO's Strawberries- iCodeThis</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="wrapper flex items-center">
+        <div class="company">
+          <a href="#">JO'S <span>&copy;</span></a>
+        </div>
+        <nav>
+          <button data-trigger="nav" aria-label="Open menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <div class="nav-container">
+            <ul class="menu">
+              <li class="menu__item"><a href="#about">About</a></li>
+              <li class="menu__item"><a href="#menu">Menu</a></li>
+              <li class="menu__item">
+                <a href="#reviews">Reviews</a>
+              </li>
+              <li class="menu__item">
+                <a href="#">Social</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <main>
+      <section class="hero">
+        <div class="wrapper grid md-grid-cols-2 gap-2">
+          <div class="col">
+            <h1>Sweet & Juicy Strawberries</h1>
+            <p>
+              Discover a vibrant selection of handpicked strawberries bursting
+              with flavor and nutrients. Join the berrylicious journey today!
+            </p>
+            <a href="#menu" class="btn btn--link">Browse menu</a>
+          </div>
+          <div class="col">
+            <div class="img-shadows">
+              <img
+                class="hero-image"
+                src="https://images.unsplash.com/photo-1591990088351-eb2ae4559d9d?w=1000&amp;auto=format&amp;fit=crop&amp;q=60&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjc2fHxzdHJhd2JlcnJ5fGVufDB8fDB8fHww"
+                alt="strawberries on clear plastic container"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="about" class="bg-white">
+        <div class="wrapper">
+          <div class="col text-center">
+            <h2>
+              Hi, we're JO's. Passionate about farming and
+              <span class="text-primary">a love for strawberries</span>.
+            </h2>
+          </div>
+          <div class="col grid md-grid-cols-2 gap-2 items-center">
+            <div class="img-shadows img-shadows--dark">
+              <img
+                class="blob-2"
+                src="https://images.unsplash.com/photo-1585254589725-b5d069c986ea?q=80&amp;w=1000&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="boy in gray t-shirt walking on green grass field during daytime"
+              />
+            </div>
+            <div class="col">
+              <p>
+                Founded in the heart of lush farmland, Jo's the business began
+                its journey as a humble family-owned strawberry patch in the
+                early 2000s, with Jo at the helm.
+              </p>
+              <p>
+                What started as a small endeavor fueled by Jo's passion for
+                farming and a love for strawberries quickly blossomed into a
+                thriving business.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="banner">
+          <div class="banner__text">
+            Life is sweet with berrylicious treats!
+          </div>
+        </div>
+      </section>
+      <section id="menu">
+        <div class="wrapper">
+          <div class="text-center">
+            <h2>Our Homemade Products</h2>
+            <p>
+              Over the years, our dedication to quality and innovation has
+              propelled us forward, allowing us to expand our fields and perfect
+              our cultivation techniques. With each season, we've honed our
+              craft, delivering the freshest, juiciest strawberries to our
+              customers' tables.
+            </p>
+          </div>
+          <div class="products">
+            <div class="product top-left">
+              <div class="product__img">
+                <img
+                  src="https://images.unsplash.com/photo-1627308595171-d1b5d67129c4?q=80&amp;w=500&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="white and red strawberry cake"
+                />
+              </div>
+              <div class="product__info">
+                <span>Shortcake</span>
+                <p>A classic dessert featuring fluffy homemade shortcakes.</p>
+              </div>
+            </div>
+            <div class="product top-right">
+              <div class="product__img">
+                <img
+                  src="https://images.unsplash.com/photo-1536918617072-e74b86065224?q=80&amp;w=500&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="clear wine glass surrounded by leaves on table"
+                />
+              </div>
+              <div class="product__info">
+                <span>Smoothie</span>
+                <p>
+                  Bursting with the vibrant flavors of ripe strawberries and
+                  creamy goodness.
+                </p>
+              </div>
+            </div>
+            <div class="middle img-shadows">
+              <img
+                src="https://images.unsplash.com/photo-1587393855524-087f83d95bc9?q=80&amp;w=1000&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="red strawberries on white ceramic plate"
+              />
+            </div>
+            <div class="product bottom-left">
+              <div class="product__img">
+                <img
+                  src="https://images.unsplash.com/photo-1500912239908-4ee48acb3a7f?q=80&amp;w=500&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="basket of strawberry fruits with jar of jam"
+                />
+              </div>
+              <div class="product__info">
+                <span>Jam</span>
+                <p>
+                  Indulge in the rich, fruity goodness of homemade strawberry
+                  jam.
+                </p>
+              </div>
+            </div>
+            <div class="product bottom-right">
+              <div class="product__img">
+                <img
+                  src="https://images.unsplash.com/photo-1532678465554-94846274c297?q=80&amp;w=500&amp;auto=format&amp;fit=crop&amp;ixlib=rb-4.0.3&amp;ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  alt="strawberry ice cream in clear glass bowl"
+                />
+              </div>
+              <div class="product__info">
+                <span>Ice cream</span>
+                <p>
+                  Homemade ice cream is sure to satisfy your sweet cravings and
+                  leave you wanting more.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <section id="reviews" class="bg-white">
+      <div class="wrapper">
+        <div class="text-center">
+          <h2>Reviews</h2>
+          <p>What our customers are saying about us.</p>
+        </div>
+        <div class="reviews">
+          <div class="review">
+            <img src="https://i.pravatar.cc/100?img=48" alt="" />
+            <span>Emily Johnson</span>
+            <p>
+              Absolutely divine! The strawberries tasted incredibly fresh, and
+              the creamy texture was spot on. I couldn't get enough of it!
+            </p>
+          </div>
+          <div class="review">
+            <img src="https://i.pravatar.cc/100?img=68" alt="" />
+            <span>David Smith</span>
+            <p>
+              The jam has a perfect balance of sweetness and tanginess, making
+              it the ideal spread for my morning toast.
+            </p>
+          </div>
+          <div class="review">
+            <img src="https://i.pravatar.cc/100?img=45" alt="" />
+            <span>Sarah Thompson</span>
+            <p>
+              The smoothies are so refreshing and packed with flavor, it feels
+              like I'm drinking sunshine in a glass!
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

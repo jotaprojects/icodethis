@@ -30,6 +30,8 @@ export default defineConfig({
         "friend-request": resolve(__dirname, "friend-request/index.html"),
         "mobile-menu": resolve(__dirname, "mobile-menu/index.html"),
         "website-comps": resolve(__dirname, "website-comps/index.html"),
+
+        joburgers: resolve(__dirname, "joburgers/index.html"),
       },
     },
     outDir: "dist/",
