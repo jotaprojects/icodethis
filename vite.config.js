@@ -24,6 +24,7 @@ export default defineConfig({
         "collections-list": resolve(__dirname, "collections-list/index.html"),
         "social-login": resolve(__dirname, "social-login/index.html"),
         "cart-item": resolve(__dirname, "cart-item/index.html"),
+        "password-field": resolve(__dirname, "password-field/index.html"),
         "website-comps": resolve(__dirname, "website-comps/index.html"),
       },
     },

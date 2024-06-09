@@ -1,0 +1,222 @@
+@import "../0_css/base/normalize.css";
+@import "../0_css/base/button.css";
+@import "../0_css/utils/grid.css";
+@import "../0_css/utils/helpers.css";
+@import "../0_css/components/toggle.css";
+
+:root {
+  --clr-primary-100: hsl(0, 0%, 100%);
+  --clr-primary-800: hsl(229, 32%, 26%);
+  --clr-primary-900: hsl(0, 0%, 0%);
+
+  --clr-blue-200: hsl(195, 49%, 79%);
+  --clr-blue-400: hsl(195, 13%, 50%);
+  --clr-blue-600: hsl(194, 18%, 37%);
+
+  --body-bg: var(--clr-blue-200);
+  --clr-text: var(--clr-primary-900);
+
+  --ff-base: system-ui, sans-serif;
+  --ff-alt: "Lato", sans-serif;
+
+  --fw-normal: 400;
+  --fw-bold: 700;
+
+  --fs-sm: 0.8rem;
+
+  --space-100: 1rem;
+
+  --border-radius: 1rem;
+}
+
+/* Direct selectors */
+
+body {
+  background-color: var(--body-bg);
+  color: var(--clr-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: calc(var(--space-100) / 2);
+  font-family: var(--ff-base);
+  font-weight: var(--fw-normal);
+  font-style: normal;
+  font-optical-sizing: auto;
+  background-size: 100% 100%;
+  background-image: radial-gradient(
+      100% 100% at 100% 10%,
+      var(--clr-blue-600) 0%,
+      #4d676f00 100%
+    ),
+    radial-gradient(100% 100% at 4% 94%, var(--clr-blue-600) 0%, #4d676f00 100%);
+}
+
+h1,
+h2 {
+  margin-top: 0;
+  margin-bottom: var(--space-100);
+  font-size: 1.9rem;
+  font-family: var(--ff-alt);
+}
+
+h2 {
+  font-size: 1.6rem;
+}
+
+/* Main style */
+
+.box {
+  background-color: hsla(195, 49%, 79%, 0.8);
+  padding: var(--space-100);
+  border-radius: var(--border-radius);
+  box-shadow: inset 0 0.4rem 0.5rem 0 hsla(0, 0%, 0%, 0.2),
+    0 0 0.5rem 0.2rem hsla(0, 0%, 0%, 0.2);
+  border: 2px solid var(--clr-blue-200);
+  width: 100%;
+  max-width: 30em;
+  overflow: hidden;
+  position: relative;
+}
+
+.box--error {
+  box-shadow: inset 0 0.4rem 0.5rem 0 hsla(0, 100%, 50%, 0.5),
+    0 0 0.5rem 0.2rem hsla(0, 0%, 0%, 0.2);
+}
+
+.state-welcome .welcome {
+  transform: translateX(0);
+}
+
+.welcome {
+  position: absolute;
+  inset: 0;
+  background-color: var(--clr-blue-200);
+  padding: var(--space-100);
+  transform: translateX(100%);
+  transition: transform 250ms ease-in;
+  display: grid;
+  place-items: center;
+}
+
+.btn-close {
+  position: absolute;
+  right: var(--space-100);
+  top: var(--space-100);
+}
+
+.account {
+  display: flex;
+  align-items: center;
+  gap: var(--space-100);
+}
+
+.account img {
+  border-radius: 50%;
+  width: 5em;
+  aspect-ratio: 1;
+}
+
+.account__user {
+  font-size: 1.3rem;
+  font-weight: var(--fw-bold);
+}
+
+form {
+  margin: var(--space-100) auto;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 0.8rem 1rem;
+}
+
+form button,
+form .stay-login {
+  grid-column: 1 / 4;
+}
+
+label {
+  grid-column: span 3;
+  cursor: pointer;
+}
+
+input[type="text"],
+input[type="password"] {
+  grid-column: span 2;
+  border-radius: calc(var(--border-radius) / 2);
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--clr-blue-400);
+}
+
+.reveal-password {
+  width: 2.5em;
+  aspect-ratio: 1;
+}
+
+#svg-glasses {
+  fill: var(--clr-primary-900);
+}
+
+.reveal-password input[type="checkbox"]:checked + label #svg-glasses {
+  fill: var(--clr-primary-100);
+}
+
+.reveal-on-blur {
+  animation: bluring 500ms ease forwards;
+}
+
+button {
+  --_btn-base-bg: var(--clr-blue-600);
+  --_btn-base-color: var(--clr-primary-100);
+  --_btn-padding: 0.8rem 2rem;
+  --_btn-border: 0;
+  --_btn-radius: calc(var(--border-radius) / 2);
+  --_btn-hover-bg: var(--clr-blue-400);
+  --_btn-hover-color: var(--clr-primary-100);
+}
+
+.toggle {
+  --_toggle-w: 3rem;
+  --_toggle-h: 1.5rem;
+  --_toggle-circle-w: 1.5rem;
+  --_toggle-circle-h: 1.5rem;
+}
+
+/* Media queries */
+
+@media (prefers-reduced-motion) {
+  .reveal-on-blur {
+    animation: none;
+  }
+}
+
+@media screen and (min-width: 60em) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  .box {
+    padding: calc(var(--space-100) * 2);
+  }
+
+  form {
+    grid-template-columns: 1fr 1fr 10%;
+  }
+
+  form button,
+  form .stay-login {
+    grid-column: auto;
+  }
+}
+
+/* Animations */
+
+@keyframes bluring {
+  0% {
+    filter: blur(5px);
+  }
+  100% {
+    filter: blur(0);
+  }
+}
