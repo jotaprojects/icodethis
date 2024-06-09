@@ -21,6 +21,7 @@ export default defineConfig({
         "sign-up-2": resolve(__dirname, "sign-up-2/index.html"),
         "project-card": resolve(__dirname, "project-card/index.html"),
         "apps-card": resolve(__dirname, "apps-card/index.html"),
+        "collections-list": resolve(__dirname, "collections-list/index.html"),
         "website-comps": resolve(__dirname, "website-comps/index.html"),
       },
     },
