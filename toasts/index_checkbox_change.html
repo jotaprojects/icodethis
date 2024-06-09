@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toasts - iCodeThis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="script.js" defer></script>
+  </head>
+  <body data-theme="dark" data-rounded="false" data-timer="false">
+    <input type="checkbox" id="theme" />
+    <input type="checkbox" id="rounded" />
+    <input type="checkbox" id="timer" />
+    <div class="body"></div>
+    <div class="wrapper">
+      <label for="theme" class="checkbox theme">
+        <span class="toggle"></span>
+        Switch theme
+      </label>
+      <label for="rounded" class="checkbox rounded">
+        <span class="toggle"></span>
+        Rounded
+      </label>
+      <label for="timer" class="checkbox timer">
+        <span class="toggle"></span>
+        Timer
+      </label>
+      <button data-success>Add Success</button>
+      <button data-danger>Add Danger</button>
+      <button data-warning>Add Warning</button>
+      <button data-info>Add Info</button>
+    </div>
+    <div class="toast-wrapper">
+      <div class="toast toast--success">
+        <span class="toast__icon"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+            /></svg
+        ></span>
+        <span class="toast__text">File has been removed successfully.</span>
+        <button data-close>&times;</button>
+      </div>
+      <div class="toast toast--danger">
+        <span class="toast__icon"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="m9.75 9.75 4.5 4.5m0-4.5-4.5 4.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
+            /></svg
+        ></span>
+        <span class="toast__text">File could not be removed.</span>
+        <button data-close>&times;</button>
+      </div>
+      <div class="toast toast--warning">
+        <span class="toast__icon"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z"
+            /></svg
+        ></span>
+        <span class="toast__text">Warning! File type is not supported.</span>
+        <button data-close>&times;</button>
+      </div>
+      <div class="toast toast--info">
+        <span class="toast__icon"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z"
+            /></svg
+        ></span>
+        <span class="toast__text">Did you know the file can be optimized?</span>
+        <button data-close>&times;</button>
+      </div>
+    </div>
+
+    <template id="toast">
+      <div class="toast">
+        <span class="toast__icon"></span>
+        <span class="toast__text">File has been removed successfully.</span>
+        <button data-close>&times;</button>
+      </div>
+    </template>
+  </body>
+</html>

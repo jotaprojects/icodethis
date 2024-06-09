@@ -1,0 +1,238 @@
+@import "../0_css/base/normalize.css";
+
+:root {
+  --clr-primary-100: #fff;
+  --clr-primary-300: #b3b7b8;
+  --clr-primary-400: #3a4042;
+  --clr-primary-600: #25292a;
+  --clr-primary-800: #151718;
+  --clr-primary-900: #000;
+
+  --clr-success-100: #6bba62;
+  --clr-danger-100: #ba626b;
+  --clr-warning-100: #ba8562;
+  --clr-info-100: #6297ba;
+
+  --fw-normal: 400;
+  --fw-bold: 700;
+
+  --border-radius: 100vw;
+}
+
+#theme:checked ~ .toast-wrapper {
+  --_toast-bg: var(--clr-primary-100);
+  --_toast-clr: var(--clr-text);
+  --_toast-border: transparent;
+  --_toast-radius: 0;
+}
+
+#rounded:checked ~ .toast-wrapper {
+  --_toast-radius: var(--border-radius);
+}
+
+#theme:checked ~ .body {
+  --body-bg: var(--clr-primary-100);
+}
+
+#theme:checked ~ .wrapper {
+  --clr-text: var(--clr-primary-900);
+  --_t-toggle-position: 100%;
+}
+
+#rounded:checked ~ .wrapper {
+  --_r-toggle-position: 100%;
+}
+
+[data-timer="true"] .toast::after {
+  height: 0.2rem;
+  animation: ticking-down 5s forwards;
+}
+
+input[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+}
+
+.toggle {
+  position: relative;
+  display: block;
+  width: 2rem;
+  height: 1rem;
+  background-color: #fff;
+  border-radius: 100vw;
+}
+
+.toggle::before {
+  content: "";
+  height: 1rem;
+  width: 1rem;
+  display: block;
+  background: green;
+  border: 1px solid #fff;
+  position: absolute;
+  top: 0;
+  border-radius: 50%;
+
+  /* transform: translateX(var(--_toggle-position)); */
+}
+
+.theme .toggle::before {
+  transform: translateX(var(--_t-toggle-position));
+}
+
+.rounded .toggle::before {
+  transform: translateX(var(--_r-toggle-position));
+}
+
+.timer .toggle::before {
+  transform: translateX(var(--_toggle-position));
+}
+
+/* [data-theme="light"] {
+  --body-bg: var(--clr-primary-100);
+  --clr-text: var(--clr-primary-900);
+} */
+
+/* [data-theme="light"] .toast {
+  --_toast-bg: var(--clr-primary-100);
+  --_toast-clr: var(--clr-text);
+  --_toast-border: transparent;
+} */
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: var(--fw-normal);
+  font-style: normal;
+
+  margin: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+svg {
+  width: var(--_icon-size);
+  height: var(--_icon-size);
+  color: var(--_indicator-bg, --_icon-clr);
+  fill: none;
+  display: block;
+  flex-shrink: 0;
+}
+
+.body {
+  --body-bg: var(--clr-primary-800);
+
+  background-color: var(--body-bg);
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+
+.wrapper {
+  --clr-text: var(--clr-primary-300);
+
+  color: var(--clr-text);
+}
+
+.toast-wrapper {
+  --_toast-bg: var(--clr-primary-600);
+  --_toast-clr: var(--clr-primary-300);
+  --_toast-border: var(--clr-primary-400);
+  --_toast-radius: 0;
+  --_toast-width: 30em;
+  --_toast-close: var(--clr-primary-300);
+  --_indicator-bg: var(--clr-primary-300);
+  --_timer-bg: var(--clr-primary-300);
+  --_icon-clr: var(--clr-primary-100);
+  --_icon-size: 2rem;
+}
+
+.toast {
+  background-color: var(--_toast-bg);
+  border: 1px solid var(--_toast-border);
+  border-radius: var(--_toast-radius);
+  box-shadow: 0 0 0.2rem 0.2rem rgba(0 0 0 / 0.1);
+  color: var(--_toast-clr);
+  font-size: 0.9rem;
+
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  overflow: hidden;
+
+  position: relative;
+  width: var(--_toast-width);
+}
+
+.toast::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  bottom: 0.5rem;
+  width: 0.5rem;
+  background-color: var(--_indicator-bg);
+}
+
+.toast::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  width: 0;
+  height: 0;
+  background-color: var(--_timer-bg);
+}
+
+.toast__icon {
+  flex-shrink: 0;
+}
+
+.toast__text {
+  flex-grow: 1;
+}
+
+.toast button {
+  background-color: transparent;
+  color: var(--_toast-close);
+  opacity: 0.7;
+  border: 0;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.toast button:hover {
+  opacity: 1;
+}
+
+.toast--success {
+  --_indicator-bg: var(--clr-success-100);
+}
+
+.toast--danger {
+  --_indicator-bg: var(--clr-danger-100);
+}
+
+.toast--warning {
+  --_indicator-bg: var(--clr-warning-100);
+}
+
+.toast--info {
+  --_indicator-bg: var(--clr-info-100);
+}
+
+@keyframes ticking-down {
+  0% {
+    width: 100%;
+  }
+
+  100% {
+    width: 0;
+  }
+}
