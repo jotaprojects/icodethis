@@ -26,6 +26,7 @@ export default defineConfig({
         "cart-item": resolve(__dirname, "cart-item/index.html"),
         "password-field": resolve(__dirname, "password-field/index.html"),
         "profile-header": resolve(__dirname, "profile-header/index.html"),
+        "blog-cards-4": resolve(__dirname, "blog-cards-4/index.html"),
         "website-comps": resolve(__dirname, "website-comps/index.html"),
       },
     },
