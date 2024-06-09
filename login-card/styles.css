@@ -1,0 +1,230 @@
+@import "../0_css/base/normalize.css";
+@import "../0_css/utils/grid.css";
+
+:root {
+  --clr-grey: hsl(60, 16%, 89%);
+  --clr-blue-100: hsl(184, 100%, 28%);
+  --clr-blue-400: hsl(197, 100%, 24%);
+  --clr-blue-600: hsl(213, 71%, 20%);
+}
+
+/* Credits to Pawel Czerwinski for amazing background image*/
+/* https: //unsplash.com/photos/a-black-and-blue-background-with-curves-uGd6aKkvHnk */
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+
+  background-image: url("https://images.unsplash.com/photo-1677158607710-3731af5a8c31?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.state-login .login-wrapper {
+  opacity: 1;
+  transform: translateY(0);
+  transition: transform 500ms ease, opacity 300ms ease;
+}
+
+.state-login .wrapper {
+  display: none;
+}
+
+.login-wrapper {
+  position: fixed;
+
+  max-width: 30rem;
+
+  background-color: hsla(100 0 100% / 0.1);
+  backdrop-filter: blur(0.5rem);
+  border-radius: 1rem;
+  box-shadow: 0 0 0 0.1rem hsla(184, 100%, 28%, 0.5);
+
+  padding: 2rem;
+  color: var(--clr-grey);
+
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: transform 500ms ease, opacity 300ms ease;
+}
+
+button {
+  background-color: hsla(184, 100%, 28%, 0.5);
+  padding: 0.5rem 2rem;
+  border: 1px solid transparent;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  color: var(--clr-grey);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
+  transition: box-shadow 200ms ease, background-color 200ms ease;
+}
+
+button:hover,
+button:focus {
+  --_opacity-bg: 0.9;
+  --_opacity-shadow: 0.5;
+
+  background-color: hsla(184, 100%, 28%, var(--_opacity-bg));
+  box-shadow: 0 0.2rem 0.5rem 0.2rem
+      hsla(184, 100%, 28%, var(--_opacity-shadow)),
+    inset 0 0 1rem 0.2rem hsla(60, 16%, 89%, 0.2);
+}
+
+button[data-login] {
+  padding: 1.5rem 6rem;
+  font-size: 2rem;
+  animation: pulse 1000ms linear infinite;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0.5rem 0.2rem hsla(184, 100%, 28%, 0.5),
+      inset 0 0 1rem 0.2rem hsla(60, 16%, 89%, 0.2);
+  }
+
+  50% {
+    box-shadow: 0 0 0.5rem 0.2rem hsla(184, 100%, 28%, 0.9),
+      inset 0 0 1rem 0.2rem hsla(60, 16%, 89%, 0.2);
+  }
+}
+
+button[data-close] {
+  background-color: white;
+  color: var(--clr-blue-600);
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border-radius: 100%;
+  line-height: 0.5;
+
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+
+form[data-form] {
+  display: grid;
+  grid-template-areas:
+    "input input"
+    "forgot button";
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.form__group:focus-within label {
+  color: var(--clr-grey);
+  transform: translate(0, 0);
+}
+
+label {
+  color: var(--clr-blue-600);
+  transform: translate(5%, 250%);
+  display: inline-block;
+  pointer-events: none;
+  margin-bottom: 0.5rem;
+  transition: transform 200ms ease, color 200ms ease;
+}
+
+input[type="email"] {
+  padding: 0.8rem;
+  width: 100%;
+  border: 0;
+}
+
+input[type="email"]:focus {
+  outline: 4px solid var(--clr-blue-100);
+}
+
+.form__group {
+  grid-area: input;
+  position: relative;
+}
+
+.form__btn {
+  grid-area: button;
+  position: relative;
+}
+
+.form__btn span {
+  padding-right: 0;
+  position: relative;
+  transition: padding-right 200ms ease;
+}
+
+.form__btn:hover span {
+  padding-right: 1.5rem;
+}
+
+.form__btn svg {
+  width: 1rem;
+  fill: var(--clr-grey);
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
+
+  transition: opacity 200ms ease;
+}
+
+.form__btn:hover svg {
+  opacity: 1;
+}
+
+.form__link {
+  grid-area: forgot;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background-color: hsla(184, 100%, 28%, 0.5);
+  margin: 2rem 0;
+}
+
+a {
+  color: var(--clr-grey);
+  text-decoration: none;
+  width: max-content;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+a::after {
+  content: "";
+  height: 1px;
+  width: 100%;
+  display: block;
+  background-color: var(--clr-blue-100);
+  transform: translateX(-100%);
+
+  transition: transform 200ms ease-in;
+}
+
+a:hover::after {
+  transform: translateX(0);
+}
+
+.login-wrapper__footer {
+  text-align: center;
+}
+
+svg {
+  display: block;
+  width: 2rem;
+  fill: hsla(0 0 0 / 0.5);
+}

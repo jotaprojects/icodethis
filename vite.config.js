@@ -10,6 +10,7 @@ export default defineConfig({
       input: {
         main: resolve(__dirname, "index.html"),
         "movie-card": resolve(__dirname, "movie-card/index.html"),
+        "login-card": resolve(__dirname, "login-card/index.html"),
         "website-comps": resolve(__dirname, "website-comps/index.html"),
       },
     },
