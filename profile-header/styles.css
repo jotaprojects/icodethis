@@ -1,0 +1,235 @@
+@import "../0_css/base/normalize.css";
+@import "../0_css/base/button.css";
+@import "../0_css/utils/helpers.css";
+@import "../0_css/base/root.css";
+
+body {
+  background-color: var(--body-bg);
+  color: var(--clr-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: var(--space-100);
+  font-family: var(--ff-base);
+  font-weight: var(--fw-normal);
+  font-style: normal;
+  font-optical-sizing: auto;
+}
+
+.box {
+  background-color: hsla(var(--clr-orange-hsl) / 0.1);
+  border: 2px solid hsla(var(--clr-orange-hsl) / 0.8);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: 0 0 1rem 0.5rem hsla(var(--clr-orange-hsl) / 0.2),
+    inset 0 0 0.5rem 0.5rem hsla(var(--clr-orange-hsl) / 0.2);
+  padding: calc(var(--space-100) * 2);
+  display: grid;
+  grid-template-columns: auto;
+  gap: var(--space-100) 1.5rem;
+  position: relative;
+}
+
+.img-wrapper {
+  position: relative;
+}
+
+.img-wrapper::before,
+.img-wrapper::after {
+  content: "";
+  display: block;
+  background: var(--clr-orange);
+  opacity: 0.5;
+  width: 10em;
+  aspect-ratio: 1;
+  position: absolute;
+  left: -1rem;
+  top: -1rem;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.img-wrapper::after {
+  bottom: 0;
+  top: auto;
+  left: 2rem;
+  width: 9em;
+}
+
+.profile {
+  grid-row: span 2;
+}
+
+.profile__img {
+  border-radius: 50%;
+}
+
+.profile__title {
+  font-size: 2rem;
+  font-weight: var(--fw-bold);
+}
+
+.profile__at {
+  font-size: var(--fs-sm);
+}
+
+.links {
+  list-style: none;
+  margin: var(--space-100) 0;
+  padding: 0;
+  display: flex;
+  gap: var(--space-100);
+  justify-content: space-between;
+  margin-bottom: 2.4rem; /* Cheating */
+}
+
+.links__item {
+  background-color: var(--clr-primary-100);
+  padding: calc(var(--space-100) / 2);
+  display: block;
+  border-radius: calc(var(--border-radius) / 2);
+  position: relative;
+}
+
+.links__item::before {
+  content: attr(data-title);
+  display: block;
+  position: absolute;
+  bottom: -0.5rem;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  color: var(--clr-primary-100);
+  background-color: var(--clr-orange);
+  padding: 0.2rem 0.5rem;
+  font-size: var(--fs-sm);
+  transition: transform 250ms ease-in;
+  border-radius: calc(var(--border-radius) / 2);
+}
+
+.links__item:hover {
+  box-shadow: 0 0.1rem 0.5rem 0.05rem hsla(var(--clr-orange-hsl) / 0.8);
+}
+
+.links__item:hover::before {
+  transform: translate(-50%, 0%);
+}
+
+.links__item:hover svg {
+  fill: var(--clr-orange);
+}
+
+.links__item svg {
+  width: 2em;
+  height: 2em;
+  transition: fill 300ms ease;
+}
+
+.info {
+  align-self: center;
+}
+
+.info__title {
+  display: flex;
+  align-items: center;
+}
+
+.info__icon {
+  margin-left: auto;
+  border: 1px solid var(--clr-primary-100);
+  border-radius: 50%;
+  height: 1.5em;
+  width: 1.5em;
+  text-align: center;
+  font-size: var(--fs-sm);
+}
+
+.stats-wrapper {
+  position: absolute;
+  top: calc(var(--space-100) * 2);
+  right: calc(var(--space-100) * 2);
+}
+
+.stats {
+  margin-bottom: var(--space-100);
+}
+
+.stats span {
+  font-weight: var(--fw-bold);
+  font-size: 1.2rem;
+}
+
+button {
+  --_btn-base-bg: var(--clr-primary-100);
+  --_btn-base-color: var(--clr-primary-800);
+  --_btn-radius: calc(var(--border-radius) / 2);
+  --_btn-border: 2px solid transparent;
+  --_btn-hover-bg: hsla(var(--clr-orange-hsl) / 0.5);
+}
+
+button:hover {
+  --_btn-border: 2px solid var(--clr-orange);
+
+  box-shadow: 0 0.1rem 0.5rem 0.05rem hsla(var(--clr-orange-hsl) / 0.8);
+}
+
+.progress-bar {
+  width: 100%;
+  height: 1.5rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 0.5rem 0.1rem var(--clr-orange);
+  border-radius: 100vw;
+  margin-top: 0.5rem;
+}
+
+.progress-bar::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  animation: progress 1s ease-out forwards;
+}
+
+.progress-bar::after {
+  background-color: var(--clr-orange);
+  z-index: 0;
+  border-radius: 100vw;
+}
+
+/* Media queries */
+
+@media screen and (min-width: 60em) {
+  .box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stats-wrapper {
+    position: static;
+    justify-self: end;
+    align-self: end;
+  }
+
+  .links {
+    margin: var(--space-100) 0 0;
+    justify-content: normal;
+  }
+
+  .links__item::before {
+    border-radius: 0.5rem 0.5rem 0 0;
+    bottom: -2rem;
+  }
+
+  .links__item:hover::before {
+    transform: translate(-50%, 0%);
+  }
+}
+
+/* Animations */
+
+@keyframes progress {
+  100% {
+    transform: translateX(-35%);
+  }
+}
