@@ -17,6 +17,7 @@ export default defineConfig({
         "404-error-page": resolve(__dirname, "404-error-page/index.html"),
         "christmas-promo": resolve(__dirname, "christmas-promo/index.html"),
         subscribe: resolve(__dirname, "subscribe/index.html"),
+        "pricing-table": resolve(__dirname, "pricing-table/index.html"),
         "website-comps": resolve(__dirname, "website-comps/index.html"),
       },
     },
