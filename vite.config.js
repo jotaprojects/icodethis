@@ -14,6 +14,7 @@ export default defineConfig({
         "birthday-list": resolve(__dirname, "birthday-list/index.html"),
         toasts: resolve(__dirname, "toasts/index.html"),
         basics: resolve(__dirname, "basics/index.html"),
+        "404-error-page": resolve(__dirname, "404-error-page/index.html"),
         "website-comps": resolve(__dirname, "website-comps/index.html"),
       },
     },
