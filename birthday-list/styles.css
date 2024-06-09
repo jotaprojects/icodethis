@@ -1,0 +1,133 @@
+@import "../0_css/base/normalize.css";
+
+:root {
+  --clr-green-100: hsl(149, 82%, 82%);
+  --clr-green-400: hsl(168, 64%, 75%);
+  --clr-purple-100: hsl(213, 66%, 69%);
+  --clr-purple-400: hsl(255, 50%, 63%);
+
+  --clr-green-100-a3: hsl(149, 82%, 82%, 0.3);
+
+  --fw-normal: 400;
+  --fw-bold: 700;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: var(--fw-normal);
+  font-style: normal;
+
+  margin: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-image: radial-gradient(
+      circle at top left,
+      rgba(149, 232, 215, 0.5) 45%,
+      rgba(255, 255, 255, 0.5) 50%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(137, 113, 208, 0.5) 20%,
+      rgba(255, 255, 255, 0.5) 30%
+    );
+  overflow: hidden;
+}
+
+h1 {
+  text-shadow: 0.1rem 0.2rem 0.1rem var(--clr-green-400);
+  margin: 0;
+}
+
+.wrapper {
+  background-color: var(--clr-green-100-a3);
+  box-shadow: 0.2rem 0.5rem 1rem 0.2rem hsla(0 0 0 / 0.1);
+  border-radius: 1rem;
+  padding: 2rem;
+  border: 1px solid var(--clr-green-100);
+
+  animation: slide-up 600ms forwards;
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.list {
+  list-style: none;
+  margin: 2rem 0;
+  padding: 0;
+}
+
+.list__item {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin: 1rem 0;
+  border-radius: 100vw;
+  border: 1px solid transparent;
+  transition: background-color 300ms ease-out;
+}
+
+.list__item:hover {
+  border-color: hsla(149, 82%, 82%, 0.8);
+  background-color: hsla(168, 64%, 75%, 0.5);
+}
+
+.list__item-img {
+  border-radius: 50%;
+  border: 4px solid #fff;
+}
+
+.list__item-info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.list__item-name {
+  font-size: 1.2rem;
+  font-weight: var(--fw-bold);
+}
+
+button {
+  padding: 0.8rem 2rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  cursor: pointer;
+  color: #fff;
+  border: 1px solid var(--clr-purple-100);
+  background-color: hsl(213, 66%, 69%, 0.8);
+  box-shadow: 0 0.2rem 0.5rem 0.1rem rgba(0 0 0 / 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+button:hover,
+button:focus {
+  border-color: var(--clr-purple-400);
+}
+
+button svg {
+  position: absolute;
+  right: 0;
+  bottom: -0.5rem;
+  width: 4rem;
+  transform: scale(1) rotate(-5deg);
+  fill: var(--clr-purple-400);
+  transition: transform 300ms ease;
+}
+
+button:hover svg,
+button:focus svg {
+  transform: scale(1.5) rotate(-15deg);
+}
