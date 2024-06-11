@@ -1,0 +1,269 @@
+@import "../0_css/base/normalize.css";
+@import "../0_css/base/button.css";
+@import "../0_css/utils/grid.css";
+
+:root {
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-900: hsl(0, 0%, 0%);
+
+  --clr-neutral-100-hsl: 0, 0%, 100%;
+  --clr-neutral-900-hsl: 0, 0%, 0%;
+
+  --clr-neutral-200: hsl(20, 60%, 99%);
+  --clr-blue-800: hsl(226, 60%, 10%);
+  --clr-blue-600: hsl(218, 100%, 16%);
+  --clr-blue-400: hsl(209, 95%, 24%);
+  --clr-blue-200: hsl(193, 80%, 35%);
+
+  --clr-green: #0f0;
+  --clr-red: #f00;
+
+  --body-bg: var(--clr-neutral-200);
+  --clr-text: var(--clr-neutral-900);
+
+  --ff-base: system-ui, sans-serif;
+  --ff-alt: "Nunito", sans-serif;
+
+  --fs-sm: 0.8rem;
+  --fs-md: 1.2rem;
+
+  --fw-normal: 400;
+  --fw-bold: 700;
+
+  --space-50: 0.5rem;
+  --space-100: 1rem;
+  --space-200: 2rem;
+
+  --space-fluid-100: 1rem;
+  --space-fluid-200: 2rem;
+
+  --border-radius: 1rem;
+  --border-rounded: 50%;
+  --border-pill: 100vw;
+
+  --i-arrow: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M214.6 41.4c-12.5-12.5-32.8-12.5-45.3 0l-160 160c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 141.2V448c0 17.7 14.3 32 32 32s32-14.3 32-32V141.2L329.4 246.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-160-160z"/></svg>');
+}
+
+body {
+  background-color: var(--body-bg);
+  color: var(--clr-text);
+  margin: 0;
+  padding: 0;
+  font-family: var(--ff-base);
+  font-weight: var(--fw-normal);
+  font-style: normal;
+  font-optical-sizing: auto;
+}
+
+h2 {
+  font-size: clamp(1.2rem, 1.5vw, 1.8rem);
+  margin: 0 0 var(--space-100) 0;
+}
+
+svg {
+  width: 1em;
+  height: 1em;
+}
+
+.txt-lg {
+  font-size: clamp(2.5rem, 3vw, 4rem);
+  font-weight: var(--fw-bold);
+}
+
+.wrapper {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.top {
+  background-color: var(--clr-blue-800);
+  padding: var(--space-100);
+}
+
+.nav-account {
+  --_size: 2em;
+
+  display: flex;
+  gap: var(--space-100);
+  justify-content: end;
+  align-items: center;
+}
+
+.nav-account__link {
+  padding: var(--space-50);
+  border-radius: var(--border-rounded);
+  border: 2px solid transparent;
+  cursor: pointer;
+}
+
+.nav-account__link:hover {
+  border-color: hsla(var(--clr-neutral-100-hsl), 0.6);
+}
+
+.nav-account__link img {
+  width: var(--_size);
+  height: var(--_size);
+  border-radius: var(--border-rounded);
+}
+
+.nav-account__link svg {
+  width: var(--_size);
+  height: var(--_size);
+  fill: var(--clr-neutral-100);
+}
+
+.nav .wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-primary,
+.nav-secondary {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-primary {
+  display: flex;
+  gap: var(--space-100);
+}
+
+.nav-primary a,
+.nav-secondary a {
+  padding: var(--space-100);
+  text-decoration: none;
+  display: block;
+
+  position: relative;
+}
+
+.nav-primary a::after {
+  content: "";
+  height: 4px;
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0.5rem;
+  right: 0.5rem;
+  background-color: var(--clr-blue-800);
+}
+
+.nav-primary a:hover,
+.nav-secondary a:hover {
+}
+
+main.wrapper {
+  display: grid;
+  grid-template-columns: 70% 1fr;
+  gap: var(--space-100);
+}
+
+.main {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: var(--space-100);
+}
+
+.aside {
+}
+
+.box {
+  --_box-bg: var(--clr-neutral-100);
+  --_box-color: var(--clr-neutral-900);
+  --_box-border: 1px solid var(--clr-neutral-100);
+
+  background-color: var(--_box-bg);
+  border: var(--_box-border);
+  border-radius: var(--_box-radius);
+  padding: var(--space-100);
+  color: var(--_box-color);
+  border-radius: var(--border-radius);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  box-shadow: 0 0 0.8rem 0.01rem hsla(var(--clr-neutral-900-hsl), 0.2);
+}
+
+.box--dark {
+  --_box-bg: var(--clr-blue-800);
+  --_box-color: var(--clr-neutral-100);
+}
+
+.box__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.box__title {
+  font-size: clamp(1.2rem, 1.5vw, 1.8rem);
+}
+
+.box__link {
+  text-transform: uppercase;
+  color: var(--_box-color);
+  text-decoration: none;
+
+  display: flex;
+  align-items: center;
+  gap: var(--space-100);
+}
+
+.box__link svg {
+  fill: var(--_box-color);
+}
+
+button,
+.btn {
+  --_btn-base-bg: transparent;
+  --_btn-base-color: var(--clr-neutral-100);
+  --_btn-border: 0;
+  --_btn-radius: var(--border-pill);
+  --_btn-hover-bg: transparent;
+  --_btn-hover-color: var(--clr-neutral-100);
+
+  background-image: linear-gradient(
+    90deg,
+    var(--clr-green-600) 0%,
+    var(--clr-green-800) 100%
+  );
+  display: inline-block;
+  text-decoration: none;
+  font-weight: var(--fw-bold);
+  position: relative;
+  transition: color 250ms ease, transform 250ms ease,
+    background-color 250ms ease;
+}
+
+@media screen and (min-width: 60em) {
+  :root {
+    --space-fluid-100: 2rem;
+    --space-fluid-200: 4rem;
+  }
+
+  .wrapper {
+  }
+
+  .md-grid-span-2 {
+    grid-column: span 2;
+  }
+
+  .md-grid-span-3 {
+    grid-column: span 3;
+  }
+
+  .md-grid-span-4 {
+    grid-column: span 4;
+  }
+
+  .md-grid-span-5 {
+    grid-column: span 5;
+  }
+
+  .md-grid-span-8 {
+    grid-column: span 8;
+  }
+}

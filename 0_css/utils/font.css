@@ -17,3 +17,24 @@
 .text-primary {
   color: var(--clr-primary-100, #000);
 }
+
+/* Headings */
+
+h1,
+h2 {
+  margin: 0 0 var(--space-fluid-100) 0;
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+}
+
+h2 {
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  margin: var(--space-fluid-100) 0;
+}
+
+h3 {
+  font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+  margin: 0;
+}

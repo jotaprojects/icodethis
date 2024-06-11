@@ -32,6 +32,11 @@ export default defineConfig({
         "article-page": resolve(__dirname, "article-page/index.html"),
         steps: resolve(__dirname, "steps/index.html"),
         "website-comps": resolve(__dirname, "website-comps/index.html"),
+        "analytics-dashboard": resolve(
+          __dirname,
+          "analytics-dashboard/index.html"
+        ),
+        "big-menu-2": resolve(__dirname, "big-menu-2/index.html"),
 
         joburgers: resolve(__dirname, "joburgers/index.html"),
       },

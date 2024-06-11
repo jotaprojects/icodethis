@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Big Menu 2 - iCodeThis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <button
+        aria-haspopup="true"
+        aria-expanded="false"
+        data-trigger="nav"
+        aria-label="Open menu"
+      >
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-container">
+        <ul class="menu">
+          <li>
+            <button
+              id="furniture-menu-btn"
+              class="menu__item-top menu-toggle"
+              data-trigger="nav-child"
+              aria-controls="furniture-menu"
+              aria-expanded="false"
+            >
+              Furniture
+            </button>
+            <a href="#" class="menu__item-top">Furniture</a>
+            <div class="submenu" id="furniture-menu">
+              <div class="submenu__col">
+                <a href="#" class="submenu__item">Sofas</a>
+                <ul>
+                  <li><a href="#">Sectionals</a></li>
+                  <li><a href="#">Recliners</a></li>
+                  <li><a href="#">Loveseats</a></li>
+                  <li><a href="#">Sleeper Sofas</a></li>
+                  <li><a href="#">Futons</a></li>
+                </ul>
+              </div>
+              <div class="submenu__col">
+                <a href="#" class="submenu__item">Chairs</a>
+                <ul>
+                  <li><a href="#">Armchairs</a></li>
+                  <li><a href="#">Accent Chairs</a></li>
+                  <li><a href="#">Recliners</a></li>
+                  <li><a href="#">Rocking Chairs</a></li>
+                  <li><a href="#">Chaise Lounges</a></li>
+                </ul>
+              </div>
+              <div class="submenu__col">
+                <a href="#" class="submenu__item">Tables</a>
+                <ul>
+                  <li><a href="#">Coffee Tables</a></li>
+                  <li><a href="#">End Tables</a></li>
+                  <li><a href="#">Console Tables</a></li>
+                  <li><a href="#">TV Stands</a></li>
+                  <li><a href="#">Ottomans</a></li>
+                </ul>
+              </div>
+              <div class="submenu__col">
+                <a href="#" class="submenu__item">Storage</a>
+                <ul>
+                  <li><a href="#">Bookcases</a></li>
+                  <li><a href="#">TV Stands</a></li>
+                  <li><a href="#">Cabinets</a></li>
+                  <li><a href="#">Media Consoles</a></li>
+                  <li><a href="#">Shelves</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li>
+            <button
+              id="lighting-menu-btn"
+              class="menu__item-top menu-toggle"
+              data-trigger="nav-child"
+              aria-controls="ligthing-menu"
+              aria-expanded="false"
+            >
+              Lighting
+            </button>
+            <a href="#" class="menu__item-top">Lighting</a>
+            <div class="submenu" id="ligthing-menu">
+              <div class="submenu__col">
+                <a href="#ceiling-lights" class="submenu__item"
+                  >Ceiling Lights</a
+                >
+                <ul>
+                  <!-- Sub-subcategories for Ceiling Lights -->
+                  <li><a href="#chandeliers">Chandeliers</a></li>
+                  <li><a href="#pendant-lights">Pendant Lights</a></li>
+                  <li><a href="#flush-mounts">Flush Mounts</a></li>
+                  <li><a href="#island-lights">Island Lights</a></li>
+                  <li><a href="#track-lighting">Track Lighting</a></li>
+                </ul>
+              </div>
+              <div class="submenu__col">
+                <a href="#wall-lights" class="submenu__item">Wall Lights</a>
+                <ul>
+                  <!-- Sub-subcategories for Wall Lights -->
+                  <li><a href="#wall-sconces">Wall Sconces</a></li>
+                  <li>
+                    <a href="#bathroom-vanity-lights">Bathroom Vanity Lights</a>
+                  </li>
+                  <li><a href="#swing-arm-lights">Swing Arm Lights</a></li>
+                  <li><a href="#picture-lights">Picture Lights</a></li>
+                  <li>
+                    <a href="#wall-recessed-lights">Wall Recessed Lights</a>
+                  </li>
+                </ul>
+              </div>
+              <div class="submenu__col">
+                <a href="#outdoor-lights" class="submenu__item"
+                  >Outdoor Lights</a
+                >
+                <ul>
+                  <!-- Sub-subcategories for Outdoor Lights -->
+                  <li><a href="#porch-lights">Porch Lights</a></li>
+                  <li><a href="#deck-lights">Deck Lights</a></li>
+                  <li><a href="#post-lights">Post Lights</a></li>
+                  <li><a href="#landscape-lighting">Landscape Lighting</a></li>
+                  <li><a href="#security-lights">Security Lights</a></li>
+                </ul>
+              </div>
+              <div class="submenu__col">
+                <a href="#lamps" class="submenu__item">Lamps</a>
+                <ul>
+                  <!-- Sub-subcategories for Lamps -->
+                  <li><a href="#table-lamps">Table Lamps</a></li>
+                  <li><a href="#floor-lamps">Floor Lamps</a></li>
+                  <li><a href="#desk-lamps">Desk Lamps</a></li>
+                  <li><a href="#buffet-lamps">Buffet Lamps</a></li>
+                  <li><a href="#arc-lamps">Arc Lamps</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li>
+            <button
+              id="decor-menu-btn"
+              class="menu__item-top menu-toggle"
+              data-trigger="nav-child"
+              aria-controls="decor-menu"
+              aria-expanded="false"
+            >
+              Decor
+            </button>
+            <a href="#" class="menu__item-top">Decor</a>
+            <div class="submenu" id="decor-menu">
+              <div class="submenu__col">
+                <a href="#" class="submenu__item">Decoration</a>
+                <ul>
+                  <li><a href="#">Vases</a></li>
+                  <li><a href="#">Jars</a></li>
+                  <li><a href="#">Posters</a></li>
+                  <li><a href="#">Photo frames</a></li>
+                  <li><a href="#">Sculptures</a></li>
+                </ul>
+              </div>
+              <div class="submenu__col">
+                <a href="#wall-decor" class="submenu__item">Wall Decor</a>
+                <ul>
+                  <!-- Sub-subcategories for Wall Decor -->
+                  <li><a href="#paintings">Paintings</a></li>
+                  <li><a href="#wall-sculptures">Wall Sculptures</a></li>
+                  <li><a href="#photo-frames">Photo Frames</a></li>
+                  <li><a href="#wall-clocks">Wall Clocks</a></li>
+                  <li><a href="#tapestries">Tapestries</a></li>
+                </ul>
+              </div>
+              <div class="submenu__col">
+                <a href="#mirrors" class="submenu__item">Mirrors</a>
+                <ul>
+                  <!-- Sub-subcategories for Mirrors -->
+                  <li><a href="#wall-mirrors">Wall Mirrors</a></li>
+                  <li><a href="#floor-mirrors">Floor Mirrors</a></li>
+                  <li><a href="#vanity-mirrors">Vanity Mirrors</a></li>
+                  <li><a href="#decorative-mirrors">Decorative Mirrors</a></li>
+                  <li><a href="#framed-mirrors">Framed Mirrors</a></li>
+                </ul>
+              </div>
+              <div class="submenu__col">
+                <a href="#rugs" class="submenu__item">Rugs</a>
+                <ul>
+                  <!-- Sub-subcategories for Rugs -->
+                  <li><a href="#area-rugs">Area Rugs</a></li>
+                  <li><a href="#runner-rugs">Runner Rugs</a></li>
+                  <li><a href="#outdoor-rugs">Outdoor Rugs</a></li>
+                  <li><a href="#bath-rugs">Bath Rugs</a></li>
+                  <li><a href="#kitchen-rugs">Kitchen Rugs</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li>
+            <button
+              id="serving-menu-btn"
+              class="menu__item-top menu-toggle"
+              data-trigger="nav-child"
+              aria-controls="serving-menu"
+              aria-expanded="false"
+            >
+              Serving & Tableware
+            </button>
+            <a href="#" class="menu__item-top">Serving & Tableware</a>
+            <div class="submenu" id="serving-menu">
+              <div class="submenu__col">
+                <a href="#dinnerware" class="submenu__item">Dinnerware</a>
+                <ul>
+                  <!-- Sub-subcategories for Dinnerware -->
+                  <li><a href="#dinner-plates">Dinner Plates</a></li>
+                  <li><a href="#salad-plates">Salad Plates</a></li>
+                  <li><a href="#bowls">Bowls</a></li>
+                  <li><a href="#mugs">Mugs</a></li>
+                  <li><a href="#sets">Sets</a></li>
+                </ul>
+              </div>
+              <div class="submenu__col">
+                <a href="#glassware" class="submenu__item">Glassware</a>
+                <ul>
+                  <!-- Sub-subcategories for Glassware -->
+                  <li><a href="#wine-glasses">Wine Glasses</a></li>
+                  <li><a href="#champagne-flutes">Champagne Flutes</a></li>
+                  <li><a href="#tumblers">Tumblers</a></li>
+                  <li><a href="#highball-glasses">Highball Glasses</a></li>
+                  <li><a href="#beer-glasses">Beer Glasses</a></li>
+                </ul>
+              </div>
+              <div class="submenu__col">
+                <a href="#serveware" class="submenu__item">Serveware</a>
+                <ul>
+                  <!-- Sub-subcategories for Serveware -->
+                  <li><a href="#platters">Platters</a></li>
+                  <li><a href="#serving-bowls">Serving Bowls</a></li>
+                  <li><a href="#serving-utensils">Serving Utensils</a></li>
+                  <li><a href="#trays">Trays</a></li>
+                  <li><a href="#pitchers">Pitchers</a></li>
+                </ul>
+              </div>
+              <div class="submenu__col">
+                <a href="#flatware" class="submenu__item">Flatware</a>
+                <ul>
+                  <!-- Sub-subcategories for Flatware -->
+                  <li><a href="#forks">Forks</a></li>
+                  <li><a href="#knives">Knives</a></li>
+                  <li><a href="#spoons">Spoons</a></li>
+                  <li><a href="#sets">Sets</a></li>
+                  <li><a href="#specialty-pieces">Specialty Pieces</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li>
+            <button
+              id="textiles-menu-btn"
+              class="menu__item-top menu-toggle"
+              data-trigger="nav-child"
+              aria-controls="textiles-menu"
+              aria-expanded="false"
+            >
+              Textiles & Carpets
+            </button>
+            <a href="#" class="menu__item-top">Textiles & Carpets</a>
+            <div class="submenu" id="textiles-menu">
+              <div class="submenu__col">
+                <a href="#curtains" class="submenu__item">Curtains</a>
+                <ul>
+                  <!-- Sub-subcategories for Curtains -->
+                  <li><a href="#blackout-curtains">Blackout Curtains</a></li>
+                  <li><a href="#sheer-curtains">Sheer Curtains</a></li>
+                  <li><a href="#valances">Valances</a></li>
+                  <li><a href="#curtain-rods">Curtain Rods</a></li>
+                  <li><a href="#tiebacks">Tiebacks</a></li>
+                </ul>
+              </div>
+              <div class="submenu__col">
+                <a href="#cushions" class="submenu__item">Cushions</a>
+                <ul>
+                  <!-- Sub-subcategories for Cushions -->
+                  <li><a href="#throw-pillows">Throw Pillows</a></li>
+                  <li><a href="#seat-cushions">Seat Cushions</a></li>
+                  <li><a href="#floor-cushions">Floor Cushions</a></li>
+                  <li><a href="#outdoor-cushions">Outdoor Cushions</a></li>
+                  <li><a href="#cushion-covers">Cushion Covers</a></li>
+                </ul>
+              </div>
+              <div class="submenu__col">
+                <a href="#carpets" class="submenu__item">Carpets</a>
+                <ul>
+                  <!-- Sub-subcategories for Carpets -->
+                  <li><a href="#area-rugs">Area Rugs</a></li>
+                  <li><a href="#runner-rugs">Runner Rugs</a></li>
+                  <li><a href="#outdoor-rugs">Outdoor Rugs</a></li>
+                  <li><a href="#bath-mats">Bath Mats</a></li>
+                  <li><a href="#kitchen-mats">Kitchen Mats</a></li>
+                </ul>
+              </div>
+              <div class="submenu__col">
+                <a href="#bedding" class="submenu__item">Bedding</a>
+                <ul>
+                  <!-- Sub-subcategories for Bedding -->
+                  <li><a href="#duvet-covers">Duvet Covers</a></li>
+                  <li><a href="#comforters">Comforters</a></li>
+                  <li><a href="#sheets">Sheets</a></li>
+                  <li><a href="#pillowcases">Pillowcases</a></li>
+                  <li><a href="#bed-skirts">Bed Skirts</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li>
+            <button
+              id="jewlery-menu-btn"
+              class="menu__item-top menu-toggle"
+              data-trigger="nav-child"
+              aria-controls="jewlery-menu"
+              aria-expanded="false"
+            >
+              Jewlery & Accessories
+            </button>
+            <a href="#" class="menu__item-top">Jewlery & Accessories</a>
+            <div class="submenu" id="jewlery-menu">
+              <div class="submenu__col">
+                <a href="#necklaces" class="submenu__item">Necklaces</a>
+                <ul>
+                  <!-- Sub-subcategories for Necklaces -->
+                  <li><a href="#pendant-necklaces">Pendant Necklaces</a></li>
+                  <li><a href="#chokers">Chokers</a></li>
+                  <li>
+                    <a href="#statement-necklaces">Statement Necklaces</a>
+                  </li>
+                  <li><a href="#layered-necklaces">Layered Necklaces</a></li>
+                  <li><a href="#lockets">Lockets</a></li>
+                </ul>
+              </div>
+              <div class="submenu__col">
+                <a href="#earrings" class="submenu__item">Earrings</a>
+                <ul>
+                  <!-- Sub-subcategories for Earrings -->
+                  <li><a href="#stud-earrings">Stud Earrings</a></li>
+                  <li><a href="#hoop-earrings">Hoop Earrings</a></li>
+                  <li><a href="#drop-earrings">Drop Earrings</a></li>
+                  <li><a href="#dangle-earrings">Dangle Earrings</a></li>
+                  <li><a href="#ear-cuffs">Ear Cuffs</a></li>
+                </ul>
+              </div>
+              <div class="submenu__col">
+                <a href="#bracelets" class="submenu__item">Bracelets</a>
+                <ul>
+                  <!-- Sub-subcategories for Bracelets -->
+                  <li><a href="#bangle-bracelets">Bangle Bracelets</a></li>
+                  <li><a href="#charm-bracelets">Charm Bracelets</a></li>
+                  <li><a href="#cuff-bracelets">Cuff Bracelets</a></li>
+                  <li><a href="#chain-bracelets">Chain Bracelets</a></li>
+                  <li><a href="#beaded-bracelets">Beaded Bracelets</a></li>
+                </ul>
+              </div>
+              <div class="submenu__col">
+                <a href="#rings" class="submenu__item">Rings</a>
+                <ul>
+                  <!-- Sub-subcategories for Rings -->
+                  <li><a href="#engagement-rings">Engagement Rings</a></li>
+                  <li><a href="#wedding-bands">Wedding Bands</a></li>
+                  <li><a href="#statement-rings">Statement Rings</a></li>
+                  <li><a href="#stackable-rings">Stackable Rings</a></li>
+                  <li><a href="#birthstone-rings">Birthstone Rings</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li>
+            <button
+              id="outdoor-menu-btn"
+              class="menu__item-top menu-toggle"
+              data-trigger="nav-child"
+              aria-controls="outdoor-menu"
+              aria-expanded="false"
+            >
+              Outdoor environment
+            </button>
+            <a href="#" class="menu__item-top">Outdoor environment</a>
+            <div class="submenu" id="outdoor-menu">
+              <div class="submenu__col">
+                <a href="#furniture" class="submenu__item">Furniture</a>
+                <ul>
+                  <!-- Sub-subcategories for Furniture -->
+                  <li><a href="#outdoor-sofas">Outdoor Sofas</a></li>
+                  <li><a href="#patio-chairs">Patio Chairs</a></li>
+                  <li><a href="#outdoor-tables">Outdoor Tables</a></li>
+                  <li><a href="#hammocks">Hammocks</a></li>
+                  <li><a href="#outdoor-benches">Outdoor Benches</a></li>
+                </ul>
+              </div>
+              <div class="submenu__col">
+                <a href="#lighting" class="submenu__item">Lighting</a>
+                <ul>
+                  <!-- Sub-subcategories for Lighting -->
+                  <li><a href="#string-lights">String Lights</a></li>
+                  <li><a href="#pathway-lights">Pathway Lights</a></li>
+                  <li><a href="#security-lights">Security Lights</a></li>
+                  <li><a href="#garden-lights">Garden Lights</a></li>
+                  <li><a href="#outdoor-lanterns">Outdoor Lanterns</a></li>
+                </ul>
+              </div>
+              <div class="submenu__col">
+                <a href="#gardening" class="submenu__item">Gardening</a>
+                <ul>
+                  <!-- Sub-subcategories for Gardening -->
+                  <li><a href="#planters">Planters</a></li>
+                  <li><a href="#raised-beds">Raised Beds</a></li>
+                  <li><a href="#garden-tools">Garden Tools</a></li>
+                  <li><a href="#composters">Composters</a></li>
+                  <li><a href="#garden-decor">Garden Decor</a></li>
+                </ul>
+              </div>
+              <div class="submenu__col">
+                <a href="#recreation" class="submenu__item">Recreation</a>
+                <ul>
+                  <!-- Sub-subcategories for Recreation -->
+                  <li><a href="#grills">Grills</a></li>
+                  <li><a href="#fire-pits">Fire Pits</a></li>
+                  <li><a href="#outdoor-games">Outdoor Games</a></li>
+                  <li><a href="#pool-accessories">Pool Accessories</a></li>
+                  <li>
+                    <a href="#playground-equipment">Playground Equipment</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </body>
+</html>
