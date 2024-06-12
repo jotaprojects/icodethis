@@ -23,6 +23,9 @@
 - Article page
 - Steps (WIP)
 - Website Comps
+- Analytics dashboard (WIP)
+- Big Menu 2
+- Blog Comps
 
 ## Resource
 
