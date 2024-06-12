@@ -1,13 +1,3 @@
-/* FIXME when loading the code all subcategories in the menu are open. They should be closed when entering */
-
-const links = document.querySelectorAll("a");
-
-links.forEach((link) => {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-  });
-});
-
 const STATE_NAV = "state-nav";
 const NAV_TRIGGER_SELECTOR = "[data-trigger='nav']";
 const NAV_CONTAINER_SELECTOR = ".nav-container";

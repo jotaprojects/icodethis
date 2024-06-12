@@ -37,6 +37,7 @@ export default defineConfig({
           "analytics-dashboard/index.html"
         ),
         "big-menu-2": resolve(__dirname, "big-menu-2/index.html"),
+        "blog-comps": resolve(__dirname, "blog-comps/index.html"),
 
         joburgers: resolve(__dirname, "joburgers/index.html"),
       },
