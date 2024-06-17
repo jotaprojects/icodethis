@@ -248,7 +248,7 @@ button:hover::after,
   transform: translateY(0);
 }
 
-.btn-invisible {
+.btn--invisible {
   --_btn-padding: 0.5rem 1.8rem 0.5rem 1.5rem;
   --_btn-hover-bg: hsl(67, 50%, 86%, 0.8);
   --_btn-hover-color: var(--clr-neutral-900);
@@ -257,7 +257,7 @@ button:hover::after,
   color: var(--clr-green-800);
 }
 
-.btn-invisible::after {
+.btn--invisible::after {
   content: none;
   filter: none;
 }

@@ -123,7 +123,7 @@ button svg {
   fill: var(--clr-primary-100);
 }
 
-.btn-invisible {
+.btn--invisible {
   --_btn-hover-color: var(--clr-orange-600);
 }
 
