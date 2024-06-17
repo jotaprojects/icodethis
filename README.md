@@ -26,7 +26,7 @@
 - Analytics dashboard (WIP)
 - Big Menu 2
 - Blog Comps
-- boardme sign up
+- boardme sign up (WIP)
 - Charts
 
 ## Resource
