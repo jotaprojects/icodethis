@@ -9,3 +9,7 @@
   white-space: nowrap;
   border-width: 0;
 }
+
+.w-f {
+  width: 100%;
+}

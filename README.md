@@ -26,11 +26,14 @@
 - Analytics dashboard (WIP)
 - Big Menu 2
 - Blog Comps
+- boardme sign up
+- Charts
 
 ## Resource
 
 - https://coolors.co/palettes/
 - https://dribbble.com/
+- https://uigradients.com/
 
 ## Author
 

@@ -32,10 +32,20 @@ button:focus-visible,
   outline: var(--_btn-focus-outline);
 }
 
-.btn-invisible {
+.btn--invisible {
   --_btn-base-bg: transparent;
   --_btn-border: 0;
   --_btn-padding: 0.2rem 0.5rem;
 
   --_btn-hover-bg: transparent;
+}
+
+.btn--icon {
+  --_btn-padding: 0.5rem;
+}
+
+.btn--lg {
+  --_btn-padding: 1rem 2rem;
+
+  font-size: 1rem;
 }

@@ -38,6 +38,8 @@ export default defineConfig({
         ),
         "big-menu-2": resolve(__dirname, "big-menu-2/index.html"),
         "blog-comps": resolve(__dirname, "blog-comps/index.html"),
+        "boardme-signup": resolve(__dirname, "boardme-signup/index.html"),
+        charts: resolve(__dirname, "charts/index.html"),
 
         joburgers: resolve(__dirname, "joburgers/index.html"),
       },

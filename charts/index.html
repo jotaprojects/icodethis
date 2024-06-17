@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Charts - iCodeThis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="box">
+        <div class="box__head">
+          <div class="box__title">Recycled</div>
+          <div class="box__actions">
+            <button class="btn--icon">
+              <span class="sr-only">Menu</span>
+              <svg
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="size-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div class="box__body">
+          <div class="chart-wrapper">
+            <div class="chart-title">
+              <div class="chart-title__text">Total</div>
+              <div class="chart-title__value">$47.1K</div>
+            </div>
+            <canvas id="chartPie"></canvas>
+          </div>
+          <div id="chartLegends" class="chart-legends"></div>
+        </div>
+        <div class="box__foot">
+          <button class="btn--lg w-f">
+            Read full report
+            <svg
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m8.25 4.5 7.5 7.5-7.5 7.5"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="box">
+        <div class="box__head">
+          <div class="box__title">Goals</div>
+          <div class="box__actions">
+            <select>
+              <option value="week">This Week</option>
+              <option value="month">This Month</option>
+              <option value="year">This Year</option>
+            </select>
+          </div>
+        </div>
+        <div class="box__body">
+          <div class="chart-bar">
+            <label for="progress-direct">
+              <div class="chart-bar__label">Direct</div>
+              <div class="chart-bar__goal">3183</div>
+            </label>
+            <progress
+              id="progress-direct"
+              max="4000"
+              value="3183"
+              class="chart-bar__bar"
+            ></progress>
+          </div>
+          <div class="chart-bar chart-bar--black">
+            <label for="progress-organic">
+              <div class="chart-bar__label">Organic</div>
+              <div class="chart-bar__goal">3846</div>
+            </label>
+            <progress
+              id="progress-organic"
+              max="4500"
+              value="3846"
+              class="chart-bar__bar"
+            ></progress>
+          </div>
+          <div class="chart-bar chart-bar--red">
+            <label for="progress-social">
+              <div class="chart-bar__label">Social</div>
+              <div class="chart-bar__goal">1058</div>
+            </label>
+            <progress
+              id="progress-social"
+              max="4500"
+              value="1058"
+              class="chart-bar__bar"
+            ></progress>
+          </div>
+          <div class="chart-bar chart-bar--yellow">
+            <label for="progress-referral">
+              <div class="chart-bar__label">Referral</div>
+              <div class="chart-bar__goal">174</div>
+            </label>
+            <progress
+              id="progress-referral"
+              max="4500"
+              value="174"
+              class="chart-bar__bar"
+            ></progress>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      function legendList(chart, id) {
+        const legend = document.getElementById(id);
+        let listContainer = legend.querySelector("ul");
+
+        if (!listContainer) {
+          listContainer = document.createElement("ul");
+          listContainer.classList.add("list");
+          legend.appendChild(listContainer);
+        }
+
+        return listContainer;
+      }
+
+      const htmlLegendPlugin = {
+        id: "htmlLegend",
+        afterUpdate: (chart, args, options) => {
+          const { type } = chart.config;
+          if (type !== "pie" && type !== "doughnut") return;
+
+          const ul = legendList(chart, options.containerID);
+
+          while (ul.firstChild) {
+            ul.firstChild.remove();
+          }
+
+          const items =
+            chart.options.plugins.legend.labels.generateLabels(chart);
+          const data = chart.data.datasets[0].data;
+
+          items.forEach((item) => {
+            const itemData = data[item.index];
+
+            const li = document.createElement("li");
+            li.classList.add("list__item");
+            ul.appendChild(li);
+
+            const colorEl = document.createElement("span");
+            colorEl.style.backgroundColor = item.fillStyle;
+            colorEl.classList.add("color-box");
+
+            const textEl = document.createElement("span");
+            textEl.classList.add("text");
+            const text = document.createTextNode(item.text);
+            textEl.appendChild(text);
+
+            const valueEl = document.createElement("span");
+            valueEl.classList.add("value");
+            const value = document.createTextNode(
+              itemData.value + itemData.suffix
+            );
+            valueEl.appendChild(value);
+
+            li.appendChild(colorEl);
+            li.appendChild(textEl);
+            li.appendChild(valueEl);
+            ul.appendChild(li);
+          });
+        },
+      };
+
+      const canvas = document.getElementById("chartPie");
+      new Chart(canvas, {
+        type: "doughnut",
+        data: {
+          labels: ["Text", "Images", "Documents", "Videos"],
+          datasets: [
+            {
+              backgroundColor: ["#ff8b8a", "#fdc500", "#40c570", "#224f72"],
+              data: [
+                { id: "Text", value: 32, suffix: "%" },
+                { id: "Images", value: 25, suffix: "%" },
+                { id: "Documents", value: 22, suffix: "%" },
+                { id: "Videos", value: 11, suffix: "%" },
+              ],
+            },
+          ],
+        },
+        plugins: [htmlLegendPlugin],
+        options: {
+          responsive: true,
+          spacing: 16,
+          borderRadius: 50,
+          borderWidth: 0,
+          cutout: "80%",
+          plugins: {
+            htmlLegend: {
+              containerID: "chartLegends",
+            },
+            legend: {
+              display: false,
+            },
+            tooltip: {
+              displayColors: false,
+              callbacks: {
+                title: function () {
+                  return "";
+                },
+                label: function (context) {
+                  return (
+                    context.dataset.data[context.dataIndex].id +
+                    ": " +
+                    context.dataset.data[context.dataIndex].value +
+                    context.dataset.data[context.dataIndex].suffix
+                  );
+                },
+              },
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
