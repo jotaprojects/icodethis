@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contraction Timer - iCodeThis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+
+    <!-- https://dribbble.com/shots/16878703-Timer-Widget -->
+    <!-- https://dribbble.com/shots/19924365-Stopwatch-Timer -->
+    <!-- https://dribbble.com/shots/24051129-Daily-UI-014-Countdown-Timer -->
+  </head>
+  <body>
+    <div class="app">
+      <div class="app__head">
+        <button class="btn--invisible">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6.75 15.75 3 12m0 0 3.75-3.75M3 12h18"
+            />
+          </svg>
+        </button>
+        <div class="title">Contraction Timer</div>
+        <button class="btn--invisible">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="size-6"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0"
+            />
+          </svg>
+        </button>
+      </div>
+      <div class="app__body">
+        <div class="timer" id="timer">00:00:00</div>
+        <p class="timer-text">Time since last contractions</p>
+        <p class="timer-time">7 min 32 sec</p>
+        <button
+          class="btn--icon"
+          id="timerBtn"
+          aria-label="Start Contraction"
+          data-state="start"
+        >
+          <!-- Start svg -->
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M4.5 5.653c0-1.427 1.529-2.33 2.779-1.643l11.54 6.347c1.295.712 1.295 2.573 0 3.286L7.28 19.99c-1.25.687-2.779-.217-2.779-1.643V5.653Z"
+              clip-rule="evenodd"
+            />
+          </svg>
+
+          <!-- Stop svg -->
+          <svg
+            aria-hidden="true"
+            focusable="false"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M4.5 7.5a3 3 0 0 1 3-3h9a3 3 0 0 1 3 3v9a3 3 0 0 1-3 3h-9a3 3 0 0 1-3-3v-9Z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </button>
+      </div>
+      <div class="app__foot">
+        <table>
+          <thead>
+            <tr>
+              <th>Length</th>
+              <th>Time apart</th>
+              <th>Start & end time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>6s</td>
+              <td>
+                3m<span class="unit">in</span> 21s<span class="unit">ec</span>
+              </td>
+              <td>4:49pm - 4:49pm</td>
+            </tr>
+            <tr>
+              <td>4s</td>
+              <td>
+                16m<span class="unit">in</span> 22s<span class="unit">ec</span>
+              </td>
+              <td>4:49pm - 4:49pm</td>
+            </tr>
+            <tr>
+              <td>6s</td>
+              <td>
+                7m<span class="unit">in</span> 41s<span class="unit">ec</span>
+              </td>
+              <td>4:49pm - 4:49pm</td>
+            </tr>
+            <tr>
+              <td>12s</td>
+              <td>
+                21m<span class="unit">in</span> 01s<span class="unit">ec</span>
+              </td>
+              <td>4:49pm - 4:49pm</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </body>
+</html>

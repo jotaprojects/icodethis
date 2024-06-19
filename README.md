@@ -28,6 +28,7 @@
 - Blog Comps
 - boardme sign up (WIP)
 - Charts
+- Contraction Timer (Future iteration - Add functionallity to log time and calculations on contractions (https://www.thebump.com/calculators/contraction))
 
 ## Resource
 

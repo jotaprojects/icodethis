@@ -40,6 +40,7 @@ export default defineConfig({
         "blog-comps": resolve(__dirname, "blog-comps/index.html"),
         "boardme-signup": resolve(__dirname, "boardme-signup/index.html"),
         charts: resolve(__dirname, "charts/index.html"),
+        "contraction-timer": resolve(__dirname, "contraction-timer/index.html"),
 
         joburgers: resolve(__dirname, "joburgers/index.html"),
       },
