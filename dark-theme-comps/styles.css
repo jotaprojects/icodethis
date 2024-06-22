@@ -160,6 +160,8 @@ a {
   width: 100%;
 }
 
+/* https://www.smashingmagazine.com/2021/12/create-custom-range-input-consistent-browsers/ */
+
 .range-wrapper {
   padding: var(--space-100);
 }
