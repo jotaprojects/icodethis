@@ -12,13 +12,21 @@
   --ff-alt: "Lato", sans-serif;
 
   --fs-sm: 0.8rem;
+  --fs-md: 1.2rem;
 
   --fw-normal: 400;
+  --fw-medium: 500;
   --fw-bold: 700;
+  --fw-black: 900;
 
   --space-50: 0.5rem;
   --space-100: 1rem;
 
+  --space-fluid-50: 0.5rem;
+  --space-fluid-100: 1rem;
+  --space-fluid-200: 2rem;
+
   --border-radius: 1rem;
   --border-rounded: 50%;
+  --border-pill: 100vw;
 }
