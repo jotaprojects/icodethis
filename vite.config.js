@@ -41,6 +41,7 @@ export default defineConfig({
         "boardme-signup": resolve(__dirname, "boardme-signup/index.html"),
         charts: resolve(__dirname, "charts/index.html"),
         "contraction-timer": resolve(__dirname, "contraction-timer/index.html"),
+        "dark-theme-comps": resolve(__dirname, "dark-theme-comps/index.html"),
 
         joburgers: resolve(__dirname, "joburgers/index.html"),
       },

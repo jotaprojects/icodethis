@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Charts - iCodeThis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <nav class="nav">
+        <div class="nav__item"><a href="#">Home</a></div>
+        <div class="nav__item"><a href="#">Features</a></div>
+        <div class="nav__item"><a href="#">Pricing</a></div>
+        <div class="nav__item"><a href="#">Contact</a></div>
+        <div class="nav__item"><a href="#" class="btn">Sign up</a></div>
+      </nav>
+      <div class="box box--chart">
+        <div class="chart-wrapper">
+          <canvas id="chartLine"></canvas>
+        </div>
+      </div>
+      <div class="box box--btns">
+        <div class="btn-wrapper">
+          <button class="btn btn--accent" data-dropdown="1">
+            Options
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="m8.25 4.5 7.5 7.5-7.5 7.5"
+              />
+            </svg>
+          </button>
+          <button class="btn btn--invisible">Edit</button>
+        </div>
+        <div class="dropdowns">
+          <ul class="dropdown" data-id="1">
+            <li class="list__item"><a href="#">Sound</a></li>
+            <li class="list__item"><a href="#">Effects</a></li>
+            <li class="list__item"><a href="#">Animations</a></li>
+            <li class="list__item"><a href="#">Preferences</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="box box--ranges">
+        <div class="range-wrapper">
+          <div class="range">
+            <div class="range-track"></div>
+            <input
+              id="range-min-max"
+              type="range"
+              min="0"
+              max="100"
+              value="50"
+            />
+          </div>
+          <label for="range-min-max">
+            <div class="range__label">min</div>
+            <div class="range__label">max</div>
+          </label>
+        </div>
+        <div class="range-wrapper">
+          <div class="range">
+            <div class="range-track-double"></div>
+            <input id="range-1" type="range" min="0" max="100" value="20" />
+            <input id="range-2" type="range" min="0" max="100" value="80" />
+          </div>
+          <div class="range-labels">
+            <label for="range-1" class="range__label">0</label>
+            <label for="range-2" class="range__label">100</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      const canvas = document.getElementById("chartLine");
+      const ctx = canvas.getContext("2d");
+      const gradient = ctx.createLinearGradient(0, 260, 0, 0);
+      gradient.addColorStop(0, "#14ffec");
+      gradient.addColorStop(0.5, "#0d7377");
+      gradient.addColorStop(1, "#14ffec");
+
+      Chart.defaults.borderColor = "rgba(255, 255, 255, 0.05)";
+      Chart.defaults.color = "rgba(255, 255, 255, 0.6)";
+      Chart.defaults.font.size = 14;
+
+      new Chart(canvas, {
+        type: "line",
+        data: {
+          labels: [0, 1, 2, 3, 4, 5, 6, 7],
+          datasets: [
+            {
+              data: [0, 15, 8, 33, 26, 20, 18, 28],
+              fill: {
+                target: "origin",
+                above: "#212121",
+              },
+              tension: 0.5,
+            },
+          ],
+        },
+        options: {
+          scales: {
+            y: {
+              suggestedMax: 40,
+              border: {
+                dash: [5, 15],
+              },
+            },
+          },
+          responsive: true,
+          borderColor: gradient,
+          elements: {
+            point: {
+              hoverBackgroundColor: "#212121",
+              hoverBorderWidth: 8,
+              hitRadius: 10,
+              borderWidth: 0,
+            },
+          },
+          plugins: {
+            legend: {
+              display: false,
+            },
+            tooltip: {
+              displayColors: false,
+              xAlign: "center",
+              yAlign: "bottom",
+              callbacks: {
+                title: function () {
+                  return "";
+                },
+              },
+            },
+          },
+        },
+      });
+
+      // Credits to https://codepen.io/alexpg96/pen/xxrBgbP
+      const rangeTrack = document.querySelector(".range-track");
+      const rangeTrackDouble = document.querySelector(".range-track-double");
+      const rangeMinMax = document.querySelector("#range-min-max");
+      const range1 = document.querySelector("#range-1");
+      const range2 = document.querySelector("#range-2");
+      const gap = 0;
+      const maxValue = range1.max;
+
+      function fillColor() {
+        const percent1 = (parseInt(range1.value) / maxValue) * 100;
+        const percent2 = (parseInt(range2.value) / maxValue) * 100;
+        rangeTrackDouble.style.setProperty("--percent1", `${percent1}%`);
+        rangeTrackDouble.style.setProperty("--percent2", `${percent2}%`);
+        const percent0 = (parseInt(rangeMinMax.value) / maxValue) * 100;
+        rangeTrack.style.setProperty("--percent0", `${percent0}%`);
+      }
+
+      fillColor();
+
+      rangeMinMax.addEventListener("input", function () {
+        if (0 - parseInt(rangeMinMax.value) <= gap) {
+          rangeMinMax.value = parseInt(rangeMinMax.value);
+        }
+        fillColor();
+      });
+
+      range1.addEventListener("input", function () {
+        if (parseInt(range2.value) - parseInt(range1.value) <= gap) {
+          range1.value = parseInt(range2.value) - gap;
+        }
+        fillColor();
+      });
+
+      range2.addEventListener("input", function () {
+        if (parseInt(range2.value) - parseInt(range1.value) <= gap) {
+          range2.value = parseInt(range1.value) + gap;
+        }
+        fillColor();
+      });
+    </script>
+  </body>
+</html>
