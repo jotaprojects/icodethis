@@ -42,6 +42,7 @@ export default defineConfig({
         charts: resolve(__dirname, "charts/index.html"),
         "contraction-timer": resolve(__dirname, "contraction-timer/index.html"),
         "dark-theme-comps": resolve(__dirname, "dark-theme-comps/index.html"),
+        "simple-cards-2": resolve(__dirname, "simple-cards-2/index.html"),
 
         joburgers: resolve(__dirname, "joburgers/index.html"),
       },
