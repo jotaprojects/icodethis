@@ -37,6 +37,7 @@
 - https://coolors.co/palettes/
 - https://dribbble.com/
 - https://uigradients.com/
+- https://colorgradient.dev/gradient-generator/
 
 ## Author
 
