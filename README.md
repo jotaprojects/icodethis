@@ -31,6 +31,7 @@
 - Contraction Timer (Future iteration - Add functionallity to log time and calculations on contractions (https://www.thebump.com/calculators/contraction))
 - Dark Theme Comps
 - Simple Cards 2
+- Timer
 
 ## Resource
 
