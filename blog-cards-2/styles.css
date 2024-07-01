@@ -1,0 +1,214 @@
+@import "../0_css/base/normalize.css";
+
+:root {
+  --clr-neutral-100: hsl(0, 0%, 100%);
+  --clr-neutral-900: hsl(0, 0%, 0%);
+
+  --clr-neutral-100-hsl: 0, 0%, 100%;
+  --clr-neutral-900-hsl: 0, 0%, 0%;
+
+  --clr-neutral-800: #03071e;
+
+  --clr-accent-100: #fffdf7;
+  --clr-accent-400: #fdd85d;
+  --clr-accent-600: hsl(46, 98%, 56%);
+
+  --clr-secondary-400: #99d6ea;
+  --clr-secondary-600: #6798c0;
+
+  --body-bg: var(--clr-accent-100);
+  --clr-text: var(--clr-neutral-800);
+
+  --ff-base: system-ui, sans-serif;
+  --ff-alt: "Open Sans", sans-serif;
+
+  --fs-sm: 0.8rem;
+  --fs-md: 1.2rem;
+
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+  --fw-black: 900;
+
+  --space-50: 0.5rem;
+  --space-100: 1rem;
+
+  --space-fluid-50: 0.5rem;
+  --space-fluid-100: 1rem;
+  --space-fluid-200: 2rem;
+
+  --border-radius: 1rem;
+  --border-rounded: 50%;
+  --border-pill: 100vw;
+}
+
+body {
+  background-color: var(--body-bg);
+  color: var(--clr-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: var(--space-100);
+  font-family: var(--ff-base);
+  font-weight: var(--fw-normal);
+  font-style: normal;
+  font-optical-sizing: auto;
+
+  background-image: radial-gradient(
+    circle at 50% 50%,
+    var(--clr-accent-100) 50%,
+    var(--clr-accent-400)
+  );
+}
+
+h2 {
+  font-family: var(--ff-alt);
+  font-weight: var(--fw-bold);
+  margin: 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-fluid-100);
+
+  max-width: 1080px;
+}
+
+.card {
+  background-color: var(--clr-accent-100);
+  position: relative;
+  border: 4px solid var(--clr-accent-100);
+  box-shadow: 0 0 0 4px var(--clr-accent-400);
+  width: 100%;
+  position: relative;
+}
+
+.card--reverse {
+  display: flex;
+  flex-direction: column;
+}
+
+.card--reverse .card__stats {
+  margin-bottom: var(--space-fluid-50);
+}
+
+.card--reverse .card__image {
+  order: 1;
+}
+
+.card::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: hsl(46, 98%, 56%, 0.8);
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+
+  transform: translate(
+    calc(var(--space-fluid-50) * -1),
+    calc(var(--space-fluid-50) * -1)
+  );
+  transition: transform 205ms ease-in-out;
+}
+
+.card:hover::before {
+  transform: translate(0, 0);
+}
+
+.card__content {
+  padding: var(--space-fluid-100);
+}
+
+.card__image {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+}
+
+.card__stats {
+  display: flex;
+  font-size: var(--fs-sm);
+  gap: var(--space-100);
+}
+
+.card__stats * {
+  position: relative;
+}
+
+.card__stats *:not(:last-child)::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: -10px;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 4px;
+  background-color: var(--clr-secondary-600);
+  border-radius: var(--border-rounded);
+}
+
+.card__title,
+.card__description {
+  margin-bottom: var(--space-fluid-100);
+}
+
+.card__footer:has(.card__author-avatar) {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0 var(--space-100);
+  align-items: center;
+}
+
+/* a-tag */
+.card__author {
+  color: var(--clr-secondary-600);
+  text-decoration: none;
+}
+
+.card__author-avatar {
+  width: 2.5em;
+  aspect-ratio: 1;
+  grid-row: span 2;
+}
+
+.card__category {
+  position: absolute;
+  right: 0;
+  top: 0.5rem;
+  padding: var(--space-fluid-50);
+  background-color: var(--clr-accent-400);
+  box-shadow: inset 0 0 0 4px var(--clr-accent-600);
+  border: 4px solid var(--clr-accent-100);
+  border-right-width: 0;
+  border-top-left-radius: var(--border-radius);
+  border-bottom-left-radius: var(--border-radius);
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 59em) {
+}
+
+@media screen and (min-width: 45em) {
+  .card {
+    width: 50%;
+  }
+
+  .card--lg {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 60em) {
+  :root {
+    --space-fluid-50: 1rem;
+    --space-fluid-100: 2rem;
+    --space-fluid-200: 4rem;
+  }
+}

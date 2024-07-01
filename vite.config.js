@@ -44,6 +44,7 @@ export default defineConfig({
         "dark-theme-comps": resolve(__dirname, "dark-theme-comps/index.html"),
         "simple-cards-2": resolve(__dirname, "simple-cards-2/index.html"),
         timer: resolve(__dirname, "timer/index.html"),
+        "blog-cards-2": resolve(__dirname, "blog-cards-2/index.html"),
 
         joburgers: resolve(__dirname, "joburgers/index.html"),
       },
