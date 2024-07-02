@@ -1,0 +1,40 @@
+input[type="radio"] + label {
+  cursor: pointer;
+}
+
+/* Custom radio button */
+/* https://moderncss.dev/pure-css-custom-styled-radio-buttons/ */
+
+input[type="radio"] {
+  margin: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--clr-neutral-100);
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  aspect-ratio: 1;
+  border: 0.15em solid var(--clr-accent-600);
+  border-radius: var(--border-rounded);
+  display: grid;
+  place-content: center;
+}
+
+input[type="radio"]::before {
+  content: "";
+  width: 0.65em;
+  aspect-ratio: 1;
+  border-radius: var(--border-rounded);
+  transform: scale(0);
+  transition: transform 120ms ease-in-out;
+  background-color: var(--clr-accent-600);
+}
+
+input[type="radio"]:checked::before {
+  transform: scale(1);
+}
+
+input[type="radio"]:focus {
+  outline: 0.15em solid currentColor;
+  outline-offset: 0.15em;
+}
