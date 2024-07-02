@@ -45,6 +45,7 @@ export default defineConfig({
         "simple-cards-2": resolve(__dirname, "simple-cards-2/index.html"),
         timer: resolve(__dirname, "timer/index.html"),
         "blog-cards-2": resolve(__dirname, "blog-cards-2/index.html"),
+        "feedback-form": resolve(__dirname, "feedback-form/index.html"),
 
         joburgers: resolve(__dirname, "joburgers/index.html"),
       },

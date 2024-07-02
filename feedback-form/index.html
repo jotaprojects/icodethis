@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Feedback Form - iCodeThis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="card">
+      <svg
+        class="card__hat"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 307.478 307.478"
+      >
+        <path
+          d="M286.247,221.102l-13.029,30.647H34.259L21.23,221.102c5.47-2.386,12.211-4.837,20.468-7.243
+	c25.967-7.567,58.477-12.237,93.064-13.496l2.038,3.53c3.535,6.124,9.867,9.78,16.938,9.78c7.072,0,13.404-3.656,16.938-9.78
+	l2.038-3.53c34.587,1.259,67.098,5.93,93.065,13.497C274.036,216.265,280.777,218.715,286.247,221.102z M41.697,148.136
+	C11.232,157.012,1.384,166.487,0,171.163l15.372,36.159c7.187-3.136,14.868-5.747,22.13-7.863
+	c25.109-7.317,55.944-12.035,88.809-13.735l-5.381-9.32c-3.535-6.123-3.536-13.594,0-19.718c3.535-6.123,9.867-9.938,16.938-9.938
+	h31.74c7.071,0,13.403,3.814,16.939,9.938c3.535,6.124,3.535,13.515,0,19.638l-5.381,9.36c32.865,1.699,63.7,6.437,88.809,13.754
+	c7.262,2.116,14.943,4.736,22.13,7.873l15.372-36.154c-1.384-4.676-11.232-14.148-41.698-23.024
+	c-30.672-8.936-70.462-13.855-112.041-13.855C112.16,134.279,72.37,139.201,41.697,148.136z M169.608,161.749h-31.74
+	c-2.376,0-3.553,1.752-3.948,2.438s-1.188,2.581,0,4.639l15.87,27.528c1.188,2.058,3.157,2.3,3.948,2.3
+	c0.792,0,2.761-0.213,3.947-2.269l15.872-27.484c1.188-2.057,0.396-4.029,0-4.714C173.161,163.499,171.984,161.749,169.608,161.749z
+	 M153.738,119.28c36.269,0,71.317,3.672,100.617,10.421c-3.354-41.231-47.196-73.972-100.617-73.972
+	c-26.57,0-51.628,7.993-70.558,22.506c-17.975,13.781-28.506,31.9-30.063,51.467C82.418,122.952,117.468,119.28,153.738,119.28z"
+        />
+      </svg>
+      <div class="card__header">
+        <h2>Send us some feedback!</h2>
+        <p>
+          Do you have a suggestion or found some bug? Let us know in the field
+          below.
+        </p>
+      </div>
+      <div class="card__body">
+        <form id="feedback-form">
+          <div class="form-group form-group--cols">
+            <label for="desc">Describe your issue or idea...</label>
+            <textarea name="desc" id="desc" required></textarea>
+          </div>
+          <div class="form-wrapper">
+            <div class="form-group">
+              <input
+                checked
+                type="radio"
+                name="category"
+                id="bug"
+                value="bug"
+              />
+              <label for="bug">Bug</label>
+            </div>
+            <div class="form-group">
+              <input
+                type="radio"
+                name="category"
+                id="comment"
+                value="comment"
+              />
+              <label for="comment">Comment</label>
+            </div>
+            <div class="form-group">
+              <input type="radio" name="category" id="other" value="other" />
+              <label for="other">Other</label>
+            </div>
+          </div>
+          <button type="submit">Send Feedback</button>
+        </form>
+      </div>
+      <svg
+        fill="currentColor"
+        class="card__anchor"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 204.851 204.851"
+      >
+        <path
+          d="M139.518,128.595l16.834,16.336c0,0-20.644,29.877-42.725,30.473
+				c0.479,0,0.117-84.092,0.039-104.472c14.694-4.797,25.402-18.182,25.402-34.117c0-20.009-16.697-36.218-37.273-36.218
+				c-20.615,0-37.312,16.209-37.312,36.208c0,15.671,10.376,28.929,24.748,33.961l0.098,104.277
+				c-26.643-1.837-42.061-27.474-42.061-27.474l17.997-17.41L0,120.505l9.887,63.301l17.362-16.795
+				c15.036,12.105,32.017,37.244,72.876,37.244c51.332-1.309,63.184-28.939,76.344-39.804l18.993,18.514l9.389-63.907
+				L139.518,128.595z M82.558,36.208c0-10.298,8.608-18.661,19.218-18.661s19.257,8.363,19.257,18.661
+				c0,10.327-8.647,18.681-19.257,18.681S82.558,46.535,82.558,36.208z"
+        />
+      </svg>
+    </div>
+    <div class="overlay"></div>
+    <div class="box">
+      <p>Thank you for your feedback!</p>
+    </div>
+  </body>
+</html>

@@ -33,6 +33,7 @@
 - Simple Cards 2
 - Timer (WIP)
 - Blog Cards 2
+- Feedback Form
 
 ## Resource
 
@@ -40,6 +41,8 @@
 - https://dribbble.com/
 - https://uigradients.com/
 - https://colorgradient.dev/gradient-generator/
+- https://www.svgbackgrounds.com/tools/svg-to-css/
+- https://getwaves.io/
 
 ## Author
 
