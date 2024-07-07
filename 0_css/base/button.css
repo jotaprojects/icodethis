@@ -12,6 +12,8 @@ button,
 
   --_btn-focus-outline: 1px solid #fff;
 
+  --_btn-icon-size: 1.5em;
+
   background-color: var(--_btn-base-bg);
   border-radius: var(--_btn-radius);
   border: var(--_btn-border);
@@ -30,6 +32,12 @@ button:hover,
 button:focus-visible,
 .btn:focus-visible {
   outline: var(--_btn-focus-outline);
+}
+
+button svg,
+.btn svg {
+  width: var(--_btn-icon-size);
+  height: var(--_btn-icon-size);
 }
 
 .btn--invisible {
