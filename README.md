@@ -34,6 +34,8 @@
 - Timer (WIP)
 - Blog Cards 2
 - Feedback Form
+- Chatbox (WIP)
+- Skewed Pricing
 
 ## Resource
 

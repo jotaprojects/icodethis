@@ -46,6 +46,8 @@ export default defineConfig({
         timer: resolve(__dirname, "timer/index.html"),
         "blog-cards-2": resolve(__dirname, "blog-cards-2/index.html"),
         "feedback-form": resolve(__dirname, "feedback-form/index.html"),
+        chatbox: resolve(__dirname, "chatbox/index.html"),
+        "skewed-pricing": resolve(__dirname, "skewed-pricing/index.html"),
 
         joburgers: resolve(__dirname, "joburgers/index.html"),
       },
