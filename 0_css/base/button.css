@@ -14,13 +14,15 @@ button,
 
   --_btn-icon-size: 1.5em;
 
+  --_btn-transition: background-color 250ms ease;
+
   background-color: var(--_btn-base-bg);
   border-radius: var(--_btn-radius);
   border: var(--_btn-border);
   color: var(--_btn-base-color);
   padding: var(--_btn-padding);
   cursor: var(--_btn-cursor);
-  transition: background-color 250ms ease;
+  transition: var(--_btn-transition);
 }
 
 button:hover,
