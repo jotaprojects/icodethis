@@ -3,11 +3,11 @@
 @import "../0_css/utils/helpers.css";
 
 :root {
-  --clr-neutral-100: hsl(0, 0%, 100%);
-  --clr-neutral-900: hsl(0, 0%, 0%);
-
   --clr-neutral-100-hsl: 0, 0%, 100%;
   --clr-neutral-900-hsl: 0, 0%, 0%;
+
+  --clr-neutral-100: hsl(var(--clr-neutral-100-hsl));
+  --clr-neutral-900: hsl(var(--clr-neutral-900-hsl));
 
   --body-bg: var(--clr-neutral-900);
   --clr-text: var(--clr-neutral-100);
@@ -28,11 +28,14 @@
 
   --space-fluid-50: 0.5rem;
   --space-fluid-100: 1rem;
+  --space-fluid-150: 1.5rem;
   --space-fluid-200: 2rem;
 
   --border-radius: 1rem;
   --border-rounded: 50%;
   --border-pill: 100vw;
+
+  --box-shadow-clr: hsl(var(--clr-neutral-900-hsl), 0.2);
 }
 
 body {
@@ -59,11 +62,6 @@ button {
   --_btn-hover-color: var(--clr-neutral-900);
 }
 
-button svg {
-  width: 1.5em;
-  height: 1.5em;
-}
-
 @media screen and (max-width: 59em) {
 }
 
@@ -74,6 +72,7 @@ button svg {
   :root {
     --space-fluid-50: 1rem;
     --space-fluid-100: 2rem;
+    --space-fluid-150: 3rem;
     --space-fluid-200: 4rem;
   }
 }
