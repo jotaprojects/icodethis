@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Search Comps 2 - iCodeThis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="box box--horizontal">
+        <form role="search">
+          <div class="form-group">
+            <label for="keyword">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                />
+              </svg>
+
+              Search Keyword
+            </label>
+            <input type="text" id="keyword" name="keyword" />
+          </div>
+          <div class="form-group">
+            <label for="location">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+                />
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"
+                />
+              </svg>
+
+              Location
+            </label>
+            <input type="text" id="location" name="location" list="locations" />
+            <datalist id="locations">
+              <option value="Bergen" />
+              <option value="Stavanger" />
+              <option value="Tromso" />
+              <option value="Oslo" />
+            </datalist>
+          </div>
+          <button type="submit">Search</button>
+        </form>
+      </div>
+      <div class="box">
+        <h2>Need to hire a freelancer?</h2>
+        <p>
+          Sign up, type in what you need and receive free quotes in seconds.
+        </p>
+        <form>
+          <label for="description">What do you need done?</label>
+          <input type="text" id="description" name="description" />
+          <button type="submit">Post a Project</button>
+        </form>
+      </div>
+      <div class="box">
+        <h2>What do you need?</h2>
+        <div class="flex">
+          <a class="btn" href="#">I want to hire</a>
+          <a class="btn btn--outline" href="#">I want to work</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

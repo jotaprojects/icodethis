@@ -48,6 +48,7 @@ export default defineConfig({
         "feedback-form": resolve(__dirname, "feedback-form/index.html"),
         chatbox: resolve(__dirname, "chatbox/index.html"),
         "skewed-pricing": resolve(__dirname, "skewed-pricing/index.html"),
+        "search-comps-2": resolve(__dirname, "search-comps-2/index.html"),
 
         joburgers: resolve(__dirname, "joburgers/index.html"),
       },
