@@ -37,6 +37,7 @@
 - Chatbox (WIP)
 - Skewed Pricing
 - Search Comps 2
+- FAQ
 
 ## Resource
 

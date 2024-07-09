@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ - iCodeThis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+
+    <!-- https://dribbble.com/shots/18963844-FAQ/attachments/14132609 -->
+    <!-- https://www.w3.org/WAI/ARIA/apg/patterns/accordion/examples/accordion/ -->
+  </head>
+  <body>
+    <!-- FIXME: Width is jumpy between fixed (520px) and loose (100%) width -->
+    <div class="wrapper">
+      <h1>Frequently Asked Questions</h1>
+      <div class="faq" id="faq">
+        <div class="faq__category" data-category="account">
+          <h2>Account</h2>
+          <div class="faq__item">
+            <h3>
+              <button
+                type="button"
+                class="faq__trigger"
+                id="account-1"
+                aria-expanded="false"
+                aria-controls="account-sect-1"
+              >
+                Creating a new account
+              </button>
+            </h3>
+            <div
+              class="faq__panel"
+              id="account-sect-1"
+              role="region"
+              aria-labelledby="account-1"
+            >
+              To create a new account:
+              <ol>
+                <li>
+                  Navigate to the homepage and click on the "Sign Up" button.
+                </li>
+                <li>
+                  Fill in the required information such as your email address,
+                  username, and password.
+                </li>
+                <li>Agree to the terms and conditions.</li>
+                <li>Click on "Create Account."</li>
+                <li>
+                  Check your email for a verification link and follow the
+                  instructions to verify your account.
+                </li>
+              </ol>
+            </div>
+          </div>
+          <div class="faq__item">
+            <h3>
+              <button
+                type="button"
+                class="faq__trigger"
+                id="account-2"
+                aria-expanded="false"
+                aria-controls="account-sect-2"
+              >
+                Updating account information
+              </button>
+            </h3>
+            <div
+              class="faq__panel"
+              id="account-sect-2"
+              role="region"
+              aria-labelledby="account-2"
+            >
+              To update your account information:
+              <ol>
+                <li>Log in to your account.</li>
+                <li>Go to the "Account Settings" or "Profile" section.</li>
+                <li>
+                  Update the desired fields, such as email address, username, or
+                  password.
+                </li>
+                <li>Save the changes.</li>
+              </ol>
+            </div>
+          </div>
+          <div class="faq__item">
+            <h3>
+              <button
+                type="button"
+                class="faq__trigger"
+                id="account-3"
+                aria-expanded="false"
+                aria-controls="account-sect-3"
+              >
+                Deleting an account
+              </button>
+            </h3>
+            <div
+              class="faq__panel"
+              id="account-sect-3"
+              role="region"
+              aria-labelledby="account-3"
+            >
+              To delete your account:
+              <ol>
+                <li>Log in to your account.</li>
+                <li>Go to the "Account Settings" section.</li>
+                <li>Scroll down to the "Delete Account" option.</li>
+                <li>Follow the prompts to confirm the deletion.</li>
+                <li>
+                  Note that this action is irreversible, and all your data will
+                  be permanently deleted.
+                </li>
+              </ol>
+            </div>
+          </div>
+          <div class="faq__item">
+            <h3>
+              <button
+                type="button"
+                class="faq__trigger"
+                id="account-4"
+                aria-expanded="false"
+                aria-controls="account-sect-4"
+              >
+                Recovering a deleted account
+              </button>
+            </h3>
+            <div
+              class="faq__panel"
+              id="account-sect-4"
+              role="region"
+              aria-labelledby="account-4"
+            >
+              Recovering a deleted account:
+              <ol>
+                <li>Contact our support team as soon as possible.</li>
+                <li>
+                  Provide your account details and the reason for recovery.
+                </li>
+                <li>
+                  Our team will assist you with the recovery process if it's
+                  possible within a certain time frame.
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        <div class="faq__category" data-category="billing-payments">
+          <h2>Billing & Payments</h2>
+          <div class="faq__item">
+            <h3>
+              <button
+                type="button"
+                class="faq__trigger"
+                id="billing-1"
+                aria-expanded="false"
+                aria-controls="billing-sect-1"
+              >
+                Accepted payment methods
+              </button>
+            </h3>
+            <div
+              class="faq__panel"
+              id="billing-sect-1"
+              role="region"
+              aria-labelledby="billing-1"
+            >
+              We accept the following payment methods:
+              <ul>
+                <li>Credit/Debit Cards (Visa, MasterCard, American Express)</li>
+                <li>PayPal</li>
+                <li>Bank Transfer</li>
+              </ul>
+            </div>
+          </div>
+          <div class="faq__item">
+            <h3>
+              <button
+                type="button"
+                class="faq__trigger"
+                id="billing-2"
+                aria-expanded="false"
+                aria-controls="billing-sect-2"
+              >
+                How to update billing information
+              </button>
+            </h3>
+            <div
+              class="faq__panel"
+              id="billing-sect-2"
+              role="region"
+              aria-labelledby="billing-2"
+            >
+              To update your billing information:
+              <ol>
+                <li>Log in to your account.</li>
+                <li>Go to the "Billing Settings" section.</li>
+                <li>Update your billing details and save the changes.</li>
+              </ol>
+            </div>
+          </div>
+          <div class="faq__item">
+            <h3>
+              <button
+                type="button"
+                class="faq__trigger"
+                id="billing-3"
+                aria-expanded="false"
+                aria-controls="billing-sect-3"
+              >
+                Troubleshooting payment issues
+              </button>
+            </h3>
+            <div
+              class="faq__panel"
+              id="billing-sect-3"
+              role="region"
+              aria-labelledby="billing-3"
+            >
+              If you are experiencing payment issues:
+              <ol>
+                <li>Verify your payment details and try again.</li>
+                <li>Ensure that your payment method has sufficient funds.</li>
+                <li>Contact your bank for further assistance.</li>
+              </ol>
+            </div>
+          </div>
+          <div class="faq__item">
+            <h3>
+              <button
+                type="button"
+                class="faq__trigger"
+                id="billing-4"
+                aria-expanded="false"
+                aria-controls="billing-sect-4"
+              >
+                Understanding charges and refunds
+              </button>
+            </h3>
+            <div
+              class="faq__panel"
+              id="billing-sect-4"
+              role="region"
+              aria-labelledby="billing-4"
+            >
+              To understand your charges and refunds:
+              <ol>
+                <li>
+                  Review your transaction history in the "Billing" section.
+                </li>
+                <li>Check the details of each transaction.</li>
+                <li>Contact our support team if you have any questions.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        <div class="faq__category" data-category="tech-support">
+          <h2>Tech Support</h2>
+          <div class="faq__item">
+            <h3>
+              <button
+                type="button"
+                class="faq__trigger"
+                id="support-1"
+                aria-expanded="false"
+                aria-controls="support-sect-1"
+              >
+                Resolving login issues
+              </button>
+            </h3>
+            <div
+              class="faq__panel"
+              id="support-sect-1"
+              role="region"
+              aria-labelledby="support-1"
+            >
+              To resolve login issues:
+              <ol>
+                <li>Ensure you are using the correct email and password.</li>
+                <li>Reset your password if necessary.</li>
+                <li>Contact support if the problem persists.</li>
+              </ol>
+            </div>
+          </div>
+          <div class="faq__item">
+            <h3>
+              <button
+                type="button"
+                class="faq__trigger"
+                id="support-2"
+                aria-expanded="false"
+                aria-controls="support-sect-2"
+              >
+                Troubleshooting connectivity problems
+              </button>
+            </h3>
+            <div
+              class="faq__panel"
+              id="support-sect-2"
+              role="region"
+              aria-labelledby="support-2"
+            >
+              To troubleshoot connectivity problems:
+              <ol>
+                <li>Check your internet connection.</li>
+                <li>Restart your router or modem.</li>
+                <li>
+                  Contact your internet service provider if issues continue.
+                </li>
+              </ol>
+            </div>
+          </div>
+          <div class="faq__item">
+            <h3>
+              <button
+                type="button"
+                class="faq__trigger"
+                id="support-3"
+                aria-expanded="false"
+                aria-controls="support-sect-3"
+              >
+                System requirements and compatibility
+              </button>
+            </h3>
+            <div
+              class="faq__panel"
+              id="support-sect-3"
+              role="region"
+              aria-labelledby="support-3"
+            >
+              Our system requirements and compatibility:
+              <ul>
+                <li>Operating Systems: Windows, macOS, Linux</li>
+                <li>Browsers: Chrome, Firefox, Safari, Edge</li>
+                <li>Hardware: Minimum 4GB RAM, 2GHz processor</li>
+              </ul>
+            </div>
+          </div>
+          <div class="faq__item">
+            <h3>
+              <button
+                type="button"
+                class="faq__trigger"
+                id="support-4"
+                aria-expanded="false"
+                aria-controls="support-sect-4"
+              >
+                Reporting bugs and technical issues
+              </button>
+            </h3>
+            <div
+              class="faq__panel"
+              id="support-sect-4"
+              role="region"
+              aria-labelledby="support-4"
+            >
+              To report bugs and technical issues:
+              <ol>
+                <li>Go to the "Support" section.</li>
+                <li>Fill out the bug report form with detailed information.</li>
+                <li>
+                  Submit the form, and our team will investigate the issue.
+                </li>
+              </ol>
+            </div>
+          </div>
+        </div>
+        <div class="faq__category" data-category="privacy">
+          <h2>Privacy</h2>
+          <div class="faq__item">
+            <h3>
+              <button
+                type="button"
+                class="faq__trigger"
+                id="privacy-1"
+                aria-expanded="false"
+                aria-controls="privacy-sect-1"
+              >
+                Data privacy policies
+              </button>
+            </h3>
+            <div
+              class="faq__panel"
+              id="privacy-sect-1"
+              role="region"
+              aria-labelledby="privacy-1"
+            >
+              Our data privacy policies include:
+              <ul>
+                <li>Compliance with GDPR and CCPA regulations.</li>
+                <li>Data encryption and secure storage.</li>
+                <li>User control over personal data.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="faq__item">
+            <h3>
+              <button
+                type="button"
+                class="faq__trigger"
+                id="privacy-2"
+                aria-expanded="false"
+                aria-controls="privacy-sect-2"
+              >
+                Enabling two-factor authentication (2FA)
+              </button>
+            </h3>
+            <div
+              class="faq__panel"
+              id="privacy-sect-2"
+              role="region"
+              aria-labelledby="privacy-2"
+            >
+              To enable two-factor authentication:
+              <ol>
+                <li>Log in to your account.</li>
+                <li>Go to the "Security Settings" section.</li>
+                <li>Select "Enable Two-Factor Authentication."</li>
+                <li>Follow the instructions to set up 2FA.</li>
+              </ol>
+            </div>
+          </div>
+          <div class="faq__item">
+            <h3>
+              <button
+                type="button"
+                class="faq__trigger"
+                id="privacy-3"
+                aria-expanded="false"
+                aria-controls="privacy-sect-3"
+              >
+                Understanding security alerts
+              </button>
+            </h3>
+            <div
+              class="faq__panel"
+              id="privacy-sect-3"
+              role="region"
+              aria-labelledby="privacy-3"
+            >
+              Understanding security alerts:
+              <ul>
+                <li>Review the alert details in your account notifications.</li>
+                <li>Follow any recommended actions to secure your account.</li>
+                <li>Contact support if you need further assistance.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="faq__item">
+            <h3>
+              <button
+                type="button"
+                class="faq__trigger"
+                id="privacy-4"
+                aria-expanded="false"
+                aria-controls="privacy-sect-4"
+              >
+                Managing pricacy settings
+              </button>
+            </h3>
+            <div
+              class="faq__panel"
+              id="privacy-sect-4"
+              role="region"
+              aria-labelledby="pricacy-4"
+            >
+              To manage your privacy settings:
+              <ol>
+                <li>Log in to your account.</li>
+                <li>Go to the "Privacy Settings" section.</li>
+                <li>Adjust your settings according to your preferences.</li>
+                <li>Save the changes.</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
