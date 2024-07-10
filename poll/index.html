@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poll - iCodeThis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="card">
+      <div class="card__head">
+        <p>
+          If you write a book about failure, and it doesn't sell, is it called
+          success?
+        </p>
+      </div>
+      <div class="card__body">
+        <form>
+          <div class="answer">
+            <div class="form-group">
+              <input type="radio" id="answer-yes" name="answer" value="yes" />
+              <label for="answer-yes">Definitely a success.</label>
+            </div>
+            <div class="answer__results">
+              <progress id="answer-yes-progress" value="0" max="100"></progress>
+              <span id="answer-yes-count">0</span>
+            </div>
+          </div>
+          <div class="answer">
+            <div class="form-group">
+              <input type="radio" id="answer-no" name="answer" value="no" />
+              <label for="answer-no">No.</label>
+            </div>
+            <div class="answer__results">
+              <progress id="answer-no-progress" value="0" max="100"></progress>
+              <span id="answer-no-count">0</span>
+            </div>
+          </div>
+          <div class="answer">
+            <div class="form-group">
+              <input
+                type="radio"
+                id="answer-maybe"
+                name="answer"
+                value="maybe"
+              />
+              <label for="answer-maybe"
+                >Only if it's in the How To section of the library.</label
+              >
+            </div>
+            <div class="answer__results">
+              <progress
+                id="answer-maybe-progress"
+                value="0"
+                max="100"
+              ></progress>
+              <span id="answer-maybe-count">0</span>
+            </div>
+          </div>
+          <div class="actions">
+            <button type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

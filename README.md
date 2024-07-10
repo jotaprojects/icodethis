@@ -38,6 +38,7 @@
 - Skewed Pricing
 - Search Comps 2
 - FAQ
+- Poll
 
 ## Resource
 

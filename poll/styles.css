@@ -1,0 +1,284 @@
+@import "../0_css/base/normalize.css";
+@import "../0_css/base/button.css";
+
+:root {
+  --clr-neutral-100-hsl: 0, 0%, 100%;
+  --clr-neutral-900-hsl: 0, 0%, 0%;
+
+  --clr-neutral-100: hsl(var(--clr-neutral-100-hsl));
+  --clr-neutral-900: hsl(var(--clr-neutral-900-hsl));
+
+  --clr-neutral-200: #f7fff7;
+  --clr-midnight-green: #1a535c;
+  --clr-midnight-green-dark: #0d292e;
+  --clr-pacific-cyan: hsl(197, 55%, 55%);
+  --clr-robin-egg-blue: #4ecdc4;
+  --clr-light-red: #ff6b6b;
+  --clr-naples-yellow: #ffd504;
+
+  --body-bg: var(--clr-midnight-green);
+  --clr-text: var(--clr-neutral-100);
+
+  --ff-base: system-ui, sans-serif;
+  --ff-alt: "Fire Sans", sans-serif;
+
+  --fs-sm: 0.8rem;
+  --fs-md: 1.2rem;
+
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+  --fw-black: 900;
+
+  --space-50: 0.5rem;
+  --space-100: 1rem;
+  --space-150: 1.5rem;
+  --space-200: 2rem;
+
+  --space-fluid-50: 0.5rem;
+  --space-fluid-100: 1rem;
+  --space-fluid-150: 1.5rem;
+  --space-fluid-200: 2rem;
+
+  --border-radius: 0.5rem;
+  --border-rounded: 50%;
+  --border-pill: 100vw;
+
+  --box-shadow-clr: hsl(var(--clr-neutral-900-hsl), 0.2);
+}
+
+body {
+  background-color: var(--body-bg);
+  color: var(--clr-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: var(--space-100);
+  font-family: var(--ff-alt);
+  font-weight: var(--fw-normal);
+  font-style: normal;
+  font-optical-sizing: auto;
+
+  background-image: radial-gradient(
+    circle at 50% 50%,
+    var(--clr-midnight-green) 50%,
+    var(--clr-midnight-green-dark) 100%
+  );
+}
+
+button {
+  --_btn-base-bg: var(--clr-pacific-cyan);
+  --_btn-base-color: var(--clr-neutral-100);
+  --_btn-radius: var(--border-radius);
+  --_btn-padding: var(--space-50) var(--space-200);
+  --_btn-hover-bg: hsl(197, 55%, 55%, 0.6);
+  --_btn-hover-color: var(--clr-neutral-100);
+  --_btn-border: 0;
+
+  font-weight: var(--fw-bold);
+  box-shadow: inset 0 0 0.5rem 0.1rem var(--box-shadow-clr),
+    0 0.5rem 0.5rem -0.5rem var(--box-shadow-clr);
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  gap: var(--space-50);
+}
+
+input[type="radio"] + label {
+  cursor: pointer;
+  width: 100%;
+}
+
+/* Custom radio button */
+/* https://moderncss.dev/pure-css-custom-styled-radio-buttons/ */
+
+input[type="radio"] {
+  --_size: 0.18em;
+  --_rotate: 45deg;
+  --_position: -5px;
+
+  margin: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--clr-neutral-100);
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  aspect-ratio: 1;
+  border: var(--_size) solid var(--clr-pacific-cyan);
+  border-radius: var(--border-rounded);
+  display: grid;
+  place-content: center;
+  position: relative;
+}
+
+input[type="radio"]::before,
+input[type="radio"]::after {
+  content: "";
+  background-color: var(--clr-pacific-cyan);
+  position: absolute;
+  transition: transform 200ms ease-in-out;
+}
+
+input[type="radio"]::before {
+  height: var(--_size);
+  top: 50%;
+  right: var(--_position);
+  left: var(--_position);
+  transform: translateY(-50%) rotate(var(--_rotate)) scale(0);
+}
+
+input[type="radio"]::after {
+  width: var(--_size);
+  left: 50%;
+  top: var(--_position);
+  bottom: var(--_position);
+  transform: translateX(-50%) scale(0) rotate(var(--_rotate));
+}
+
+input[type="radio"]:checked::before {
+  transform: translateY(-50%) scale(1) rotate(var(--_rotate));
+}
+
+input[type="radio"]:checked::after {
+  transform: translateX(-50%) scale(1) rotate(var(--_rotate));
+}
+
+input[type="radio"]:focus-visible {
+  outline: var(--_size) solid var(--clr-pacific-cyan);
+  outline-offset: var(--_size);
+}
+
+/* Html5 progress */
+progress[value] {
+  --_bar-progress-bg: hsl(0, 0%, 0%, 0.05);
+  --_bar-value-bg: steelblue;
+  --_bar-radius: 100vw;
+  --_bar-size: 0.8em;
+  appearance: none;
+  height: var(--_bar-size);
+  width: 100%;
+  background-color: transparent;
+}
+
+progress[value]::-webkit-progress-value {
+  background-color: var(--_bar-value-bg);
+  border-radius: var(--_bar-radius);
+  transition: all 250ms linear;
+}
+
+progress[value]::-webkit-progress-bar {
+  background-color: var(--_bar-progress-bg);
+  border-radius: var(--_bar-radius);
+}
+
+progress[value]::-moz-progress-bar {
+  background-color: var(--_bar-progress-bg);
+  border-radius: var(--_bar-radius);
+}
+
+#answer-yes-progress {
+  --_bar-value-bg: var(--clr-robin-egg-blue);
+}
+
+#answer-no-progress {
+  --_bar-value-bg: var(--clr-light-red);
+}
+
+#answer-maybe-progress {
+  --_bar-value-bg: var(--clr-naples-yellow);
+}
+
+.card {
+  background-color: var(--clr-neutral-200);
+  color: var(--clr-neutral-900);
+  border-radius: var(--border-radius);
+  max-width: 30em;
+  box-shadow: 0 1rem 1rem 1rem hsl(var(--clr-neutral-900-hsl), 0.2);
+
+  animation: slide-up 500ms ease-in-out;
+}
+
+.card__head {
+  background-color: hsl(197, 55%, 55%, 0.1);
+  padding: var(--space-fluid-100);
+  text-align: center;
+  font-weight: var(--fw-bold);
+  border-bottom: 1px solid hsl(var(--clr-neutral-900-hsl), 0.2);
+}
+
+.card__head p {
+  margin: 0;
+}
+
+.card__body {
+  padding: var(--space-fluid-100);
+}
+
+.card__body form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-fluid-50);
+}
+
+.answer {
+  transform: translateY(100%);
+  opacity: 0;
+  width: 100%;
+  animation: slide-up 500ms ease-in forwards;
+  animation-delay: 600ms;
+}
+
+.answer:nth-child(2) {
+  animation-delay: 700ms;
+}
+
+.answer:nth-child(3) {
+  animation-delay: 800ms;
+}
+
+.actions {
+  transform: translateY(100%);
+  opacity: 0;
+  animation: slide-up 500ms ease-in forwards;
+  animation-delay: 900ms;
+}
+
+.answer__results {
+  margin-block: var(--space-50) var(--space-100);
+  display: flex;
+  align-items: center;
+  gap: var(--space-50);
+}
+
+@keyframes slide-up {
+  0% {
+    transform: translateY(10%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 59em) {
+}
+
+@media screen and (min-width: 45em) {
+}
+
+@media screen and (min-width: 60em) {
+  :root {
+    --space-fluid-50: 1rem;
+    --space-fluid-100: 2rem;
+    --space-fluid-150: 3rem;
+    --space-fluid-200: 4rem;
+  }
+}

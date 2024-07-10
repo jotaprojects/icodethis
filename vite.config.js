@@ -50,6 +50,7 @@ export default defineConfig({
         "skewed-pricing": resolve(__dirname, "skewed-pricing/index.html"),
         "search-comps-2": resolve(__dirname, "search-comps-2/index.html"),
         faq: resolve(__dirname, "faq/index.html"),
+        poll: resolve(__dirname, "poll/index.html"),
 
         joburgers: resolve(__dirname, "joburgers/index.html"),
       },
