@@ -40,6 +40,7 @@
 - FAQ
 - Poll
 - Table (WIP)
+- Pagination
 
 ## Resource
 

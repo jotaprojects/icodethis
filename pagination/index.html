@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pagination - iCodeThis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Pagination square -->
+      <div class="pagination-group">
+        <nav class="pagination pagination--square" aria-label="Pagination">
+          <ul class="pagination__list">
+            <li>
+              <a
+                class="pagination__link"
+                href="#"
+                aria-label="page 1"
+                aria-current="page"
+              >
+                1 <span class="sr-only">(first page)</span></a
+              >
+            </li>
+            <li>
+              <a class="pagination__link" href="#"
+                ><span class="sr-only">page</span> 2</a
+              >
+            </li>
+            <li>
+              <a class="pagination__link" href="#"
+                ><span class="sr-only">page</span> 3</a
+              >
+            </li>
+            <li aria-label="ellipsis indicating non-visible pages">
+              <span>...</span>
+            </li>
+            <li>
+              <a
+                class="pagination__link pagination__link--next"
+                href="#"
+                aria-label="Next page"
+              >
+                <svg
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                  />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="pagination pagination--square" aria-label="Pagination">
+          <ul class="pagination__list">
+            <li>
+              <a
+                class="pagination__link pagination__link--prev"
+                href="#"
+                aria-label="Previous page"
+                title="Previous page"
+                ><svg
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="pagination__link" href="#"
+                ><span class="sr-only">page</span> 1
+                <span class="sr-only">(first page)</span></a
+              >
+            </li>
+            <li>
+              <a
+                class="pagination__link"
+                href="#"
+                aria-label="page 2"
+                aria-current="page"
+                >2</a
+              >
+            </li>
+            <li>
+              <a class="pagination__link" href="#"
+                ><span class="sr-only">page</span> 3</a
+              >
+            </li>
+            <li class="md-up">
+              <a class="pagination__link" href="#"
+                ><span class="sr-only">page</span> 4</a
+              >
+            </li>
+            <li aria-label="ellipsis indicating non-visible pages">
+              <span>...</span>
+            </li>
+            <li>
+              <a
+                class="pagination__link pagination__link--next"
+                href="#"
+                aria-label="Next page"
+                title="Next page"
+                ><svg
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                  />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!-- Pagination rounded and square-->
+      <div class="pagination-group">
+        <nav class="pagination pagination--rounded" aria-label="Pagination">
+          <ul class="pagination__list">
+            <li>
+              <a
+                class="pagination__link"
+                href="#"
+                aria-label="page 1"
+                aria-current="page"
+              >
+                1 <span class="sr-only">(first page)</span></a
+              >
+            </li>
+            <li>
+              <a class="pagination__link" href="#"
+                ><span class="sr-only">page</span> 2</a
+              >
+            </li>
+            <li>
+              <a class="pagination__link" href="#"
+                ><span class="sr-only">page</span> 3</a
+              >
+            </li>
+            <li aria-label="ellipsis indicating non-visible pages">
+              <span>...</span>
+            </li>
+            <li>
+              <a
+                class="pagination__link pagination__link--next"
+                href="#"
+                aria-label="Next page"
+              >
+                <svg
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                  />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="pagination pagination--rounded" aria-label="Pagination">
+          <ul class="pagination__list">
+            <li>
+              <a
+                class="pagination__link pagination__link--prev"
+                href="#"
+                aria-label="Previous page"
+                title="Previous page"
+                ><svg
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="pagination__link" href="#"
+                ><span class="sr-only">page</span> 1
+                <span class="sr-only">(first page)</span></a
+              >
+            </li>
+            <li>
+              <a
+                class="pagination__link"
+                href="#"
+                aria-label="page 2"
+                aria-current="page"
+                >2</a
+              >
+            </li>
+            <li>
+              <a class="pagination__link" href="#"
+                ><span class="sr-only">page</span> 3</a
+              >
+            </li>
+            <li class="md-up">
+              <a class="pagination__link" href="#"
+                ><span class="sr-only">page</span> 4</a
+              >
+            </li>
+            <li aria-label="ellipsis indicating non-visible pages">
+              <span>...</span>
+            </li>
+            <li>
+              <a
+                class="pagination__link pagination__link--next"
+                href="#"
+                aria-label="Next page"
+                title="Next page"
+                ><svg
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                  />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!-- Pagination rounded and no background -->
+      <div class="pagination-group">
+        <nav class="pagination pagination--invisible" aria-label="Pagination">
+          <ul class="pagination__list">
+            <li>
+              <a
+                class="pagination__link"
+                href="#"
+                aria-label="page 1"
+                aria-current="page"
+              >
+                1 <span class="sr-only">(first page)</span></a
+              >
+            </li>
+            <li>
+              <a class="pagination__link" href="#"
+                ><span class="sr-only">page</span> 2</a
+              >
+            </li>
+            <li>
+              <a class="pagination__link" href="#"
+                ><span class="sr-only">page</span> 3</a
+              >
+            </li>
+            <li aria-label="ellipsis indicating non-visible pages">
+              <span>...</span>
+            </li>
+            <li>
+              <a
+                class="pagination__link pagination__link--next"
+                href="#"
+                aria-label="Next page"
+              >
+                <svg
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                  />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="pagination pagination--invisible" aria-label="Pagination">
+          <ul class="pagination__list">
+            <li>
+              <a
+                class="pagination__link pagination__link--prev"
+                href="#"
+                aria-label="Previous page"
+                title="Previous page"
+                ><svg
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a class="pagination__link" href="#"
+                ><span class="sr-only">page</span> 1
+                <span class="sr-only">(first page)</span></a
+              >
+            </li>
+            <li>
+              <a
+                class="pagination__link"
+                href="#"
+                aria-label="page 2"
+                aria-current="page"
+                >2</a
+              >
+            </li>
+            <li>
+              <a class="pagination__link" href="#"
+                ><span class="sr-only">page</span> 3</a
+              >
+            </li>
+            <li class="md-up">
+              <a class="pagination__link" href="#"
+                ><span class="sr-only">page</span> 4</a
+              >
+            </li>
+            <li aria-label="ellipsis indicating non-visible pages">
+              <span>...</span>
+            </li>
+            <li>
+              <a
+                class="pagination__link pagination__link--next"
+                href="#"
+                aria-label="Next page"
+                title="Next page"
+                ><svg
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                  />
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </body>
+</html>

@@ -52,6 +52,7 @@ export default defineConfig({
         faq: resolve(__dirname, "faq/index.html"),
         poll: resolve(__dirname, "poll/index.html"),
         table: resolve(__dirname, "table/index.html"),
+        pagination: resolve(__dirname, "pagination/index.html"),
 
         joburgers: resolve(__dirname, "joburgers/index.html"),
       },
