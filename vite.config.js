@@ -51,6 +51,7 @@ export default defineConfig({
         "search-comps-2": resolve(__dirname, "search-comps-2/index.html"),
         faq: resolve(__dirname, "faq/index.html"),
         poll: resolve(__dirname, "poll/index.html"),
+        table: resolve(__dirname, "table/index.html"),
 
         joburgers: resolve(__dirname, "joburgers/index.html"),
       },

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table - iCodeThis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="table-header">
+        <div class="form-group">
+          <span>Show</span>
+          <select>
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="40">40</option>
+          </select>
+          <span>entries</span>
+        </div>
+        <div class="form-group">
+          <label for="search">Search</label>
+          <input type="text" id="search" name="search" />
+        </div>
+      </div>
+      <table>
+        <caption>
+          List of Users
+        </caption>
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Created At</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Sample Data Rows -->
+          <tr>
+            <td data-label="First Name">John</td>
+            <td data-label="Last Name">Doe</td>
+            <td data-label="Email">john.doe@example.com</td>
+            <td data-label="Created At">2023-01-01</td>
+            <td><button>Action</button></td>
+          </tr>
+          <tr>
+            <td data-label="First Name">Jane</td>
+            <td data-label="Last Name">Smith</td>
+            <td data-label="Email">jane.smith@example.com</td>
+            <td data-label="Created At">2023-02-15</td>
+            <td><button>Action</button></td>
+          </tr>
+          <tr>
+            <td data-label="First Name">Michael</td>
+            <td data-label="Last Name">Brown</td>
+            <td data-label="Email">michael.brown@example.com</td>
+            <td data-label="Created At">2023-03-20</td>
+            <td><button>Action</button></td>
+          </tr>
+          <tr>
+            <td data-label="First Name">Emily</td>
+            <td data-label="Last Name">Davis</td>
+            <td data-label="Email">emily.davis@example.com</td>
+            <td data-label="Created At">2023-04-10</td>
+            <td><button>Action</button></td>
+          </tr>
+          <tr>
+            <td data-label="First Name">David</td>
+            <td data-label="Last Name">Wilson</td>
+            <td>david.wilson@example.com</td>
+            <td data-label="Created At">2023-05-25</td>
+            <td><button>Action</button></td>
+          </tr>
+          <!-- Add more rows up to 50 -->
+          <!-- ... -->
+        </tbody>
+      </table>
+      <div class="table-footer">
+        <button>< Previous</button>
+        <button>Next ></button>
+      </div>
+    </div>
+  </body>
+</html>

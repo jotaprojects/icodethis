@@ -39,6 +39,7 @@
 - Search Comps 2
 - FAQ
 - Poll
+- Table (WIP)
 
 ## Resource
 
