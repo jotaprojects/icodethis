@@ -41,6 +41,7 @@
 - Poll
 - Table (WIP)
 - Pagination
+- Signup Form 1
 
 ## Resource
 

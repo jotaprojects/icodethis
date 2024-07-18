@@ -53,6 +53,7 @@ export default defineConfig({
         poll: resolve(__dirname, "poll/index.html"),
         table: resolve(__dirname, "table/index.html"),
         pagination: resolve(__dirname, "pagination/index.html"),
+        "signup-form-1": resolve(__dirname, "signup-form-1/index.html"),
 
         joburgers: resolve(__dirname, "joburgers/index.html"),
       },
