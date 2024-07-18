@@ -1,40 +1,50 @@
-input[type="radio"] + label {
+input[type="radio"] + label,
+input[type="checkbox"] + label {
   cursor: pointer;
 }
 
-/* Custom radio button */
+/* Custom radio/checkbox button */
 /* https://moderncss.dev/pure-css-custom-styled-radio-buttons/ */
 
 input[type="radio"] {
+  --_bg: var(--clr-neutral-100);
+  --_size: 1.15em;
+  --_border: 0.15em solid var(--clr-neutral-900);
+  --_fill-size: 0.65em;
+  --_fill-color: var(--clr-neutral-100);
+  --_outline-size: 0.15em;
+
   margin: 0;
   -webkit-appearance: none;
   appearance: none;
-  background-color: var(--clr-neutral-100);
+  background-color: var(--_bg);
   font: inherit;
   color: currentColor;
-  width: 1.15em;
+  width: var(--_size);
   aspect-ratio: 1;
-  border: 0.15em solid var(--clr-accent-600);
+  border: var(--_border);
   border-radius: var(--border-rounded);
   display: grid;
   place-content: center;
+  transition: width 250ms ease-in-out;
 }
 
 input[type="radio"]::before {
   content: "";
-  width: 0.65em;
+  width: var(--_fill-size);
   aspect-ratio: 1;
   border-radius: var(--border-rounded);
   transform: scale(0);
   transition: transform 120ms ease-in-out;
-  background-color: var(--clr-accent-600);
+  background-color: var(--_fill-color);
 }
 
 input[type="radio"]:checked::before {
   transform: scale(1);
 }
 
+/* Consider to use focus-visible instead */
 input[type="radio"]:focus {
-  outline: 0.15em solid currentColor;
-  outline-offset: 0.15em;
+  outline: var(--_outline-size) solid currentColor;
+  outline-offset: var(--_outline-size);
 }
