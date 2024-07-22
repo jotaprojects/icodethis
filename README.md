@@ -42,6 +42,7 @@
 - Table (WIP)
 - Pagination
 - Signup Form 1
+- Agency Search
 
 ## Resource
 
