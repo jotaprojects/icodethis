@@ -7,11 +7,11 @@ input[type="checkbox"] + label {
 /* https://moderncss.dev/pure-css-custom-styled-radio-buttons/ */
 
 input[type="radio"] {
-  --_bg: var(--clr-neutral-100);
+  --_bg: var(--clr-neutral-100, #fff);
   --_size: 1.15em;
-  --_border: 0.15em solid var(--clr-neutral-900);
+  --_border: 0.15em solid var(--clr-neutral-900, #000);
   --_fill-size: 0.65em;
-  --_fill-color: var(--clr-neutral-100);
+  --_fill-color: var(--clr-neutral-100, #fff);
   --_outline-size: 0.15em;
 
   margin: 0;
@@ -23,20 +23,20 @@ input[type="radio"] {
   width: var(--_size);
   aspect-ratio: 1;
   border: var(--_border);
-  border-radius: var(--border-rounded);
+  border-radius: var(--border-rounded, 50%);
   display: grid;
   place-content: center;
   transition: width 250ms ease-in-out;
 }
 
 input[type="radio"]::before {
+  background-color: var(--_fill-color);
+  border-radius: var(--border-rounded, 50%);
   content: "";
   width: var(--_fill-size);
   aspect-ratio: 1;
-  border-radius: var(--border-rounded);
   transform: scale(0);
   transition: transform 120ms ease-in-out;
-  background-color: var(--_fill-color);
 }
 
 input[type="radio"]:checked::before {
@@ -47,4 +47,29 @@ input[type="radio"]:checked::before {
 input[type="radio"]:focus {
   outline: var(--_outline-size) solid currentColor;
   outline-offset: var(--_outline-size);
+}
+
+/* Select */
+select {
+  --_bg: transparent;
+  --_clr: var(--clr-neutral-900, #000);
+  --_border: 1px solid var(--clr-neutral-900, #000);
+  --_border-radius: var(--border-radius, 1rem);
+  --_space: var(--space-50, 0.5rem);
+  --_outline: 2px solid var(--clr-neutral-900, #000);
+  --_outline-offset: 1px;
+
+  background-color: var(--_bg);
+  border: var(--_border);
+  border-radius: var(--_border-radius);
+  padding: var(--_space);
+}
+
+select:focus-visible {
+  outline: var(--_outline);
+  outline-offset: var(--_outline-offset);
+}
+
+select[disabled] {
+  background-color: hsl(var(--clr-neutral-900-hsl, #000), 0.2);
 }
