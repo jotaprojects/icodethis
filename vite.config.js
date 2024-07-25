@@ -55,6 +55,7 @@ export default defineConfig({
         pagination: resolve(__dirname, "pagination/index.html"),
         "signup-form-1": resolve(__dirname, "signup-form-1/index.html"),
         "agency-search": resolve(__dirname, "agency-search/index.html"),
+        "social-profile-2": resolve(__dirname, "social-profile-2/index.html"),
 
         joburgers: resolve(__dirname, "joburgers/index.html"),
       },
