@@ -1,0 +1,266 @@
+@import "../0_css/base/normalize.css";
+@import "../0_css/base/button.css";
+@import "../0_css/utils/helpers.css";
+
+:root {
+  --clr-neutral-100-hsl: 0, 0%, 100%;
+  --clr-neutral-900-hsl: 0, 0%, 0%;
+
+  --clr-neutral-100: hsl(var(--clr-neutral-100-hsl));
+  --clr-neutral-900: hsl(var(--clr-neutral-900-hsl));
+
+  --clr-neutral-200-hsl: 235, 31%, 93%;
+  --clr-neutral-400-hsl: 0, 0%, 81%;
+  --clr-neutral-600-hsl: 240, 1%, 65%;
+  --clr-neutral-800-hsl: 244, 16%, 18%;
+
+  --clr-accent-hsl: 192, 71%, 82%;
+
+  --clr-neutral-200: hsl(var(--clr-neutral-200-hsl));
+  --clr-neutral-400: hsl(var(--clr-neutral-400-hsl));
+  --clr-neutral-600: hsl(var(--clr-neutral-600-hsl));
+  --clr-neutral-800: hsl(var(--clr-neutral-800-hsl));
+
+  --clr-accent: hsl(var(--clr-accent-hsl));
+
+  --body-bg: var(--clr-neutral-600);
+  --clr-text: var(--clr-neutral-800);
+
+  --ff-base: system-ui, sans-serif;
+  --ff-alt: "Rubrik", sans-serif;
+
+  --fs-sm: 0.8rem;
+  --fs-md: 1.2rem;
+
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+  --fw-black: 900;
+
+  --space-50: 0.5rem;
+  --space-100: 1rem;
+  --space-150: 1.5rem;
+  --space-200: 2rem;
+
+  --space-fluid-50: 0.5rem;
+  --space-fluid-100: 1rem;
+  --space-fluid-150: 1.5rem;
+  --space-fluid-200: 2rem;
+
+  --border-radius: 0.25rem;
+  --border-rounded: 50%;
+  --border-pill: 100vw;
+
+  --box-shadow-clr: hsl(var(--clr-neutral-900-hsl), 0.2);
+}
+
+body {
+  background-color: var(--body-bg);
+  color: var(--clr-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: var(--space-100);
+  font-family: var(--ff-base);
+  font-weight: var(--fw-normal);
+  font-style: normal;
+  font-optical-sizing: auto;
+
+  background-image: linear-gradient(
+    120deg,
+    var(--clr-neutral-200),
+    var(--clr-neutral-600)
+  );
+}
+
+button {
+  --_btn-base-bg: transparent;
+  --_btn-base-color: var(--clr-neutral-600);
+  --_btn-border: 0;
+  --_btn-radius: 0;
+  --_btn-padding: 0;
+  --_btn-hover-bg: transparent;
+  --_btn-hover-color: var(--clr-neutral-800);
+}
+
+button:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+h2,
+h3 {
+  font-family: var(--ff-alt);
+  margin-block-start: 0;
+}
+
+p {
+  color: var(--clr-neutral-600);
+}
+
+input[type="checkbox"] {
+  --_size: 1.15em;
+
+  margin: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: var(--clr-accent);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: var(--_size);
+  height: var(--_size);
+  border-radius: var(--border-rounded);
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+input[type="checkbox"]::before {
+  position: absolute;
+  inset: 4px;
+  content: "";
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  background-color: var(--clr-neutral-100);
+}
+
+input[type="checkbox"] + label {
+  display: block;
+  cursor: pointer;
+  border-radius: var(--border-rounded);
+}
+
+input[type="checkbox"] + label::before {
+  position: absolute;
+  content: "";
+  inset: 0;
+  border: 4px solid hsl(var(--clr-neutral-900-hsl), 0.2);
+  border-radius: var(--border-rounded);
+  transition: border-color 0.2s ease-in-out;
+}
+
+input[type="checkbox"]:checked {
+  opacity: 1;
+}
+
+input[type="checkbox"]:checked + label::before {
+  border-color: var(--clr-accent);
+}
+
+/* Consider to use focus-visible instead */
+input[type="checkbox"]:focus-visible + label {
+  --_outline-size: 0.15em;
+
+  outline: var(--_outline-size) solid currentColor;
+  outline-offset: var(--_outline-size);
+}
+
+.modal {
+  background-color: hsl(var(--clr-neutral-100-hsl), 0.8);
+  border-radius: var(--border-radius);
+  box-shadow: 0 1rem 1rem -0.5rem var(--box-shadow-clr);
+  padding: var(--space-fluid-100);
+  max-width: 35em;
+}
+
+.form-group {
+  border-radius: var(--border-radius);
+  padding: var(--space-fluid-50);
+  margin: var(--space-fluid-100) 0;
+  display: grid;
+  gap: var(--space-50);
+  background-color: var(--clr-neutral-100);
+  position: relative;
+  box-shadow: 0 0.1rem 1rem 0 hsl(var(--clr-neutral-900-hsl), 0.1);
+}
+
+.form-group label {
+  font-weight: var(--fw-bold);
+}
+
+.form-group input {
+  background-color: transparent;
+  border: 0;
+  padding: var(--space-50);
+  padding-right: calc(var(--space-50) + 2rem);
+  border-bottom: 1px solid var(--clr-neutral-400);
+}
+
+.form-group button {
+  --_btn-base-bg: transparent;
+  --_btn-padding: var(--space-50);
+  --_btn-border: 0;
+
+  display: grid;
+  place-content: center;
+  position: absolute;
+  bottom: var(--space-100);
+  right: var(--space-100);
+}
+
+.members {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-block-start: var(--space-fluid-100);
+}
+
+/* FIXME: How you focus a hidden element */
+.members-list {
+  margin: var(--space-fluid-100) 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-50);
+}
+
+.members__list-item {
+  position: relative;
+  flex: 0 1 20%;
+}
+
+.members__list-item img {
+  border-radius: var(--border-rounded);
+}
+
+/* TODO: Add hover effect */
+.members__list-item div {
+  display: none;
+}
+
+/* TODO: Add better solution */
+.members-list li:nth-child(n + 5) {
+  display: none;
+}
+
+.members-list.members-list--all li:nth-child(n + 5) {
+  display: block;
+}
+
+@media screen and (max-width: 59em) {
+}
+
+@media screen and (min-width: 45em) {
+}
+
+@media screen and (min-width: 60em) {
+  :root {
+    --space-fluid-50: 1rem;
+    --space-fluid-100: 2rem;
+    --space-fluid-150: 3rem;
+    --space-fluid-200: 4rem;
+  }
+
+  input[type="checkbox"] {
+    --_size: 1.6em;
+  }
+
+  .member-item {
+    flex: 0 1 16.6%;
+  }
+}

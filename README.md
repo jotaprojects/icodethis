@@ -44,6 +44,7 @@
 - Signup Form 1
 - Agency Search
 - Social Profile 2
+- Member Invite
 
 ## Resource
 

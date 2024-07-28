@@ -56,6 +56,7 @@ export default defineConfig({
         "signup-form-1": resolve(__dirname, "signup-form-1/index.html"),
         "agency-search": resolve(__dirname, "agency-search/index.html"),
         "social-profile-2": resolve(__dirname, "social-profile-2/index.html"),
+        "member-invite": resolve(__dirname, "member-invite/index.html"),
 
         joburgers: resolve(__dirname, "joburgers/index.html"),
       },
