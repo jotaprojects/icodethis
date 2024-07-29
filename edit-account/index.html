@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Account - iCodeThis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="modal">
+      <button
+        class="modal__close btn--icon state-trigger"
+        aria-label="Close modal"
+      >
+        &times;
+      </button>
+      <div class="modal__head">
+        <h2>Edit Your Account</h2>
+      </div>
+      <div class="modal__body">
+        <form id="edit-form">
+          <div class="space-wrapper">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" value="Jane Doe" />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value="jane.doe@example.com"
+              />
+            </div>
+            <fieldset>
+              <legend>Date of Birth</legend>
+              <div class="form-hint" id="dobHint">Ex. 2020 01 19</div>
+              <div class="dob-wrapper">
+                <div class="form-group">
+                  <label for="dob_year">Year</label>
+                  <input
+                    type="text"
+                    inputmode="numeric"
+                    id="dob_year"
+                    name="dob_year"
+                    aria-describedby="dobHint"
+                    minlength="4"
+                    maxlength="4"
+                    pattern="[0-9]*"
+                    value="2020"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="dob_month">Month</label>
+                  <input
+                    type="text"
+                    inputmode="numeric"
+                    id="dob_month"
+                    name="dob_month"
+                    aria-describedby="dobHint"
+                    minlength="2"
+                    maxlength="2"
+                    pattern="[0-9]*"
+                    value="01"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="dob_day">Day</label>
+                  <input
+                    type="text"
+                    inputmode="numeric"
+                    id="dob_day"
+                    name="dob_day"
+                    aria-describedby="dobHint"
+                    minlength="2"
+                    maxlength="2"
+                    pattern="[0-9]*"
+                    value="19"
+                  />
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <div class="form-actions">
+            <button type="button" class="btn--secondary state-trigger">
+              Cancel
+            </button>
+            <button type="submit">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

@@ -57,6 +57,7 @@ export default defineConfig({
         "agency-search": resolve(__dirname, "agency-search/index.html"),
         "social-profile-2": resolve(__dirname, "social-profile-2/index.html"),
         "member-invite": resolve(__dirname, "member-invite/index.html"),
+        "edit-account": resolve(__dirname, "edit-account/index.html"),
 
         joburgers: resolve(__dirname, "joburgers/index.html"),
       },
