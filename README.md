@@ -46,6 +46,7 @@
 - Social Profile 2
 - Member Invite
 - Edit Account (Future iteration would be adding a success state, validation.)
+- Background pattern
 
 ## Resource
 

@@ -1,0 +1,125 @@
+@import "../0_css/base/normalize.css";
+
+:root {
+  --clr-neutral-100-hsl: 0, 0%, 100%;
+  --clr-neutral-900-hsl: 0, 0%, 0%;
+
+  --clr-neutral-100: hsl(var(--clr-neutral-100-hsl));
+  --clr-neutral-900: hsl(var(--clr-neutral-900-hsl));
+
+  --clr-green-200-hsl: 93, 74%, 79%;
+  --clr-green-400-hsl: 86, 60%, 63%;
+  --clr-green-600-hsl: 143, 42%, 45%;
+
+  --clr-green-200: hsl(var(--clr-green-200-hsl));
+  --clr-green-400: hsl(var(--clr-green-400-hsl));
+  --clr-green-600: hsl(var(--clr-green-600-hsl));
+
+  --body-bg: var(--clr-neutral-900);
+  --clr-text: var(--clr-neutral-100);
+
+  --ff-base: system-ui, sans-serif;
+  --ff-alt: "Open Sans", sans-serif;
+
+  --fs-sm: 0.8rem;
+  --fs-md: 1.2rem;
+
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+  --fw-black: 900;
+
+  --space-50: 0.5rem;
+  --space-100: 1rem;
+  --space-150: 1.5rem;
+  --space-200: 2rem;
+
+  --space-fluid-50: 0.5rem;
+  --space-fluid-100: 1rem;
+  --space-fluid-150: 1.5rem;
+  --space-fluid-200: 2rem;
+
+  --border-radius: 1rem;
+  --border-rounded: 50%;
+  --border-pill: 100vw;
+
+  --box-shadow-clr: hsl(var(--clr-neutral-900-hsl), 0.2);
+}
+
+body {
+  --_main-size: 40px;
+  --_stop-size: 4px;
+
+  --_linear-gradient-stops: #c6f1a280 calc(var(--_stop-size) / 2),
+    transparent calc(var(--_stop-size) / 2);
+  --_radial-gradient-stops: #c6f1a280 var(--_stop-size),
+    transparent var(--_stop-size);
+
+  background-color: var(--body-bg);
+  color: var(--clr-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: var(--space-100);
+  font-family: var(--ff-base);
+  font-weight: var(--fw-normal);
+  font-style: normal;
+  font-optical-sizing: auto;
+
+  position: relative;
+  background-image: linear-gradient(
+    120deg,
+    var(--clr-green-400) 0%,
+    var(--clr-green-600) 100%
+  );
+}
+
+/* Lines */
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: var(--_main-size) var(--_main-size);
+  background-position: calc(
+        (var(--_main-size) / 2) + calc(var(--_stop-size) / 2)
+      )
+      calc((var(--_main-size) / 2) - calc(var(--_stop-size) / 2)),
+    0 0, 0 0, 0 0;
+  background-image: radial-gradient(
+      circle at 48% 52%,
+      var(--_radial-gradient-stops)
+    ),
+    linear-gradient(0deg, var(--_linear-gradient-stops)),
+    linear-gradient(90deg, var(--_linear-gradient-stops));
+  z-index: -1;
+}
+
+/* Dots */
+/* Warning, magic numbers for random */
+body::after {
+  --_gradient: var(--clr-neutral-100) var(--_stop-size), transparent 0;
+
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-size: 800px 800px, 800px 800px, 400px 400px, 200px 200px;
+  background-position: 2px -2px, -38px 78px, 42px 38px, 22px 18px, 42px 38px;
+  background-image: radial-gradient(var(--_gradient)),
+    radial-gradient(var(--_gradient)), radial-gradient(var(--_gradient)),
+    radial-gradient(var(--_gradient));
+  z-index: -1;
+}
+
+.card {
+  margin-block-start: 0;
+  padding: var(--space-200);
+  background-color: hsl(var(--clr-neutral-100-hsl), 0.2);
+  backdrop-filter: blur(4px);
+  border-radius: var(--border-radius);
+}
+
+.card h1 {
+  margin-block-start: 0;
+}

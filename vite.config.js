@@ -58,6 +58,10 @@ export default defineConfig({
         "social-profile-2": resolve(__dirname, "social-profile-2/index.html"),
         "member-invite": resolve(__dirname, "member-invite/index.html"),
         "edit-account": resolve(__dirname, "edit-account/index.html"),
+        "background-pattern": resolve(
+          __dirname,
+          "background-pattern/index.html"
+        ),
 
         joburgers: resolve(__dirname, "joburgers/index.html"),
       },
