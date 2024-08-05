@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Top 10 Most Listened Songs - iCodeThis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <button aria-label="Go Back" class="btn--invisible">
+          <svg
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+            />
+          </svg>
+        </button>
+        <div class="group">
+          <h1>Top 10 Most Listened Songs</h1>
+          <span>in the past week</span>
+        </div>
+      </header>
+      <main>
+        <ol class="list" id="list"></ol>
+      </main>
+    </div>
+    <template id="list-item">
+      <li class="list__item">
+        <div class="album">
+          <img src="" alt="album" />
+          <div class="album__info">
+            <h2>Album Title</h2>
+            <p>Artist Name</p>
+          </div>
+          <div class="album__stats">0,000,000</div>
+        </div>
+      </li>
+    </template>
+  </body>
+</html>

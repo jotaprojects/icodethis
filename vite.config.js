@@ -62,6 +62,7 @@ export default defineConfig({
           __dirname,
           "background-pattern/index.html"
         ),
+        "top-charts": resolve(__dirname, "top-charts/index.html"),
 
         joburgers: resolve(__dirname, "joburgers/index.html"),
       },

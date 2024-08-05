@@ -47,6 +47,7 @@
 - Member Invite
 - Edit Account (Future iteration would be adding a success state, validation.)
 - Background pattern
+- Top Charts (Future iteration would be adding skeleton loading)
 
 ## Resource
 
