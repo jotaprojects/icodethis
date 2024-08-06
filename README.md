@@ -26,7 +26,7 @@
 - Analytics dashboard (WIP)
 - Big Menu 2
 - Blog Comps
-- boardme sign up (WIP)
+- boardme sign up (Future iteration adjustments to small screens, change font)
 - Charts
 - Contraction Timer (Future iteration - Add functionallity to log time and calculations on contractions (https://www.thebump.com/calculators/contraction))
 - Dark Theme Comps
