@@ -12,6 +12,7 @@ button,
 
   --_btn-focus-outline: 1px solid #fff;
 
+  --_btn-icon-color: #000;
   --_btn-icon-size: 1.5em;
 
   --_btn-transition: background-color 250ms ease;
@@ -40,6 +41,7 @@ button svg,
 .btn svg {
   width: var(--_btn-icon-size);
   height: var(--_btn-icon-size);
+  color: var(--_btn-icon-color);
 }
 
 .btn--invisible {
