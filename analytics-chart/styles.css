@@ -1,0 +1,83 @@
+@import "../0_css/base/normalize.css";
+
+:root {
+  --clr-neutral-100-hsl: 0, 0%, 100%;
+  --clr-neutral-900-hsl: 0, 0%, 0%;
+
+  --clr-neutral-100: hsl(var(--clr-neutral-100-hsl));
+  --clr-neutral-900: hsl(var(--clr-neutral-900-hsl));
+
+  --clr-neutral-200-hsl: 228, 19%, 95%;
+  --clr-neutral-400-hsl: 217, 10%, 84%;
+
+  --clr-neutral-200: hsl(var(--clr-neutral-200-hsl));
+  --clr-neutral-400: hsl(var(--clr-neutral-400-hsl));
+
+  --body-bg: var(--clr-neutral-400);
+  --clr-text: var(--clr-neutral-900);
+
+  --ff-base: system-ui, sans-serif;
+  --ff-alt: "PT Sans", sans-serif;
+
+  --fs-sm: 0.8rem;
+  --fs-md: 1.2rem;
+
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+  --fw-black: 900;
+
+  --space-50: 0.5rem;
+  --space-100: 1rem;
+  --space-150: 1.5rem;
+  --space-200: 2rem;
+
+  --space-fluid-50: 0.5rem;
+  --space-fluid-100: 1rem;
+  --space-fluid-150: 1.5rem;
+  --space-fluid-200: 2rem;
+
+  --border-radius: 1rem;
+  --border-rounded: 50%;
+  --border-pill: 100vw;
+
+  --box-shadow-clr: hsl(var(--clr-neutral-900-hsl), 0.2);
+}
+
+body {
+  background-color: var(--body-bg);
+  color: var(--clr-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: var(--space-100);
+  font-family: var(--ff-base);
+  font-weight: var(--fw-normal);
+  font-style: normal;
+  font-optical-sizing: auto;
+}
+
+.box {
+  background-color: var(--clr-neutral-200);
+  padding: var(--space-fluid-100);
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 0.5rem var(--box-shadow-clr);
+  width: 40em;
+}
+
+@media screen and (max-width: 59em) {
+}
+
+@media screen and (min-width: 45em) {
+}
+
+@media screen and (min-width: 60em) {
+  :root {
+    --space-fluid-50: 1rem;
+    --space-fluid-100: 2rem;
+    --space-fluid-150: 3rem;
+    --space-fluid-200: 4rem;
+  }
+}

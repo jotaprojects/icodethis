@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Analytics Chart - iCodeThis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="box">
+      <canvas id="stackedBar"></canvas>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      const canvas = document.getElementById("stackedBar");
+      const maxValues = [180, 155, 200, 95, 150, 160];
+      const font = {
+        weight: "bold",
+        size: 14,
+      };
+      Chart.defaults.font.family = "PT Sans";
+
+      new Chart(canvas, {
+        type: "bar",
+        data: {
+          labels: ["Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+          datasets: [
+            {
+              label: "United States",
+              data: [75000, 35000, 115000, 55000, 70000, 110000],
+              backgroundColor: "#224f72",
+              stack: "Stack 0",
+            },
+            {
+              label: "Canada",
+              data: [45000, 75000, 40000, 15000, 35000, 20000],
+              backgroundColor: "#40c570",
+              stack: "Stack 0",
+            },
+            {
+              label: "Australia",
+              data: [30000, 15000, 20000, 15000, 40000, 15000],
+              backgroundColor: "#fdc500",
+              stack: "Stack 0",
+            },
+            {
+              label: "China",
+              data: [20000, 30000, 25000, 10000, 5000, 15000],
+              backgroundColor: "#ff8b8a",
+              stack: "Stack 0",
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          borderRadius: 50,
+          barThickness: 10,
+          interaction: {
+            intersect: false,
+          },
+          scales: {
+            x: {
+              stacked: true,
+              grid: {
+                display: false,
+              },
+              border: {
+                width: 2,
+                color: "#ccc",
+              },
+              ticks: {
+                font: font,
+              },
+            },
+            y: {
+              stacked: true,
+              grid: {
+                drawTicks: false,
+              },
+              border: {
+                display: false,
+                color: "#ccc",
+                width: 2,
+                dash: [5, 10],
+              },
+              ticks: {
+                padding: 10,
+                font: font,
+              },
+            },
+          },
+          plugins: {
+            legend: {
+              position: "bottom",
+              labels: {
+                boxHeight: 8,
+                usePointStyle: true,
+                pointStyle: "rectRounded",
+              },
+            },
+            tooltip: {
+              displayColors: false,
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
