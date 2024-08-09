@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expenses Graph - iCodeThis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="card">
+      <div class="card__header">
+        <h2>Expenses</h2>
+        <form id="filter-form" class="filter" data-filter="week">
+          <div class="form-group">
+            <input type="radio" name="filter" id="week" value="week" checked />
+            <label for="week">Weekly</label>
+          </div>
+          <div class="form-group">
+            <input type="radio" name="filter" id="month" value="month" />
+            <label for="month">Monthly</label>
+          </div>
+          <div class="form-group">
+            <input type="radio" name="filter" id="year" value="year" />
+            <label for="year">Yearly</label>
+          </div>
+        </form>
+        <div class="dropdown">
+          <button
+            id="actions-menu-btn"
+            aria-label="Actions menu"
+            aria-haspopup="true"
+            aria-expanded="false"
+            aria-controls="menu-actions"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+              />
+            </svg>
+          </button>
+
+          <div id="actions-menu" role="menu" aria-labelledby="actions-menu-btn">
+            <button role="menuitem">Export</button>
+            <button role="menuitem">Print</button>
+          </div>
+        </div>
+      </div>
+      <div class="card__body">
+        <!-- https://www.chartjs.org/docs/latest/general/accessibility.html -->
+        <canvas id="expenses-chart"></canvas>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+      const data = {
+        week: {
+          labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+          data: [
+            {
+              income: 465,
+              expense: 2624,
+              date: "2021-01-25",
+            },
+            {
+              income: 2338,
+              expense: 3555,
+              date: "2021-03-11",
+            },
+            {
+              income: 153,
+              expense: 2079,
+              date: "2020-10-06",
+            },
+            {
+              income: 2578,
+              expense: 1633,
+              date: "2024-07-21",
+            },
+            {
+              income: 3501,
+              expense: 2353,
+              date: "2023-12-20",
+            },
+            {
+              income: 840,
+              expense: 3066,
+              date: "2024-03-29",
+            },
+            {
+              income: 3318,
+              expense: 1709,
+              date: "2022-02-15",
+            },
+          ],
+        },
+        month: {
+          labels: [
+            "2024-08-01",
+            "2024-08-02",
+            "2024-08-03",
+            "2024-08-04",
+            "2024-08-05",
+            "2024-08-06",
+            "2024-08-07",
+            "2024-08-08",
+            "2024-08-09",
+            "2024-08-10",
+            "2024-08-11",
+            "2024-08-12",
+            "2024-08-13",
+            "2024-08-14",
+            "2024-08-15",
+            "2024-08-16",
+            "2024-08-17",
+            "2024-08-18",
+            "2024-08-19",
+            "2024-08-20",
+            "2024-08-21",
+            "2024-08-22",
+            "2024-08-23",
+            "2024-08-24",
+            "2024-08-25",
+            "2024-08-26",
+            "2024-08-27",
+            "2024-08-28",
+            "2024-08-29",
+            "2024-08-30",
+            "2024-08-31",
+          ],
+          data: [
+            {
+              income: 3117,
+              expense: 2093,
+              date: "2023-12-19",
+            },
+            {
+              income: 349,
+              expense: 1850,
+              date: "2023-06-24",
+            },
+            {
+              income: 3796,
+              expense: 3797,
+              date: "2020-11-08",
+            },
+            {
+              income: 184,
+              expense: 809,
+              date: "2022-06-05",
+            },
+            {
+              income: 2025,
+              expense: 1772,
+              date: "2020-08-11",
+            },
+            {
+              income: 1465,
+              expense: 3687,
+              date: "2021-11-09",
+            },
+            {
+              income: 2553,
+              expense: 798,
+              date: "2023-08-28",
+            },
+            {
+              income: 710,
+              expense: 1253,
+              date: "2021-03-09",
+            },
+            {
+              income: 2385,
+              expense: 946,
+              date: "2020-11-01",
+            },
+            {
+              income: 3741,
+              expense: 3228,
+              date: "2023-12-14",
+            },
+            {
+              income: 338,
+              expense: 1038,
+              date: "2020-10-16",
+            },
+            {
+              income: 1887,
+              expense: 2746,
+              date: "2024-08-04",
+            },
+            {
+              income: 3433,
+              expense: 3987,
+              date: "2022-04-11",
+            },
+            {
+              income: 241,
+              expense: 67,
+              date: "2021-04-28",
+            },
+            {
+              income: 1255,
+              expense: 2469,
+              date: "2020-11-06",
+            },
+            {
+              income: 1042,
+              expense: 630,
+              date: "2023-12-03",
+            },
+            {
+              income: 2929,
+              expense: 1190,
+              date: "2023-05-18",
+            },
+            {
+              income: 2713,
+              expense: 3595,
+              date: "2023-11-04",
+            },
+            {
+              income: 2047,
+              expense: 1450,
+              date: "2023-03-12",
+            },
+            {
+              income: 658,
+              expense: 1822,
+              date: "2020-12-14",
+            },
+            {
+              income: 1317,
+              expense: 681,
+              date: "2022-02-20",
+            },
+            {
+              income: 656,
+              expense: 335,
+              date: "2022-11-07",
+            },
+            {
+              income: 3865,
+              expense: 3700,
+              date: "2022-04-06",
+            },
+            {
+              income: 1567,
+              expense: 3193,
+              date: "2022-05-21",
+            },
+            {
+              income: 3717,
+              expense: 3014,
+              date: "2021-10-28",
+            },
+            {
+              income: 2969,
+              expense: 2268,
+              date: "2022-10-06",
+            },
+            {
+              income: 50,
+              expense: 2241,
+              date: "2024-07-23",
+            },
+            {
+              income: 1396,
+              expense: 3453,
+              date: "2022-08-22",
+            },
+            {
+              income: 1411,
+              expense: 3903,
+              date: "2023-06-02",
+            },
+            {
+              income: 435,
+              expense: 1927,
+              date: "2021-11-04",
+            },
+            {
+              income: 1120,
+              expense: 291,
+              date: "2021-07-02",
+            },
+          ],
+        },
+        year: {
+          labels: [
+            "Jan",
+            "Feb",
+            "Mar",
+            "Apr",
+            "May",
+            "Jun",
+            "Jul",
+            "Aug",
+            "Sep",
+            "Oct",
+            "Nov",
+            "Dec",
+          ],
+          data: [
+            {
+              income: 215,
+              expense: 2005,
+              date: "2022-05-15",
+            },
+            {
+              income: 1208,
+              expense: 639,
+              date: "2024-03-26",
+            },
+            {
+              income: 892,
+              expense: 650,
+              date: "2020-11-03",
+            },
+            {
+              income: 1551,
+              expense: 1183,
+              date: "2021-12-20",
+            },
+            {
+              income: 242,
+              expense: 1896,
+              date: "2023-12-31",
+            },
+            {
+              income: 789,
+              expense: 1711,
+              date: "2022-07-29",
+            },
+            {
+              income: 1595,
+              expense: 1952,
+              date: "2023-10-17",
+            },
+            {
+              income: 3327,
+              expense: 1813,
+              date: "2020-09-18",
+            },
+            {
+              income: 2096,
+              expense: 941,
+              date: "2021-05-09",
+            },
+            {
+              income: 3117,
+              expense: 423,
+              date: "2023-04-08",
+            },
+            {
+              income: 2912,
+              expense: 1464,
+              date: "2022-07-15",
+            },
+            {
+              income: 723,
+              expense: 1424,
+              date: "2021-12-16",
+            },
+          ],
+        },
+      };
+
+      const canvas = document.getElementById("expenses-chart");
+      const startFilter = data["week"];
+      const income = startFilter.data.map((item) => item.income);
+      const expense = startFilter.data.map((item) => item.expense);
+
+      const chart = new Chart(canvas, {
+        type: "bar",
+        data: {
+          labels: startFilter.labels,
+          datasets: [
+            {
+              label: "Income",
+              data: income,
+              backgroundColor: "#4cc9f0",
+            },
+            {
+              label: "Expenses",
+              data: expense,
+              backgroundColor: "#7209b7",
+              maxBarThickness: 4,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          borderRadius: 50,
+          borderSkipped: false,
+          maxBarThickness: 8,
+          barPercentage: 1,
+          categoryPercentage: 0.3,
+          scales: {
+            x: {
+              grid: {
+                display: false,
+              },
+              border: {
+                width: 1,
+                color: "#ccc",
+              },
+            },
+            y: {
+              grid: {
+                drawTicks: false,
+              },
+              border: {
+                display: false,
+              },
+              ticks: {
+                padding: 15,
+                callback: function (value, index, ticks) {
+                  return Intl.NumberFormat("en-US", {
+                    notation: "compact",
+                    maximumFractionDigits: 1,
+                  }).format(value);
+                },
+              },
+            },
+          },
+          plugins: {
+            legend: {
+              position: "bottom",
+              labels: {
+                boxHeight: 6,
+                usePointStyle: true,
+                pointStyle: "circle",
+              },
+            },
+            tooltip: {
+              displayColors: false,
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

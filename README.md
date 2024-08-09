@@ -50,6 +50,7 @@
 - Top Charts (Future iteration would be adding skeleton loading)
 - Analytics Chart
 - Big Menu (Iteration thoughts: adding icons as in mockup, fix better dropdown on large screen, fixat the back button.)
+- Expenses Graph (Iteration thoughts: Readup on accessibility for canvas and maybe use the same data object as chartjs)
 
 ## Resource
 
