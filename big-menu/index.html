@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Big Menu - iCodeThis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <button
+        aria-haspopup="true"
+        aria-expanded="false"
+        data-trigger="nav"
+        aria-label="Open menu"
+        class="menu-action"
+      >
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-container">
+        <ul class="menu">
+          <li>
+            <button
+              id="product-menu-btn"
+              class="menu__item-top menu-toggle"
+              data-trigger="nav-child"
+              aria-controls="product-menu"
+              aria-expanded="false"
+            >
+              Product
+            </button>
+            <a href="#" class="menu__item-top">Product</a>
+            <div class="submenu" id="product-menu">
+              <button
+                class="menu-action"
+                data-trigger="back"
+                aria-label="Back to top menu"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3"
+                  />
+                </svg>
+              </button>
+              <div class="submenu__col">
+                <div class="submenu__title">Overview</div>
+                <ul>
+                  <li><a href="#">Introduction</a></li>
+                  <li><a href="#">Key Benefits</a></li>
+                  <li><a href="#">Product Tour</a></li>
+                  <li><a href="#">Demo Video</a></li>
+                </ul>
+              </div>
+              <div class="submenu__col">
+                <div class="submenu__title">Use Cases</div>
+                <ul>
+                  <li><a href="#">Industry Solutions</a></li>
+                  <li><a href="#">Case Studies</a></li>
+                  <li><a href="#">Customer Success</a></li>
+                  <li><a href="#">Testimonials</a></li>
+                </ul>
+              </div>
+              <div class="submenu__col submenu__col--highlight">
+                <a href="#" class="highlight">
+                  <img src="https://picsum.photos/id/7/300/200" alt="" />
+                  <div class="highlight__title">
+                    Why and how serverless computing helps teams scale up
+                  </div>
+                  <div class="highlight__author">Christopher Gehiot</div>
+                  <div class="highlight__stats">
+                    <time>Sep 7</time>
+                    <span>4 min read</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <button
+              id="features-menu-btn"
+              class="menu__item-top menu-toggle"
+              data-trigger="nav-child"
+              aria-controls="features-menu"
+              aria-expanded="false"
+            >
+              Features
+            </button>
+            <a href="#" class="menu__item-top">Features</a>
+            <div class="submenu" id="features-menu">
+              <button
+                class="menu-action"
+                data-trigger="back"
+                aria-label="Back to top menu"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3"
+                  />
+                </svg>
+              </button>
+              <div class="submenu__col">
+                <div class="submenu__title">Analytics Dashboard</div>
+                <ul>
+                  <li><a href="#">Real-time Data</a></li>
+                  <li><a href="#">Custom Reports</a></li>
+                  <li><a href="#">User Insights</a></li>
+                  <li><a href="#">Data Export</a></li>
+                </ul>
+              </div>
+              <div class="submenu__col">
+                <div class="submenu__title">Automation Tools</div>
+                <ul>
+                  <li><a href="#">Workflow Automation</a></li>
+                  <li>
+                    <a href="#">Task Management</a>
+                  </li>
+                  <li><a href="#">Notifications</a></li>
+                  <li><a href="#">Integrations</a></li>
+                </ul>
+              </div>
+              <div class="submenu__col submenu__col--highlight">
+                <a href="#" class="highlight">
+                  <img src="https://picsum.photos/id/7/300/200" alt="" />
+                  <div class="highlight__title">
+                    Why and how serverless computing helps teams scale up
+                  </div>
+                  <div class="highlight__author">Christopher Gehiot</div>
+                  <div class="highlight__stats">
+                    <time>Sep 7</time>
+                    <span>4 min read</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <button
+              id="resources-menu-btn"
+              class="menu__item-top menu-toggle"
+              data-trigger="nav-child"
+              aria-controls="resources-menu"
+              aria-expanded="false"
+            >
+              Resources
+            </button>
+            <a href="#" class="menu__item-top">Resources</a>
+            <div class="submenu" id="resources-menu">
+              <button
+                class="menu-action"
+                data-trigger="back"
+                aria-label="Back to top menu"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3"
+                  />
+                </svg>
+              </button>
+              <div class="submenu__col">
+                <div class="submenu__title">Resources</div>
+                <ul>
+                  <li><a href="#">Blog</a></li>
+                  <li><a href="#">Reports</a></li>
+                  <li><a href="#">Nedia</a></li>
+                  <li><a href="#">Case Studies</a></li>
+                  <li><a href="#">Podcasts</a></li>
+                </ul>
+              </div>
+              <div class="submenu__col">
+                <div class="submenu__title">Developers</div>
+                <ul>
+                  <li><a href="#">Documentation</a></li>
+                  <li><a href="#">API</a></li>
+                  <li><a href="#">Videos and Tutorials</a></li>
+                  <li><a href="#">Forum</a></li>
+                  <li><a href="#">Support</a></li>
+                </ul>
+              </div>
+              <div class="submenu__col submenu__col--highlight">
+                <a href="#" class="highlight">
+                  <img src="https://picsum.photos/id/7/300/200" alt="" />
+                  <div class="highlight__title">
+                    Why and how serverless computing helps teams scale up
+                  </div>
+                  <div class="highlight__author">Christopher Gehiot</div>
+                  <div class="highlight__stats">
+                    <time>Sep 7</time>
+                    <span>4 min read</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <button
+              id="pricing-menu-btn"
+              class="menu__item-top menu-toggle"
+              data-trigger="nav-child"
+              aria-controls="pricing-menu"
+              aria-expanded="false"
+            >
+              Pricing
+            </button>
+            <a href="#" class="menu__item-top">Pricing</a>
+            <div class="submenu" id="pricing-menu">
+              <button
+                class="menu-action"
+                data-trigger="back"
+                aria-label="Back to top menu"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="size-6"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M9 15 3 9m0 0 6-6M3 9h12a6 6 0 0 1 0 12h-3"
+                  />
+                </svg>
+              </button>
+              <div class="submenu__col">
+                <div class="submenu__title">Plans & Pricing</div>
+                <ul>
+                  <li><a href="#">Free Plan</a></li>
+                  <li><a href="#">Pro Plan</a></li>
+                  <li><a href="#">Enterprise Plan</a></li>
+                  <li><a href="#">Custom Quotes</a></li>
+                </ul>
+              </div>
+              <div class="submenu__col">
+                <div class="submenu__title">Billing & Support</div>
+                <ul>
+                  <li><a href="#">Payment Methods</a></li>
+                  <li><a href="#">Invoicing</a></li>
+                  <li><a href="#">Support Contact</a></li>
+                  <li><a href="#">Refund Policy</a></li>
+                </ul>
+              </div>
+              <div class="submenu__col submenu__col--highlight">
+                <a href="#" class="highlight">
+                  <img src="https://picsum.photos/id/7/300/200" alt="" />
+                  <div class="highlight__title">
+                    Why and how serverless computing helps teams scale up
+                  </div>
+                  <div class="highlight__author">Christopher Gehiot</div>
+                  <div class="highlight__stats">
+                    <time>Sep 7</time>
+                    <span>4 min read</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li>
+            <a href="#" class="menu__item-top">About</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </body>
+</html>

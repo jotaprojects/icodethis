@@ -49,6 +49,7 @@
 - Background pattern
 - Top Charts (Future iteration would be adding skeleton loading)
 - Analytics Chart
+- Big Menu (Iteration thoughts: adding icons as in mockup, fix better dropdown on large screen, fixat the back button.)
 
 ## Resource
 
