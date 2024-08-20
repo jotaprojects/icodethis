@@ -52,6 +52,7 @@
 - Big Menu (Iteration thoughts: adding icons as in mockup, fix better dropdown on large screen, fixat the back button.)
 - Expenses Graph (Iteration thoughts: Readup on accessibility for canvas and maybe use the same data object as chartjs)
 - Search UI (Iteration thoughts: Add search, hide filter on smaller screens, add map popup)
+- Links Section 2
 
 ## Resource
 
