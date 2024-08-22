@@ -4,10 +4,17 @@ const STATE_STOP = "stop";
 const timerBtn = document.querySelector("#timerBtn");
 const timerEl = document.querySelector("#timer");
 
+const contractions = [];
 let timerAnimation = null;
 let timerState = STATE_STOP;
 let startTime = null;
 let elapsedTime = 0;
+
+function pauseTimer() {}
+
+function startTimer() {}
+
+function stopTimer() {}
 
 function updateTime() {
   timerAnimation = requestAnimationFrame(updateTime);
@@ -41,3 +48,7 @@ timerBtn.addEventListener("click", () => {
     timerBtn.setAttribute("aria-label", "Start");
   }
 });
+
+// time between contractions is timed by the time elapsed between when the 1st contraction starts and when the 2nd contractions starts
+// NOT between when the 1st contraction ends and 2nd contraction starts
+// so when startTiming is pressed and isTiming turns to true, the time between clock starts and doesn't stop until button is pressed to start, then stops, the starts again
