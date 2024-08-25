@@ -53,6 +53,7 @@
 - Expenses Graph (Iteration thoughts: Readup on accessibility for canvas and maybe use the same data object as chartjs)
 - Search UI (Iteration thoughts: Add search, hide filter on smaller screens, add map popup)
 - Links Section 2 (Iteration thoughts: improve on the responsive design, small animations, might be too flashy on card hover)
+- Domain Landing Page (WIP)
 
 ## Resource
 

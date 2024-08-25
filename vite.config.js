@@ -68,6 +68,10 @@ export default defineConfig({
         "expenses-graph": resolve(__dirname, "expenses-graph/index.html"),
         "search-ui": resolve(__dirname, "search-ui/index.html"),
         "links-section-2": resolve(__dirname, "links-section-2/index.html"),
+        "domain-landing-page": resolve(
+          __dirname,
+          "domain-landing-page/index.html"
+        ),
 
         joburgers: resolve(__dirname, "joburgers/index.html"),
       },
