@@ -3,6 +3,15 @@
 @import "../0_css/utils/helpers.css";
 @import "../0_css/base/root.css";
 
+:root {
+  --clr-primary-100: hsl(0, 0%, 100%);
+  --clr-primary-800: #1a1c20;
+  --clr-primary-900: hsl(0, 0%, 0%);
+
+  --clr-orange: hsl(34, 100%, 41%);
+  --clr-orange-hsl: 34 100% 41%;
+}
+
 body {
   background-color: var(--body-bg);
   color: var(--clr-text);
