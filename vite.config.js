@@ -72,6 +72,7 @@ export default defineConfig({
           __dirname,
           "domain-landing-page/index.html"
         ),
+        "repositories-list": resolve(__dirname, "repositories-list/index.html"),
 
         joburgers: resolve(__dirname, "joburgers/index.html"),
       },
