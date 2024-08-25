@@ -21,8 +21,9 @@ button,
   border-radius: var(--_btn-radius);
   border: var(--_btn-border);
   color: var(--_btn-base-color);
-  padding: var(--_btn-padding);
   cursor: var(--_btn-cursor);
+  display: inline-flex;
+  padding: var(--_btn-padding);
   transition: var(--_btn-transition);
 }
 
