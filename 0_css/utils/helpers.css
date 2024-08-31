@@ -13,3 +13,24 @@
 .w-f {
   width: 100%;
 }
+
+/* State Transition */
+/* Needs to work together with translate X or Y */
+
+.state-transition-inline-start {
+  inset-inline-start: auto;
+  transform: translateX(-100%);
+}
+
+.state-transition-inline-end {
+  inset-inline-end: auto;
+  transform: translateX(100%);
+}
+
+.state-transition-block-start {
+  inset-block-start: auto;
+}
+
+.state-transition-block-end {
+  inset-block-end: auto;
+}
