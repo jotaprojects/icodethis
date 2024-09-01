@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabbed Ui - iCodeThis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="tabs-wrapper">
+      <div role="tablist">
+        <button
+          id="tab-details"
+          type="button"
+          role="tab"
+          aria-selected="true"
+          aria-controls="tabpanel-details"
+        >
+          Details
+        </button>
+        <button
+          id="tab-tutorials"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          aria-controls="tabpanel-tutorials"
+          tabindex="-1"
+        >
+          Tutorials
+        </button>
+        <button
+          id="tab-code-snippets"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          aria-controls="tabpanel-code-snippets"
+          tabindex="-1"
+        >
+          <span>Code Snippets</span>
+        </button>
+      </div>
+      <div
+        id="tabpanel-details"
+        role="tabpanel"
+        aria-labelledby="tab-details"
+        tabindex="0"
+      >
+        <div class="panel__header">
+          <h2>Color Palette</h2>
+          <p>Click on the color to copy code.</p>
+        </div>
+        <div class="colors">
+          <button class="color" data-hex="bac4e0">
+            <span class="color__preview"></span>
+            <span class="color__code">#bac4e0</span>
+          </button>
+          <button class="color" data-hex="e9effd">
+            <span class="color__preview"></span>
+            <span class="color__code">#e9effd</span>
+          </button>
+          <button class="color" data-hex="f2f3f6">
+            <span class="color__preview"></span>
+            <span class="color__code">#f2f3f6</span>
+          </button>
+          <button class="color" data-hex="8f95a7">
+            <span class="color__preview"></span>
+            <span class="color__code">#8f95a7</span>
+          </button>
+          <button class="color" data-hex="5282f6">
+            <span class="color__preview"></span>
+            <span class="color__code">#5282f6</span>
+          </button>
+          <button class="color" data-hex="222e4e">
+            <span class="color__preview"></span>
+            <span class="color__code">#222e4e</span>
+          </button>
+        </div>
+        <div class="panel__header">
+          <h2>Fonts</h2>
+        </div>
+        <ul class="list">
+          <li>Muli Regular</li>
+          <li>Muli Bold</li>
+        </ul>
+      </div>
+      <div
+        id="tabpanel-tutorials"
+        role="tabpanel"
+        aria-labelledby="tab-tutorials"
+        tabindex="0"
+      >
+        <div class="panel__header">
+          <h2>Tutorials</h2>
+          <p>Learn how to build this component.</p>
+        </div>
+        <section>
+          <h3>HTML/CSS</h3>
+          <ul class="list">
+            <li class="list__item">
+              <a
+                href="https://www.youtube.com/watch?v=0oIWW5piQcs"
+                target="_blank"
+                class="link"
+              >
+                <div class="link__author">Andrew Gabrial</div>
+                <div class="link__url">
+                  https://www.youtube.com/watch?v=0oIWW5piQcs
+                </div>
+              </a>
+            </li>
+            <li class="list__item">
+              <a
+                href="https://www.youtube.com/watch?v=dgJTUa7WgjI"
+                target="_blank"
+                class="link"
+              >
+                <div class="link__author">Shanghai Raj</div>
+                <div class="link__url">
+                  https://www.youtube.com/watch?v=dgJTUa7WgjI
+                </div>
+              </a>
+            </li>
+          </ul>
+        </section>
+        <section>
+          <h3>React Native</h3>
+          <ul class="list">
+            <li class="list__item">
+              <a
+                href="https://codedaily.io/tutorials/177/Create-an-Animated-Product-Review-Display-with-React-Native"
+                target="_blank"
+                class="link"
+              >
+                <div class="link__author">Jason Brown</div>
+                <div class="link__url">
+                  https://codedaily.io/tutorials/177/Create-an-Animated-Product-Review-Display-with-React-Native
+                </div>
+              </a>
+            </li>
+          </ul>
+        </section>
+        <p class="panel__bottom">
+          Did you make a tutorial with this component?
+          <a href="#">Send your link</a> and we will post it here.
+        </p>
+      </div>
+      <div
+        id="tabpanel-code-snippets"
+        role="tabpanel"
+        aria-labelledby="tab-code-snippets"
+        tabindex="0"
+      >
+        <div class="panel__header">
+          <h2>Code Snippets</h2>
+          <p>Inspect the solutions others implemented.</p>
+        </div>
+        <section>
+          <ul class="list">
+            <li class="list__item">
+              <a
+                href="https://codepen.io/stefan-galescu/pen/OJMNvPp"
+                target="_blank"
+                class="link"
+              >
+                <div class="link__author">Stefan Galescu</div>
+                <div class="link__url">
+                  https://codepen.io/stefan-galescu/pen/OJMNvPp
+                </div>
+              </a>
+            </li>
+            <li class="list__item">
+              <a
+                href="https://codepen.io/fede19/pen/MWKOarZ"
+                target="_blank"
+                class="link"
+              >
+                <div class="link__author">frederic</div>
+                <div class="link__url">
+                  https://codepen.io/fede19/pen/MWKOarZ
+                </div>
+              </a>
+            </li>
+          </ul>
+        </section>
+        <p class="panel__bottom">
+          Did you build this component? <a href="#">Send your link</a> and we
+          will post it here.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
