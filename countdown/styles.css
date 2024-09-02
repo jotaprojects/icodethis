@@ -1,0 +1,196 @@
+@import "../0_css/base/normalize.css";
+@import "../0_css/components/purrson.css";
+
+:root {
+  --clr-neutral-100-hsl: 0, 0%, 100%;
+  --clr-neutral-900-hsl: 0, 0%, 0%;
+
+  --clr-neutral-100: hsl(var(--clr-neutral-100-hsl));
+  --clr-neutral-900: hsl(var(--clr-neutral-900-hsl));
+
+  --clr-gold-hsl: 34, 100%, 30%;
+  --clr-orange-hsl: 19, 100%, 50%;
+
+  --clr-gold: hsl(var(--clr-gold-hsl));
+  --clr-orange: hsl(var(--clr-orange-hsl));
+
+  --body-bg: var(--clr-neutral-900);
+  --clr-text: var(--clr-neutral-100);
+
+  --ff-base: system-ui, sans-serif;
+  --ff-alt: "Roboto Mono", monospace;
+  --ff-heading: "Baskervville SC", system-ui;
+
+  --fs-sm: 0.8rem;
+  --fs-md: 1.2rem;
+
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+  --fw-black: 900;
+
+  --space-50: 0.5rem;
+  --space-100: 1rem;
+  --space-150: 1.5rem;
+  --space-200: 2rem;
+
+  --space-fluid-50: 0.5rem;
+  --space-fluid-100: 1rem;
+  --space-fluid-150: 1.5rem;
+  --space-fluid-200: 2rem;
+
+  --border-radius: 1rem;
+  --border-rounded: 50%;
+  --border-pill: 100vw;
+
+  --box-shadow-clr: hsl(var(--clr-neutral-900-hsl), 0.2);
+
+  --purrson-bg: transparent;
+  --purrson-color: var(--clr-gold);
+  --purrson-size: 2em;
+  --purrson-hover-color: var(--clr-orange);
+}
+
+body {
+  background-color: var(--body-bg);
+  color: var(--clr-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: var(--space-100);
+  font-family: var(--ff-base);
+  font-weight: var(--fw-normal);
+  font-style: normal;
+  font-optical-sizing: auto;
+}
+
+@property --circle-size {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 20%;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(
+    circle at 50% 50%,
+    transparent,
+    var(--clr-neutral-900) var(--circle-size)
+  );
+  z-index: -1;
+  animation: reveal 1100ms ease-in-out forwards;
+}
+
+.background {
+  position: absolute;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  object-position: center center;
+  z-index: -2;
+}
+
+.card {
+  background-color: hsl(var(--clr-neutral-900-hsl), 0.5);
+  border-radius: var(--border-radius);
+  backdrop-filter: blur(0.2rem);
+  box-shadow: 0 0 0.5rem var(--clr-gold);
+  padding: var(--space-fluid-200);
+  display: grid;
+  gap: var(--space-100);
+  transition: padding 300ms ease-in-out;
+  animation: zoomIn 1800ms forwards;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.card h1 {
+  margin-block-start: 0;
+  font-family: var(--ff-heading);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  text-align: center;
+  text-shadow: 0.1rem 0.2rem 0.3rem var(--clr-orange);
+}
+
+.countdown {
+  display: grid;
+  grid-template-areas:
+    "months months months days days days"
+    "hours hours minutes minutes seconds seconds";
+  gap: var(--space-fluid-100);
+  justify-items: center;
+  font-family: var(--ff-alt);
+  transition: gap 300ms ease-in-out;
+}
+
+.countdown__item {
+  display: grid;
+  justify-items: center;
+}
+
+.countdown__item--months {
+  grid-area: months;
+}
+.countdown__item--days {
+  grid-area: days;
+}
+.countdown__item--hours {
+  grid-area: hours;
+}
+.countdown__item--minutes {
+  grid-area: minutes;
+}
+.countdown__item--seconds {
+  grid-area: seconds;
+}
+
+.countdown__item .value {
+  font-size: clamp(3rem, 5vw, 4.5rem);
+}
+
+.countdown__item .label {
+  font-size: clamp(0.75rem, 2vw, 1rem);
+}
+
+@media screen and (max-width: 59em) {
+}
+
+@media screen and (min-width: 45em) {
+}
+
+@media screen and (min-width: 60em) {
+  :root {
+    --space-fluid-50: 1rem;
+    --space-fluid-100: 2rem;
+    --space-fluid-150: 3rem;
+    --space-fluid-200: 4rem;
+  }
+}
+
+@keyframes reveal {
+  100% {
+    --circle-size: 100%;
+  }
+}
+
+@keyframes zoomIn {
+  0% {
+    opacity: 0;
+    scale: 0.1;
+    transform: translate3d(0, -1000px, 0);
+    animation-timing-function: ease-in;
+  }
+
+  60% {
+    opacity: 1;
+    scale: 0.475;
+    transform: translate3d(0, 60px, 0);
+    animation-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  }
+}
