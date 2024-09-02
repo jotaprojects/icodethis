@@ -1,0 +1,54 @@
+/*
+<button class="btn--purrson"><svg></button>
+*/
+:root {
+  --purrson-bg: transparent;
+  --purrson-color: hsl(0, 0%, 0%);
+  --purrson-size: 2em;
+  --purrson-tooltip-bg: hsl(0, 0%, 0%, 0.8);
+  --purrson-tooltip-color: hsl(0, 0%, 100%);
+}
+
+.btn--purrson {
+  background-color: var(--purrson-bg);
+  border: 0;
+  color: var(--purrson-color, hsl(0, 0%, 0%));
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  rotate: -25deg;
+  transform: translateY(1rem);
+  transition: transform 300ms ease-in-out, color 300ms ease-in-out;
+  cursor: pointer;
+}
+
+.btn--purrson:hover {
+  transform: translateY(0);
+  color: var(--purrson-hover-color, hsl(0, 0%, 0%));
+}
+
+.btn--purrson.found .purrson-tooltip {
+  opacity: 1;
+}
+
+.btn--purrson svg {
+  width: var(--purrson-size, 2em);
+  aspect-ratio: 1;
+}
+
+.purrson-tooltip {
+  position: absolute;
+  top: -2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  background-color: var(--purrson-tooltip-bg, hsl(0, 0%, 0%, 0.8));
+  color: var(--purrson-tooltip-color, hsl(0, 0%, 100%));
+  padding: 0.5rem;
+  border-radius: 1rem;
+  opacity: 0;
+  font-size: 0.8rem;
+  width: 8em;
+  pointer-events: none;
+  transition: opacity 300ms ease-in-out;
+}
