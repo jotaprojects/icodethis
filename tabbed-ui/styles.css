@@ -1,5 +1,6 @@
 @import "../0_css/base/normalize.css";
 @import "../0_css/base/button.css";
+@import "../0_css/components/purrson.css";
 
 :root {
   --clr-neutral-100-hsl: 0, 0%, 100%;
@@ -198,6 +199,8 @@ div[role="tabpanel"] {
       var(--clr-neutral-600),
     inset calc(var(--_shadow-x) * -1) calc(var(--_shadow-x) * -1)
       var(--_shadow-blur) var(--clr-neutral-400);
+  position: relative;
+  overflow: hidden;
 }
 
 div[role="tabpanel"].panel--active {
@@ -285,15 +288,29 @@ h3 + .list {
 .link__url {
   color: var(--clr-neutral-600);
   font-size: clamp(0.9rem, 1.2vw, 1rem);
-  width: 30ch;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: nowrap;
+}
+
+.btn--purrson {
+  rotate: 0deg;
+  inset-inline-start: 50%;
+  inset-inline-end: auto;
+  transform: translate(-50%, 1.5rem);
+}
+
+.btn--purrson:hover {
+  transform: translate(-50%, 0);
 }
 
 @media screen and (max-width: 59em) {
   button[role="tab"] span {
     width: 6ch;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .link__url {
+    width: 30ch;
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
