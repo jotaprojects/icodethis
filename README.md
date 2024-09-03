@@ -55,7 +55,7 @@
 - Links Section 2 (Iteration thoughts: improve on the responsive design, small animations, might be too flashy on card hover)
 - Domain Landing Page (WIP)
 - Repositories List (Iteration thoughts: Add search, clean up code)
-- Search Comps
+- Search Comps (WIP)
 - Big Footer (TODO: Add purrson icon)
 - Tabbed Ui (Iteration thoughts: Transition animation between tabs)
 - Countdown
