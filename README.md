@@ -55,6 +55,11 @@
 - Links Section 2 (Iteration thoughts: improve on the responsive design, small animations, might be too flashy on card hover)
 - Domain Landing Page (WIP)
 - Repositories List (Iteration thoughts: Add search, clean up code)
+- Search Comps
+- Big Footer (TODO: Add purrson icon)
+- Tabbed Ui (Iteration thoughts: Transition animation between tabs)
+- Countdown
+- UI Design Daily
 
 ## Resource
 
@@ -68,8 +73,11 @@
 - https://animista.net/
 - https://picsum.photos/
 - https://heroicons.com/
+- https://neumorphism.io/
 
 ## Purrson
+
+- https://github.com/madrobby/purrson-icon
 
 <svg
             version="1.1"
@@ -101,6 +109,21 @@
 	c0-1.5-0.1-3-0.2-4.4C381.5,243.1,361,224,336,224z M336,288c-8.8,0-16-7.2-16-16s7.2-16,16-16s16,7.2,16,16S344.8,288,336,288z"
             />
 </svg>
+
+## Calculations related to Time
+
+- Note in this we are using 30 days for each months.
+
+* Division by 1000: Converts milliseconds to seconds.
+* Division by 60: Converts seconds to minutes, and minutes to hours.
+* Division by 24: Converts hours to days.
+* Division by 30: Approximates days to months (assuming each month has 30 days).
+* Modulo (%): Extracts the remainder after dividing by 60 for seconds/minutes/hours and by 24/30 for days/months, effectively isolating the specific time component.
+
+- 1000: The number of milliseconds in a second.
+- 60000: The number of milliseconds in a minute (60 seconds).
+- 3600000: The number of milliseconds in an hour (60 minutes).
+- 86400000: The number of milliseconds in a day (24 hours).
 
 ## Author
 

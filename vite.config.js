@@ -73,6 +73,11 @@ export default defineConfig({
           "domain-landing-page/index.html"
         ),
         "repositories-list": resolve(__dirname, "repositories-list/index.html"),
+        "search-comps": resolve(__dirname, "search-comps/index.html"),
+        "big-footer": resolve(__dirname, "big-footer/index.html"),
+        "tabbed-ui": resolve(__dirname, "tabbed-ui/index.html"),
+        countdown: resolve(__dirname, "countdown/index.html"),
+        "ui-design-daily": resolve(__dirname, "ui-design-daily/index.html"),
 
         joburgers: resolve(__dirname, "joburgers/index.html"),
       },
