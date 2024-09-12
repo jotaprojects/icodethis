@@ -9,8 +9,10 @@ button,
 
   --_btn-hover-bg: #000;
   --_btn-hover-color: #fff;
+  --_btn-hover-border: var(--_btn-border, 1px solid #000);
 
   --_btn-focus-outline: 1px solid #fff;
+  --_btn-focus-outline-offset: 2px;
 
   --_btn-icon-color: #000;
   --_btn-icon-size: 1.5em;
@@ -31,11 +33,13 @@ button:hover,
 .btn:hover {
   background-color: var(--_btn-hover-bg);
   color: var(--_btn-hover-color);
+  border: var(--_btn-hover-border);
 }
 
 button:focus-visible,
 .btn:focus-visible {
   outline: var(--_btn-focus-outline);
+  outline-offset: var(--_btn-focus-outline-offset);
 }
 
 button svg,
@@ -53,8 +57,26 @@ button svg,
   --_btn-hover-bg: transparent;
 }
 
+.btn--outline {
+  --_btn-base-bg: transparent;
+  --_btn-base-color: #000;
+  --_btn-border: 1px solid #000;
+}
+
 .btn--icon {
   --_btn-padding: 0.5rem;
+}
+
+.btn--xs {
+  --_btn-padding: 0.25rem;
+}
+
+.btn--sm {
+  --_btn-padding: 0.5rem;
+}
+
+.btn--md {
+  --_btn-padding: 1rem;
 }
 
 .btn--lg {
