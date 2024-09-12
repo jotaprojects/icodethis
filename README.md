@@ -55,11 +55,10 @@
 - Links Section 2 (Iteration thoughts: improve on the responsive design, small animations, might be too flashy on card hover)
 - Domain Landing Page (WIP)
 - Repositories List (Iteration thoughts: Add search, clean up code)
-- Search Comps (WIP)
+- Search Comps (Iteration thoughts: Build a selection of choosing one-way (No need for return), multi-way (Select departure and return) and plan trip (Add multiple departures and returns), think of how the selection of dates is built, at start we are reading Departure Departure for screen-readers)
 - Big Footer (TODO: Add purrson icon)
 - Tabbed Ui (Iteration thoughts: Transition animation between tabs)
 - Countdown
-- UI Design Daily
 
 ## Resource
 

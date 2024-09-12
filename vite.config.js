@@ -77,7 +77,6 @@ export default defineConfig({
         "big-footer": resolve(__dirname, "big-footer/index.html"),
         "tabbed-ui": resolve(__dirname, "tabbed-ui/index.html"),
         countdown: resolve(__dirname, "countdown/index.html"),
-        "ui-design-daily": resolve(__dirname, "ui-design-daily/index.html"),
 
         joburgers: resolve(__dirname, "joburgers/index.html"),
       },
