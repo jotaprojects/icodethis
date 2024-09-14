@@ -60,6 +60,17 @@
 - Tabbed Ui (Iteration thoughts: Transition animation between tabs)
 - Countdown
 
+## Requirements
+
+- [Node.js](https://nodejs.org/en) for running the project and start script.
+- [Vite](https://vitejs.dev/) for bundling and serving the project.
+- [Glob](https://github.com/isaacs/node-glob) for Vite config to dynamically set up paths.
+- [jsdom](https://github.com/jsdom/jsdom) for start script to manipulate DOM in starter files.
+
+## Work In Progress
+
+- Set up start.js to package.json instead of calling `node start.js`
+
 ## Resource
 
 - https://coolors.co/palettes/
