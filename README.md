@@ -59,6 +59,7 @@
 - Big Footer (TODO: Add purrson icon)
 - Tabbed Ui (Iteration thoughts: Transition animation between tabs)
 - Countdown
+- Pricing Card
 
 ## Requirements
 

@@ -4,7 +4,6 @@ import { globSync } from "glob";
 
 export default defineConfig({
   root: "./",
-  publicDir: "./",
   build: {
     rollupOptions: {
       input: globSync("**/*.html", {
