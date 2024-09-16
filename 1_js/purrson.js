@@ -1,3 +1,5 @@
+// TODO: Fixc repeating code for tooltip innertext
+
 class PurrsonScore {
   constructor(storeKey) {
     this.storeKey = storeKey;
@@ -15,7 +17,6 @@ class PurrsonScore {
     btns.forEach((btn) => {
       btn.appendChild(this.tooltip);
       btn.addEventListener("click", () => {
-        this.setScore();
         btn.classList.add("found");
         this.setScore();
         setTimeout(() => {
@@ -49,7 +50,7 @@ class PurrsonScore {
 
   setScore() {
     this.setScoreAsArray();
-    if (this.getScoreAsArray().includes(this.storeKey)) {
+    if (this.hasFound()) {
       this.tooltip.innerText = "Already found!";
       return;
     }
@@ -62,15 +63,19 @@ class PurrsonScore {
   }
 
   createTooltip() {
-    const found = this.hasFound();
     const tooltip = document.createElement("div");
     tooltip.classList.add("purrson-tooltip");
-    tooltip.innerText = found ? "Already found!" : "You found me!";
+    tooltip.innerText = this.getTooltipText();
     this.tooltip = tooltip;
   }
 
   getTooltip() {
     return this.tooltip;
+  }
+
+  getTooltipText() {
+    const found = this.hasFound();
+    return found ? "Already found!" : "You found me!";
   }
 
   getLocalStorage() {
@@ -82,17 +87,5 @@ class PurrsonScore {
   }
 }
 
-// const btns = document.querySelectorAll(".btn--purrson");
 // const scoreKey = "purrson-countdown";
 // const purrson = new PurrsonScore(scoreKey);
-
-// btns.forEach((btn) => {
-//   btn.appendChild(purrson.getTooltip());
-//   btn.addEventListener("click", () => {
-//     btn.classList.add("found");
-//     purrson.setScore();
-//     setTimeout(() => {
-//       btn.classList.remove("found");
-//     }, 1000);
-//   });
-// });
