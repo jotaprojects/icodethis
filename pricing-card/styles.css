@@ -1,0 +1,279 @@
+@import "../0_css/base/normalize.css";
+@import "../0_css/base/button.css";
+
+:root {
+  --clr-neutral-100-hsl: 0, 0%, 100%;
+  --clr-neutral-900-hsl: 0, 0%, 0%;
+
+  --clr-neutral-100: hsl(var(--clr-neutral-100-hsl));
+  --clr-neutral-900: hsl(var(--clr-neutral-900-hsl));
+
+  --clr-neutral-200-hsl: 330, 9%, 96%;
+  --clr-neutral-300-hsl: 0, 0%, 83%;
+  --clr-neutral-400-hsl: 5, 7%, 67%;
+  --clr-neutral-700-hsl: 206, 14%, 10%;
+  --clr-neutral-800-hsl: 330, 10%, 4%;
+  --clr-accent-200-hsl: 359, 77%, 56%;
+  --clr-accent-400-hsl: 359, 77%, 41%;
+  --clr-accent-600-hsl: 358, 76%, 36%;
+  --clr-accent-800-hsl: 359, 87%, 21%;
+
+  --clr-neutral-200: hsl(var(--clr-neutral-200-hsl));
+  --clr-neutral-300: hsl(var(--clr-neutral-300-hsl));
+  --clr-neutral-400: hsl(var(--clr-neutral-400-hsl));
+  --clr-neutral-700: hsl(var(--clr-neutral-700-hsl));
+  --clr-neutral-800: hsl(var(--clr-neutral-800-hsl));
+  --clr-accent-200: hsl(var(--clr-accent-200-hsl));
+  --clr-accent-400: hsl(var(--clr-accent-400-hsl));
+  --clr-accent-600: hsl(var(--clr-accent-600-hsl));
+  --clr-accent-800: hsl(var(--clr-accent-800-hsl));
+
+  --body-bg: var(--clr-neutral-900);
+  --clr-text: var(--clr-neutral-100);
+
+  --ff-base: system-ui, sans-serif;
+  --ff-alt: "Nunito", sans-serif;
+
+  --fs-sm: 0.8rem;
+  --fs-md: 1.2rem;
+
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+  --fw-black: 900;
+
+  --space-50: 0.5rem;
+  --space-100: 1rem;
+  --space-150: 1.5rem;
+  --space-200: 2rem;
+  --space-400: 4rem;
+
+  --space-fluid-50: 0.5rem;
+  --space-fluid-100: 1rem;
+  --space-fluid-150: 1.5rem;
+  --space-fluid-200: 2rem;
+  --space-fluid-400: 4rem;
+
+  --border-radius: 0.25rem;
+  --border-rounded: 50%;
+  --border-pill: 100vw;
+
+  --box-shadow-clr: hsl(var(--clr-neutral-900-hsl), 0.2);
+
+  --purrson-bg: transparent;
+  --purrson-color: var(--clr-accent-800);
+  --purrson-size: 2em;
+  --purrson-tooltip-bg: hsl(0, 0%, 0%, 0.8);
+  --purrson-tooltip-color: hsl(0, 0%, 100%);
+}
+
+body {
+  background-color: var(--body-bg);
+  color: var(--clr-text);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: var(--space-100);
+  font-family: var(--ff-alt);
+  font-weight: var(--fw-normal);
+  font-style: normal;
+  font-optical-sizing: auto;
+
+  background-image: radial-gradient(
+    100% 100% at 15% -25%,
+    var(--clr-accent-400) 0%,
+    var(--clr-neutral-800) 100%
+  );
+}
+
+button {
+  --_btn-base-bg: hsl(var(--clr-accent-400-hsl), 0.6);
+  --_btn-base-color: var(--clr-neutral-100);
+  --_btn-radius: var(--border-radius);
+  --_btn-border: 2px solid var(--clr-accent-800);
+  --_btn-padding: var(--space-50) var(--space-100);
+  --_btn-hover-bg: hsl(var(--clr-accent-400-hsl), 0.6);
+  --_btn-hover-color: var(--clr-neutral-100);
+
+  justify-content: center;
+  position: relative;
+  box-shadow: inset 0 0 0.5rem 0.2rem hsl(var(--clr-accent-400-hsl), 0.8);
+}
+
+button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0;
+  border-radius: var(--_btn-radius);
+  background-color: transparent;
+  box-shadow: 0 0 0.5rem 0.2rem var(--clr-accent-200);
+  transition: opacity 350ms ease-in-out;
+}
+
+button:hover::before {
+  opacity: 1;
+}
+
+.btn--outline {
+  --_btn-base-color: var(--_btn-base-color);
+  --_btn-border: 2px solid var(--clr-accent-600);
+  --_btn-hover-bg: transparent;
+
+  box-shadow: none;
+}
+
+.card {
+  --_divider-size: 4px;
+
+  background-image: radial-gradient(
+    100% 100% at 15% -20%,
+    var(--clr-accent-200) 0%,
+    hsl(var(--clr-accent-800-hsl), 0.5) 75%
+  );
+  padding: var(--space-fluid-200);
+  border-radius: var(--border-radius);
+  box-shadow: 0 0 1rem 0.5rem hsl(var(--clr-accent-800-hsl), 0.6);
+  border: 1px solid var(--clr-accent-600);
+  display: grid;
+  gap: 4rem;
+  width: min(100%, 40rem);
+  position: relative;
+  overflow: clip;
+}
+
+.card .pricing:first-child {
+  position: relative;
+}
+
+.card .pricing:first-child::after {
+  content: "";
+  position: absolute;
+  inset-block-end: calc(-2rem - 5px);
+  inset-inline: 0;
+  width: 100%;
+  height: var(--_divider-size);
+  background-color: hsl(var(--clr-neutral-800-hsl), 0.2);
+  border-block-start: 1px solid var(--clr-accent-800);
+  border-radius: var(--border-pill);
+}
+
+.pricing,
+.pricing__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-200);
+}
+
+.pricing__header {
+  gap: var(--space-50);
+}
+
+.pricing__title {
+  margin-block-start: 0;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+}
+
+.pricing__price {
+  font-size: clamp(1.4rem, 2.2vw, 1.8rem);
+}
+
+.pricing__visitors {
+  color: var(--clr-neutral-300);
+}
+
+.pricing__features ul {
+  padding: 0;
+  padding-left: 1.25rem;
+  margin: 0;
+}
+
+.pricing__features li::marker {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Purrson */
+
+.btn--purrson {
+  background-color: var(--purrson-bg);
+  border: 0;
+  color: var(--purrson-color, hsl(0, 0%, 0%));
+  position: absolute;
+  inset-block-end: 0;
+  inset-inline-start: 0;
+  rotate: 25deg;
+  transform: translateY(1rem);
+  transition: transform 300ms ease-in-out, color 300ms ease-in-out;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.btn--purrson:hover {
+  transform: translateY(0);
+  color: var(--purrson-hover-color, hsl(0, 0%, 0%));
+}
+
+.btn--purrson.found .purrson-tooltip {
+  opacity: 1;
+}
+
+.btn--purrson svg {
+  width: var(--purrson-size, 2em);
+  aspect-ratio: 1;
+  color: currentColor;
+}
+
+.purrson-tooltip {
+  position: absolute;
+  inset-block-start: -2.5rem;
+  inset-inline-start: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  background-color: var(--purrson-tooltip-bg, hsl(0, 0%, 0%, 0.8));
+  color: var(--purrson-tooltip-color, hsl(0, 0%, 100%));
+  padding: 0.5rem;
+  border-radius: 1rem;
+  opacity: 0;
+  font-size: 0.8rem;
+  width: 8em;
+  pointer-events: none;
+  transition: opacity 300ms ease-in-out;
+}
+
+@media screen and (max-width: 59em) {
+}
+
+@media screen and (min-width: 45em) {
+  :root {
+    --space-fluid-200: 4rem;
+  }
+
+  .card {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .card .pricing:first-child {
+    position: relative;
+  }
+
+  .card .pricing:first-child::after {
+    inset-block: calc(var(--space-fluid-100) * -1);
+    inset-inline: auto calc(calc(var(--space-fluid-100) * -1) - 5px);
+    width: var(--_divider-size);
+    height: auto;
+    border-inline-start: 1px solid var(--clr-accent-800);
+  }
+}
+
+@media screen and (min-width: 60em) {
+  :root {
+    --space-fluid-50: 1rem;
+    --space-fluid-100: 2rem;
+    --space-fluid-150: 3rem;
+    --space-fluid-200: 4rem;
+  }
+}
