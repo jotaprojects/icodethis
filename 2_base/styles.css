@@ -55,7 +55,8 @@ body {
   font-optical-sizing: auto;
 }
 
-button {
+button,
+.btn {
   --_btn-base-bg: var(--clr-neutral-100);
   --_btn-base-color: var(--clr-neutral-900);
   --_btn-radius: var(--border-radius);

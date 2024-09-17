@@ -5,6 +5,7 @@ input[type="checkbox"] + label {
 
 /* Custom radio/checkbox button */
 /* https://moderncss.dev/pure-css-custom-styled-radio-buttons/ */
+/* https://moderncss.dev/pure-css-custom-checkbox-style/ */
 
 input[type="radio"] {
   --_bg: var(--clr-neutral-100, #fff);

@@ -1,3 +1,8 @@
+## Set up
+
+- form, fieldset, legend, `.form__group`, `.form__actions`
+- state, `.state-wrapper`
+
 ## Create helpers:
 
 - Progress bar
