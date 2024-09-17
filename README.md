@@ -60,6 +60,7 @@
 - Tabbed Ui (Iteration thoughts: Transition animation between tabs)
 - Countdown
 - Pricing Card
+- User Feedback (Iteration thoughts: Something more fun with smilies, Read up on keyboard accessibility, focus on dialog/states)
 
 ## Requirements
 
