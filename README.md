@@ -61,6 +61,7 @@
 - Countdown
 - Pricing Card
 - User Feedback (Iteration thoughts: Something more fun with smilies, Read up on keyboard accessibility, focus on dialog/states)
+- Circle Team (WIP, Iteration thoughts: Responsive, No magic numbers, Nicer text when active);
 
 ## Requirements
 
