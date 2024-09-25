@@ -2,6 +2,8 @@
 @import "../0_css/base/button.css";
 @import "../0_css/utils/helpers.css";
 
+/* https://colormix.app/palettes/890 */
+
 :root {
   --clr-neutral-100-hsl: 0, 0%, 100%;
   --clr-neutral-900-hsl: 0, 0%, 0%;
