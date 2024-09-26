@@ -2,25 +2,57 @@
 @import "../0_css/base/button.css";
 
 :root {
-  --clr-primary-100: hsl(0, 0%, 100%);
-  --clr-primary-200: hsl(30, 20%, 80%);
-  --clr-primary-700: #3a3535;
-  --clr-primary-800: #232020;
-  --clr-primary-900: hsl(0, 0%, 0%);
+  --clr-neutral-100-hsl: 0, 0%, 100%;
+  --clr-neutral-900-hsl: 0, 0%, 0%;
 
-  --clr-dark-blue: #3090a1;
-  --clr-blue: #7bcecc;
-  --clr-cream: #fef8e6;
-  --clr-red: #bc5148;
+  --clr-neutral-100: hsl(var(--clr-neutral-100-hsl));
+  --clr-neutral-900: hsl(var(--clr-neutral-900-hsl));
+
+  --clr-primary-200-hsl: 30, 20%, 80%;
+  --clr-primary-600-hsl: 0, 5%, 22%;
+  --clr-primary-800-hsl: 0, 4%, 13%;
+  --clr-blue-400-hsl: 179, 46%, 65%;
+  --clr-blue-600-hsl: 189, 54%, 41%;
+  --clr-cream-hsl: 45, 92%, 95%;
+  --clr-red-hsl: 5, 46%, 51%;
+
+  --clr-primary-200: hsl(var(--clr-primary-200-hsl));
+  --clr-primary-600: hsl(var(--clr-primary-600-hsl));
+  --clr-primary-800: hsl(var(--clr-primary-800-hsl));
+  --clr-blue-400: hsl(var(--clr-blue-400-hsl));
+  --clr-blue-600: hsl(var(--clr-blue-600-hsl));
+  --clr-cream: hsl(var(--clr-cream-hsl));
+  --clr-red: hsl(var(--clr-red-hsl));
 
   --body-bg: var(--clr-primary-800);
-  --clr-text: var(--clr-primary-100);
+  --clr-text: var(--clr-neutral-100);
 
   --ff-base: system-ui, sans-serif;
   --ff-alt: "Lobster", sans-serif;
 
+  --fs-sm: 0.8rem;
+  --fs-md: 1.2rem;
+
   --fw-normal: 400;
+  --fw-medium: 500;
   --fw-bold: 700;
+  --fw-black: 900;
+
+  --space-50: 0.5rem;
+  --space-100: 1rem;
+  --space-150: 1.5rem;
+  --space-200: 2rem;
+
+  --space-fluid-50: 0.5rem;
+  --space-fluid-100: 1rem;
+  --space-fluid-150: 1.5rem;
+  --space-fluid-200: 2rem;
+
+  --border-radius: 1rem;
+  --border-rounded: 50%;
+  --border-pill: 100vw;
+
+  --box-shadow-clr: hsl(var(--clr-neutral-900-hsl), 0.2);
 }
 
 body {
@@ -41,50 +73,50 @@ body {
 
 .box {
   max-width: 30em;
-  padding: 1.5rem;
-  background-color: var(--clr-primary-700);
-  box-shadow: inset 0 0 0 0.1rem var(--clr-primary-100),
-    -1rem 1rem 0 0 var(--clr-primary-100);
-  border: 0.8rem solid var(--clr-primary-700);
+  padding: var(--space-150);
+  background-color: var(--clr-primary-600);
+  box-shadow: inset 0 0 0 0.1rem var(--clr-neutral-100),
+    -1rem 1rem 0 0 var(--clr-neutral-100);
+  border: 0.8rem solid var(--clr-primary-600);
 }
 
 form {
-  border-top: 0.4rem dotted var(--clr-primary-100);
+  border-block-start: 0.4rem dotted var(--clr-neutral-100);
 }
 
 h1 {
   font-family: var(--ff-alt);
   font-size: 3rem;
-  margin-top: 0;
-  margin-bottom: 1.5rem;
+  margin-block: 0 var(--space-150);
 }
 
 input {
   background-color: transparent;
   border: 0;
-  border-bottom: 1px solid var(--clr-primary-100);
-  padding: 0.5rem 1rem;
-  color: var(--clr-primary-100);
+  border-block-end: 1px solid var(--clr-neutral-100);
+  padding: var(--space-50) var(--space-100);
+  color: var(--clr-neutral-100);
 }
 
 input:focus {
-  outline: 2px dotted var(--clr-primary-100);
+  outline: 2px dotted var(--clr-neutral-100);
 }
 
 .form-group {
-  margin: 2rem 0;
+  margin: var(--space-200) 0;
 }
 
 .form-group--small {
-  font-size: 0.8rem;
+  font-size: var(--fs-sm);
 }
 
 button {
   --_btn-base-bg: transparent;
-  --_btn-base-color: var(--clr-primary-100);
+  --_btn-base-color: var(--clr-neutral-100);
+  --_btn-border: 1px solid var(--clr-neutral-100);
+  --_btn-hover-bg: transparent;
 
-  border: 1px solid var(--clr-primary-100);
-  outline: 1px solid var(--clr-primary-100);
+  outline: 1px solid var(--clr-neutral-100);
   outline-offset: -1px;
   transition: outline-offset 200ms ease;
 }

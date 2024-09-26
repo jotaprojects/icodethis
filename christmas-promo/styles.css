@@ -2,6 +2,50 @@
 @import "../0_css/base/button.css";
 
 :root {
+  --clr-neutral-100-hsl: 0, 0%, 100%;
+  --clr-neutral-900-hsl: 0, 0%, 0%;
+
+  --clr-neutral-100: hsl(var(--clr-neutral-100-hsl));
+  --clr-neutral-900: hsl(var(--clr-neutral-900-hsl));
+
+  --clr-neutral-400-hsl: 30, 20%, 80%;
+  --clr-red-hsl: 3, 96%, 30%;
+  --clr-green-hsl: 143, 53%, 20%;
+
+  --clr-neutral-400: hsl(var(--clr-neutral-400-hsl));
+  --clr-red: hsl(var(--clr-red-hsl));
+  --clr-green: hsl(var(--clr-green-hsl));
+
+  --body-bg: var(--clr-green);
+  --clr-text: var(--clr-neutral-400);
+
+  --ff-base: "Open Sans", sans-serif;
+  --ff-alt: "Galada", cursive;
+
+  --fs-sm: 0.8rem;
+  --fs-md: 1.2rem;
+
+  --fw-normal: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+  --fw-black: 900;
+
+  --space-50: 0.5rem;
+  --space-100: 1rem;
+  --space-150: 1.5rem;
+  --space-200: 2rem;
+
+  --space-fluid-50: 0.5rem;
+  --space-fluid-100: 1rem;
+  --space-fluid-150: 1.5rem;
+  --space-fluid-200: 2rem;
+
+  --border-radius: 1rem;
+  --border-rounded: 50%;
+  --border-pill: 100vw;
+
+  --box-shadow-clr: hsl(var(--clr-neutral-900-hsl), 0.2);
+
   --clr-primary-100: hsl(0, 0%, 100%);
   --clr-primary-200: hsl(30, 20%, 80%);
   --clr-primary-900: hsl(0, 0%, 0%);
@@ -44,11 +88,11 @@ h3 {
 .box {
   position: relative;
   overflow: hidden;
-  background-color: var(--clr-calpoly-green);
-  padding: 2rem;
-  box-shadow: inset 0 0 0.6rem 0.1rem hsla(0, 0%, 0%, 0.5),
-    0 0 1rem 0.1rem hsla(0, 0%, 0%, 0.5);
-  border-radius: 1rem;
+  background-color: var(--clr-green);
+  padding: var(--space-200);
+  box-shadow: inset 0 0 0.6rem 0.1rem hsl(var(--clr-neutral-900-hsl), 0.5),
+    0 0 1rem 0.1rem hsl(var(--clr-neutral-900-hsl), 0.5);
+  border-radius: var(--border-radius);
   background-image: radial-gradient(
     122% 78% at 109% -8%,
     hsla(139, 37%, 40%, 0.361) 98%,
@@ -73,12 +117,12 @@ h3 {
   height: 4rem;
   transform: rotate(45deg);
   background: hsl(46, 81%, 61%);
-  box-shadow: 0 0 1rem 0 hsla(0, 0%, 0%, 0.5);
+  box-shadow: 0 0 1rem 0 hsl(var(--clr-neutral-900-hsl), 0.5);
 }
 
 .box::before {
-  top: 35px;
-  right: -75px;
+  inset-block-start: 35px;
+  inset-inline-end: -75px;
   background: linear-gradient(
     0,
     hsl(46, 81%, 61%) 0%,
@@ -96,8 +140,8 @@ h3 {
 }
 
 .box::after {
-  bottom: -40px;
-  left: -75px;
+  inset-block-end: -40px;
+  inset-inline-start: -75px;
   background: linear-gradient(
     0,
     hsl(46, 81%, 61%) 0%,
@@ -116,20 +160,23 @@ h3 {
 
 h1 {
   font-size: 4rem;
-  color: var(--clr-dark-red);
+  color: var(--clr-red);
   text-shadow: 0 0.06rem 0.1rem hsl(46, 81%, 61%),
-    0 -0.1rem 0.1rem hsl(46, 81%, 61%), 0.2rem 0rem 1.2rem hsla(0, 0%, 0%, 0.8);
+    0 -0.1rem 0.1rem hsl(46, 81%, 61%),
+    0.2rem 0rem 1.2rem hsl(var(--clr-neutral-900-hsl), 0.8);
 }
 
 .text {
-  padding: 1rem 2rem;
+  padding: var(--space-100) var(--space-200);
 }
 
 /* Credits to https://codepen.io/kvasheilds/pen/MqOaMm?editors=1100 */
 
 button {
   --_btn-base-bg: hsl(46, 65%, 52%);
-  --_btn-padding: 1rem 2rem;
+  --_btn-base-color: var(--clr-neutral-900);
+  --_btn-padding: var(--space-100) var(--space-200);
+  --_btn-hover-color: var(--clr-neutral-900);
 
   box-shadow: 0 3px 6px hsla(0, 0%, 0%, 0.16), 0 3px 6px hsla(40, 69%, 25%, 0.4),
     inset 0 -2px 5px 1px hsl(27, 89%, 29%),

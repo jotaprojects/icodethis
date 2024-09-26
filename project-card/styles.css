@@ -4,25 +4,53 @@
 @import "../0_css/utils/helpers.css";
 
 :root {
-  --clr-primary-100: hsl(0, 0%, 100%);
-  --clr-primary-800: hsl(225, 5%, 17%);
-  --clr-primary-900: hsl(0, 0%, 0%);
+  --clr-neutral-100-hsl: 0, 0%, 100%;
+  --clr-neutral-900-hsl: 0, 0%, 0%;
 
-  --clr-amber: #ffc43d;
-  --clr-light-yellow: #f8ffe5;
-  --clr-emerald: #06d6a0;
-  --clr-blue: #1b9aaa;
-  --clr-midnight-green: hsl(186, 71%, 20%);
+  --clr-neutral-100: hsl(var(--clr-neutral-100-hsl));
+  --clr-neutral-900: hsl(var(--clr-neutral-900-hsl));
 
-  --body-bg: var(--clr-primary-800);
-  --clr-text: var(--clr-primary-100);
+  --clr-neutral-800-hsl: 225, 5%, 17%;
+  --clr-amber-hsl: 42, 100%, 62%;
+  --clr-emerald-hsl: 164, 95%, 43%;
+  --clr-blue-hsl: 187, 73%, 39%;
+  --clr-midnight-green-hsl: 186, 71%, 20%;
+
+  --clr-neutral-800: hsl(var(--clr-neutral-800-hsl));
+  --clr-amber: hsl(var(--clr-amber-hsl));
+  --clr-emerald: hsl(var(--clr-emerald-hsl));
+  --clr-blue: hsl(var(--clr-blue-hsl));
+  --clr-midnight-green: hsl(var(--clr-midnight-green-hsl));
+
+  --body-bg: var(--clr-neutral-800);
+  --clr-text: var(--clr-neutral-100);
 
   --ff-base: system-ui, sans-serif;
+  --ff-alt: "Open Sans", sans-serif;
+
+  --fs-sm: 0.8rem;
+  --fs-md: 1.2rem;
 
   --fw-normal: 400;
+  --fw-medium: 500;
   --fw-bold: 700;
+  --fw-black: 900;
 
+  --space-50: 0.5rem;
   --space-100: 1rem;
+  --space-150: 1.5rem;
+  --space-200: 2rem;
+
+  --space-fluid-50: 0.5rem;
+  --space-fluid-100: 1rem;
+  --space-fluid-150: 1.5rem;
+  --space-fluid-200: 2rem;
+
+  --border-radius: 1rem;
+  --border-rounded: 50%;
+  --border-pill: 100vw;
+
+  --box-shadow-clr: hsl(var(--clr-neutral-900-hsl), 0.2);
 }
 
 body {
@@ -41,23 +69,23 @@ body {
   background-image: radial-gradient(
     circle at top,
     hsl(225, 5%, 30%),
-    hsl(225, 5%, 17%)
+    var(--clr-neutral-800)
   );
 }
 
 .box {
   max-width: 30em;
-  border-radius: 2rem;
+  border-radius: calc(var(--border-radius) * 2);
   overflow: hidden;
-  border-top: 0.3rem solid var(--clr-amber);
+  border-block-start: 0.3rem solid var(--clr-amber);
 
   background-image: linear-gradient(
     160deg,
     hsl(186, 71%, 35%),
-    hsl(186, 71%, 20%)
+    var(--clr-midnight-green)
   );
-  box-shadow: 0 0.8rem 1rem 1rem hsla(0 0 0 / 0.2),
-    inset 0 -0.2rem 0.5rem 0.2rem hsla(0 0 0 / 0.2);
+  box-shadow: 0 0.8rem 1rem 1rem var(--box-shadow-clr),
+    inset 0 -0.2rem 0.5rem 0.2rem var(--box-shadow-clr);
 }
 
 .box__head {
@@ -66,16 +94,20 @@ body {
   display: grid;
   grid-template-columns: auto 3em;
   padding: var(--space-100);
-  box-shadow: inset 0 -0.2rem 0.5rem 0.2rem hsla(0 0 0 / 0.2);
+  box-shadow: inset 0 -0.2rem 0.5rem 0.2rem var(--box-shadow-clr);
 }
 
 .box__head .date {
-  font-size: 0.8rem;
+  font-size: var(--fs-sm);
 }
 
 .box__actions button {
   --_btn-base-bg: transparent;
   --_btn-padding: 0;
+  --_btn-radius: var(--border-rounded);
+  --_btn-border: 2px solid var(--clr-midnight-green);
+  --_btn-transition: background-color 200ms ease;
+  --_btn-hover-bg: var(--clr-midnight-green);
 
   width: 2.5rem;
   aspect-ratio: 1;
@@ -83,24 +115,16 @@ body {
   align-items: center;
   justify-content: center;
   gap: 0.3rem;
-  border-radius: 50%;
-  border: 2px solid var(--clr-midnight-green);
-  text-decoration: none;
   position: relative;
-  transition: background-color 200ms ease;
 }
 
 .box__actions span {
   width: 0.25em;
   aspect-ratio: 1;
   display: block;
-  background-color: var(--clr-primary-100);
-  border-radius: 50%;
+  background-color: var(--clr-neutral-100);
+  border-radius: var(--border-rounded);
   transform: translateY(0);
-}
-
-.box__actions button:hover {
-  background-color: var(--clr-midnight-green);
 }
 
 .box__actions button:hover span {
@@ -127,7 +151,7 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
-  gap: 0.5rem;
+  gap: var(--space-50);
 }
 
 .box__foot li {
@@ -137,7 +161,7 @@ body {
 .box__foot img {
   width: 3em;
   aspect-ratio: 1;
-  border-radius: 50%;
+  border-radius: var(--border-rounded);
   border: 0.2rem solid transparent;
   box-shadow: 0 0 0 0.1rem var(--clr-blue);
   transition: border 200ms ease;
@@ -153,21 +177,21 @@ body {
 
 .box__foot span {
   position: absolute;
+  inset-block-start: -2.2rem;
+  inset-inline-start: 50%;
   opacity: 0;
-  top: -2.2rem;
   pointer-events: none;
   background-color: var(--clr-blue);
-  border-radius: 0.5rem;
+  border-radius: calc(var(--border-radius) / 2);
   padding: 0.1rem 0.4rem;
-  left: 50%;
   transform: translateX(-50%);
 }
 
 .box__foot span::after {
   content: "";
   position: absolute;
-  bottom: -0.5rem;
-  left: 50%;
+  inset-block-end: -0.5rem;
+  inset-inline-start: 50%;
   transform: translateX(-50%);
   width: 0;
   height: 0;
@@ -182,7 +206,7 @@ body {
 
 .progress-bar {
   width: 100%;
-  background-color: hsl(186, 70%, 12%);
+  background-color: var(--clr-midnight-green);
   height: 1.5rem;
   position: relative;
   overflow: hidden;
@@ -200,15 +224,15 @@ body {
 .progress-bar::before {
   content: attr(data-progress) "%";
   z-index: 1;
-  color: var(--clr-primary-900);
-  text-align: right;
-  padding-right: 0.5rem;
+  color: var(--clr-neutral-900);
+  text-align: end;
+  padding-right: var(--space-50);
 }
 
 .progress-bar::after {
-  background-color: var(--clr-light-yellow);
+  background-color: var(--clr-amber);
   z-index: 0;
-  border-radius: 0 100vw 100vw 0;
+  border-radius: 0 var(--border-pill) var(--border-pill) 0;
 }
 
 @keyframes progress {

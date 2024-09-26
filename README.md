@@ -1,14 +1,14 @@
 # iCodeThis Solutions
 
 - Movie card
-- Login card
+- Login card (Fix label showing inside input when the input has text)
 - Birthday list
-- Toasts
+- Toasts (Iteration thoughts: Animations when toast disappear)
 - Basics
 - 404 Error page
 - Christmas promo
-- Subscribe
-- Pricing Table
+- Subscribe (Iteration thoughts: Mix up some more colors, customize inputs)
+- Pricing Table (Iteration thoughts: Add bubble as background animation. Watch out if it gets to busy)
 - Signup 2
 - Project card
 - Apps card

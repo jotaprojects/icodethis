@@ -2,18 +2,55 @@
 @import "../0_css/utils/grid.css";
 
 :root {
-  --clr-primary-100: hsl(0, 0%, 80%);
-  --clr-primary-400: hsl(203, 39%, 57%);
-  --clr-primary-700: hsl(200, 26%, 18%);
-  --clr-primary-900: hsl(0, 0%, 0%);
+  --clr-neutral-100-hsl: 0, 0%, 100%;
+  --clr-neutral-900-hsl: 0, 0%, 0%;
 
-  --clr-accent-400: hsl(38, 84%, 71%);
+  --clr-neutral-100: hsl(var(--clr-neutral-100-hsl));
+  --clr-neutral-900: hsl(var(--clr-neutral-900-hsl));
 
-  --body-bg: var(--clr-primary-700);
-  --clr-text: var(--clr-primary-100);
+  --clr-neutral-200-hsl: 0, 0%, 80%;
+  --clr-neutral-600-hsl: 0, 0%, 40%;
+  --clr-neutral-800-hsl: 0, 0%, 15%;
+  --clr-accent-400-hsl: 203, 39%, 57%;
+  --clr-accent-600-hsl: 200, 26%, 18%;
+  --clr-secondary-hsl: 38, 84%, 71%;
+
+  --clr-neutral-200: hsl(var(--clr-neutral-200-hsl));
+  --clr-neutral-600: hsl(var(--clr-neutral-600-hsl));
+  --clr-neutral-800: hsl(var(--clr-neutral-800-hsl));
+  --clr-accent-400: hsl(var(--clr-accent-400-hsl));
+  --clr-accent-600: hsl(var(--clr-accent-600-hsl));
+  --clr-secondary: hsl(var(--clr-secondary-hsl));
+
+  --body-bg: var(--clr-accent-600);
+  --clr-text: var(--clr-neutral-200);
+
+  --ff-base: system-ui, sans-serif;
+  --ff-alt: "Poppins", sans-serif;
+
+  --fs-sm: 0.8rem;
+  --fs-md: 1.2rem;
 
   --fw-normal: 400;
+  --fw-medium: 500;
   --fw-bold: 700;
+  --fw-black: 900;
+
+  --space-50: 0.5rem;
+  --space-100: 1rem;
+  --space-150: 1.5rem;
+  --space-200: 2rem;
+
+  --space-fluid-50: 0.5rem;
+  --space-fluid-100: 1rem;
+  --space-fluid-150: 1.5rem;
+  --space-fluid-200: 2rem;
+
+  --border-radius: 1rem;
+  --border-rounded: 50%;
+  --border-pill: 100vw;
+
+  --box-shadow-clr: hsl(var(--clr-neutral-900-hsl), 0.2);
 
   --l-cord-w: 0.25em;
   --l-cord-h: 5em;
@@ -52,24 +89,24 @@ body {
   align-items: center;
   min-height: 100vh;
   margin: 0;
-  font-family: "Poppins", sans-serif;
+  font-family: var(--ff-alt);
   font-weight: var(--fw-normal);
   font-style: normal;
   text-align: center;
 
   background-image: radial-gradient(
       100% 100% at 50% 30%,
-      #82826fb3 0%,
-      #22323a 100%
+      hsla(60, 8%, 47%, 0.7) 0%,
+      var(--clr-accent-600) 100%
     ),
-    linear-gradient(0deg, #22323a 40%, #555 41%);
+    linear-gradient(0deg, var(--clr-accent-600) 40%, hsl(0, 0%, 33%) 40%);
 }
 
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background-color: #000;
+  background-color: var(--clr-neutral-900);
   opacity: 0.5;
   z-index: 10;
   pointer-events: none;
@@ -91,7 +128,7 @@ body::before {
 
 .wrapper {
   max-width: 40em;
-  padding-bottom: 2rem;
+  padding-block-end: var(--space-200);
   overflow: hidden;
 }
 
@@ -102,8 +139,7 @@ h1 {
   position: relative;
   perspective: 500px;
   perspective-origin: 55% 100%;
-  text-shadow: 0 -0.4rem rgba(0 0 0 / 0.3);
-
+  text-shadow: 0 -0.4rem hsl(var(--clr-neutral-900-hsl), 0.3);
   animation: swing 3000ms linear infinite;
   animation-play-state: var(--animation-state);
 }
@@ -131,12 +167,12 @@ h1::after {
 .cord,
 .cord-nob,
 .cord-shell {
-  background: rgb(38, 38, 38);
+  background: hsl(0, 0%, 15%);
   background: linear-gradient(
     90deg,
-    rgba(38, 38, 38, 1) 0%,
-    rgba(101, 101, 101, 1) 56%,
-    rgba(38, 38, 38, 1) 100%
+    var(--clr-neutral-800) 0%,
+    var(--clr-neutral-600) 56%,
+    var(--clr-neutral-800) 100%
   );
 }
 
@@ -163,30 +199,29 @@ h1::after {
   position: relative;
   margin-top: -0.5rem; /* Cheating */
   border-radius: var(--l-shade-radius);
-  background: rgb(101, 101, 101);
+  background: var(--clr-neutral-600);
   background: radial-gradient(
     circle at top right,
-    rgba(101, 101, 101, 1) 0%,
-    rgba(38, 38, 38, 1) 81%
+    var(--clr-neutral-600) 0%,
+    var(--clr-neutral-800) 80%
   );
-  box-shadow: inset 0 0 2rem 0.5rem hsla(0 0 0 / 0.2);
+  box-shadow: inset 0 0 2rem 0.5rem var(--box-shadow-clr);
 }
 
 .lightbold {
   width: var(--l-lightbold-w);
   height: var(--l-lightbold-h);
-  border-radius: 100%;
-  background: rgb(210, 210, 210);
+  border-radius: var(--border-rounded);
+  background: hsl(0, 0%, 82%);
   background: radial-gradient(
     circle at top,
-    rgba(210, 210, 210, 1) 0%,
-    rgba(144, 144, 144, 1) 100%
+    hsl(0, 0%, 82%) 0%,
+    hsl(0, 0%, 56%) 100%
   );
-  box-shadow: inset 0 0 1rem 0.5rem hsla(0 0 0 / 0.2);
-
+  box-shadow: inset 0 0 1rem 0.5rem var(--box-shadow-clr);
   position: absolute;
-  left: 50%;
-  bottom: -20%;
+  inset-inline-start: 50%;
+  inset-block-end: -20%;
   z-index: -1;
   transform: translateX(-50%);
 }
@@ -213,12 +248,12 @@ h1::after {
   position: relative;
   z-index: 2;
   border-radius: var(--l-ns-light-top-radius);
-  background: rgb(187, 161, 92);
+  background: hsl(44, 41%, 55%);
   background: linear-gradient(
     180deg,
-    rgba(187, 161, 92, 1) 0%,
-    rgba(255, 216, 125, 1) 67%,
-    rgba(255, 210, 138, 1)
+    hsl(44, 41%, 55%) 0%,
+    hsl(42, 100%, 75%) 67%,
+    hsl(37, 100%, 77%)
   );
 }
 
@@ -227,21 +262,20 @@ h1::after {
   height: var(--l-ns-lightbold-h);
   position: relative;
   inset: 0;
-  top: -8%;
+  inset-block-start: -8%;
   transform: none;
   z-index: 0;
-
-  background: rgb(250, 237, 179);
+  background: hsl(49, 88%, 84%);
   background: radial-gradient(
     circle at 50% 70%,
-    rgba(250, 237, 179, 1) 0%,
-    rgba(255, 211, 128, 1) 36%,
-    rgba(255, 210, 138, 1) 49%
+    hsl(49, 88%, 84%) 0%,
+    hsl(39, 100%, 75%) 36%,
+    hsl(37, 100%, 77%) 49%
   );
 }
 
 .lightbold-wrapper > * {
-  box-shadow: 0 0 8rem 2rem rgba(250, 237, 179, 0.5);
+  box-shadow: 0 0 8rem 2rem hsla(49, 88%, 84%, 0.5);
 }
 
 .lightbold-wrapper {
@@ -251,17 +285,17 @@ h1::after {
 .lamp--mirror .shade {
   background: radial-gradient(
     circle at top left,
-    rgba(101, 101, 101, 1) 0%,
-    rgba(38, 38, 38, 1) 81%
+    var(--clr-neutral-600) 0%,
+    var(--clr-neutral-800) 80%
   );
 }
 
 .lamp--mirror .cord-shell {
   background: linear-gradient(
     90deg,
-    rgba(38, 38, 38, 1) 0%,
-    rgba(101, 101, 101, 1) 46%,
-    rgba(38, 38, 38, 1) 100%
+    var(--clr-neutral-800) 0%,
+    var(--clr-neutral-600) 45%,
+    var(--clr-neutral-800) 100%
   );
 }
 
@@ -270,9 +304,8 @@ h1::after {
   margin: 0 auto;
   height: 3rem;
   width: 3rem;
-  background-color: var(--clr-primary-100);
+  background-color: var(--clr-neutral-200);
   z-index: 11;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -281,30 +314,28 @@ h1::after {
 .switch::before {
   content: "";
   display: block;
-  background-color: grey;
+  background-color: hsl(0, 0%, 50%);
   height: 1.5rem;
   width: 1rem;
-  border: 2px solid grey;
-  background-size: 100% 100%;
-  background-position: 0px 0px;
+  border: 2px solid hsl(0, 0%, 50%);
   background-image: linear-gradient(
     0deg,
-    #cfcfcf 0%,
-    #e4e4e4 63%,
-    #bcbcbc 64%,
-    #777777 87%,
-    #484848 99%
+    hsl(0, 0%, 81%) 0%,
+    hsl(0, 0%, 89%) 63%,
+    hsl(0, 0%, 74%) 64%,
+    hsl(0, 0%, 47%) 87%,
+    hsl(0, 0%, 28%) 99%
   );
 }
 
 .switch--on::before {
   background-image: linear-gradient(
     0deg,
-    #484848 1%,
-    #777777 13%,
-    #bcbcbc 36%,
-    #e4e4e4 37%,
-    #cfcfcf 100%
+    hsl(0, 0%, 28%) 1%,
+    hsl(0, 0%, 47%) 13%,
+    hsl(0, 0%, 74%) 36%,
+    hsl(0, 0%, 89%) 37%,
+    hsl(0, 0%, 81%) 100%
   );
 }
 
