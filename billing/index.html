@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Billing - iCodeThis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer=""></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="sidebar">
+        <div class="sidebar__brand">
+          <svg
+            version="1.1"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 512 512"
+            fill="currentColor"
+          >
+            <path
+              id="XMLID_25_"
+              d="M182.6,224.5c-2.2-0.3-4.4-0.5-6.6-0.5c-25,0-45.5,19.1-47.8,43.6c-0.1,1.5-0.2,2.9-0.2,4.4
+	c0,26.5,21.5,48,48,48s48-21.5,48-48C224,247.7,206,227.7,182.6,224.5z M176,288c-8.8,0-16-7.2-16-16s7.2-16,16-16s16,7.2,16,16
+	S184.8,288,176,288z"
+            />
+            <path
+              id="XMLID_28_"
+              d="M512,352v-32h-64.8c0.5-5.3,0.8-10.6,0.8-16c0-23.5-5-45.9-14.2-66.4l45-165.1c3.7-13.6-1.9-28.1-13.9-35.5
+	c-5.2-3.3-11.1-4.9-17-4.9c-7.6,0-15.1,2.7-21.1,7.9l-110.8,96.9c-18.9-5.7-39.2-8.8-60.2-8.8s-41.2,3.1-60.2,8.8L85.1,39.9
+	C79.1,34.7,71.6,32,64,32c-5.9,0-11.7,1.6-17,4.9c-12,7.5-17.6,21.9-13.9,35.5l45,165.1C69,258.1,64,280.5,64,304
+	c0,5.7,0.3,11.4,0.9,17H0v32h71.5c3,9.5,6.9,18.8,11.5,27.6L8.8,417.7l14.3,28.6l77.6-38.8C135.6,451.4,192.2,480,256,480
+	c66.3,0,124.8-30.8,159.3-77.7l72.4,43.5l16.5-27.4l-72.4-43.5c3.5-7.4,6.5-15,9-22.8H512z M411.4,269.9c3,10.9,4.6,22.4,4.6,34.1
+	c0,79.4-71.8,144-160,144S96,383.4,96,304c0-11.8,1.6-23.2,4.6-34.1c2.9-10.8,6-20.2,11.4-29.9l0,0l-10.9-40L64,64l98.6,86.2
+	l26.4,23.1c10.3-4.3,21.2-7.6,32.5-9.9c11.1-2.2,22.7-3.4,34.6-3.4s23.4,1.2,34.6,3.4c11.3,2.3,22.2,5.6,32.5,9.9l26.4-23.1L448,64
+	l-37.1,136L400,240l0,0C405.5,249.7,408.5,259.1,411.4,269.9z"
+            />
+            <path
+              id="XMLID_31_"
+              d="M336,224c-2.3,0-4.5,0.2-6.6,0.5C306,227.7,288,247.7,288,272c0,26.5,21.5,48,48,48s48-21.5,48-48
+	c0-1.5-0.1-3-0.2-4.4C381.5,243.1,361,224,336,224z M336,288c-8.8,0-16-7.2-16-16s7.2-16,16-16s16,7.2,16,16S344.8,288,336,288z"
+            />
+          </svg>
+        </div>
+        <button data-drawer-trigger="nav" aria-label="Open Menu">
+          <span></span><span></span><span></span>
+        </button>
+        <nav
+          data-drawer-wrapper="nav"
+          class="drawer-wrapper drawer-wrapper--nav drawer-transition-inline-start"
+        >
+          <button
+            type="button"
+            data-drawer-reset-trigger
+            aria-label="Close Menu"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18 18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+          <div class="drawer-wrapper-inner">
+            <a href="#general">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m21 7.5-9-5.25L3 7.5m18 0-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9"
+                />
+              </svg>
+              <span class="text">General</span>
+            </a>
+            <a href="#password">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z"
+                />
+              </svg>
+              <span class="text">Password</span>
+            </a>
+            <a href="#invitations">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"
+                />
+              </svg>
+              <span class="text">Invitations</span>
+            </a>
+            <a href="#billing" class="nav--active">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M2.25 18.75a60.07 60.07 0 0 1 15.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 0 1 3 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 0 0-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 0 1-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 0 0 3 15h-.75M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm3 0h.008v.008H18V10.5Zm-12 0h.008v.008H6V10.5Z"
+                />
+              </svg>
+              <span class="text">Billing</span>
+            </a>
+            <a href="#apps">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M14.25 6.087c0-.355.186-.676.401-.959.221-.29.349-.634.349-1.003 0-1.036-1.007-1.875-2.25-1.875s-2.25.84-2.25 1.875c0 .369.128.713.349 1.003.215.283.401.604.401.959v0a.64.64 0 0 1-.657.643 48.39 48.39 0 0 1-4.163-.3c.186 1.613.293 3.25.315 4.907a.656.656 0 0 1-.658.663v0c-.355 0-.676-.186-.959-.401a1.647 1.647 0 0 0-1.003-.349c-1.036 0-1.875 1.007-1.875 2.25s.84 2.25 1.875 2.25c.369 0 .713-.128 1.003-.349.283-.215.604-.401.959-.401v0c.31 0 .555.26.532.57a48.039 48.039 0 0 1-.642 5.056c1.518.19 3.058.309 4.616.354a.64.64 0 0 0 .657-.643v0c0-.355-.186-.676-.401-.959a1.647 1.647 0 0 1-.349-1.003c0-1.035 1.008-1.875 2.25-1.875 1.243 0 2.25.84 2.25 1.875 0 .369-.128.713-.349 1.003-.215.283-.4.604-.4.959v0c0 .333.277.599.61.58a48.1 48.1 0 0 0 5.427-.63 48.05 48.05 0 0 0 .582-4.717.532.532 0 0 0-.533-.57v0c-.355 0-.676.186-.959.401-.29.221-.634.349-1.003.349-1.035 0-1.875-1.007-1.875-2.25s.84-2.25 1.875-2.25c.37 0 .713.128 1.003.349.283.215.604.401.96.401v0a.656.656 0 0 0 .658-.663 48.422 48.422 0 0 0-.37-5.36c-1.886.342-3.81.574-5.766.689a.578.578 0 0 1-.61-.58v0Z"
+                />
+              </svg>
+              <span class="text">Apps</span>
+            </a>
+          </div>
+        </nav>
+        <button
+          data-drawer-trigger="account"
+          aria-label="Open Account Menu"
+          class="btn--invisible"
+        >
+          <img src="https://i.pravatar.cc/80?img=16" alt="" />
+        </button>
+        <div
+          data-drawer-wrapper="account"
+          class="drawer-wrapper drawer-wrapper--account drawer-transition-inline-end"
+        >
+          <button
+            type="button"
+            data-drawer-reset-trigger
+            aria-label="Close Account Menu"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M6 18 18 6M6 6l12 12"
+              />
+            </svg>
+          </button>
+          <div class="drawer-wrapper-inner">
+            <img src="https://i.pravatar.cc/80?img=16" alt="" />
+            <div class="name">
+              <div class="name__full">Ildiko Gaspar</div>
+              <div class="name__username">@igaspar</div>
+            </div>
+            <a href="#logout" class="btn btn--invisible">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15.75 9V5.25A2.25 2.25 0 0 0 13.5 3h-6a2.25 2.25 0 0 0-2.25 2.25v13.5A2.25 2.25 0 0 0 7.5 21h6a2.25 2.25 0 0 0 2.25-2.25V15m3 0 3-3m0 0-3-3m3 3H9"
+                />
+              </svg>
+              Log out
+            </a>
+          </div>
+        </div>
+      </div>
+      <main>
+        <h1>Billing</h1>
+        <section class="section--dark plan">
+          <div class="plan__text plan__text--lg">Your plan</div>
+          <div class="plan__header">Pro Annual</div>
+          <div class="plan__text">Renews on Nov 21, 2021</div>
+          <a href="#cancel" class="btn btn--outline">Cancel subscription</a>
+        </section>
+        <section>
+          <div class="section__header">
+            <h2>Order History</h2>
+            <p>Manage billing information and view receipts.</p>
+          </div>
+          <div class="section__content">
+            <table>
+              <thead>
+                <tr>
+                  <th>Date</th>
+                  <th>Type</th>
+                  <th>Receipt</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Oct 21, 2021</td>
+                  <td>Pro Annual</td>
+                  <td>
+                    <button class="btn--secondary btn--icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        aria-hidden="true"
+                        focusable="false"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M9 8.25H7.5a2.25 2.25 0 0 0-2.25 2.25v9a2.25 2.25 0 0 0 2.25 2.25h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25H15M9 12l3 3m0 0 3-3m-3 3V2.25"
+                        />
+                      </svg>
+                      <span class="sr-only"
+                        >Download Receipt from Oct 21, 2021</span
+                      >
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Aug 21, 2021</td>
+                  <td>Pro Portfolio</td>
+                  <td>
+                    <button
+                      class="btn--secondary btn--icon"
+                      title="Download Receipt"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        aria-hidden="true"
+                        focusable="false"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M9 8.25H7.5a2.25 2.25 0 0 0-2.25 2.25v9a2.25 2.25 0 0 0 2.25 2.25h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25H15M9 12l3 3m0 0 3-3m-3 3V2.25"
+                        />
+                      </svg>
+                      <span class="sr-only"
+                        >Download Receipt from Aug 21, 2021</span
+                      >
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>July 21, 2021</td>
+                  <td>Sponsored Post</td>
+                  <td>
+                    <button
+                      class="btn--secondary btn--icon"
+                      title="Download Receipt"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        aria-hidden="true"
+                        focusable="false"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M9 8.25H7.5a2.25 2.25 0 0 0-2.25 2.25v9a2.25 2.25 0 0 0 2.25 2.25h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25H15M9 12l3 3m0 0 3-3m-3 3V2.25"
+                        />
+                      </svg>
+                      <span class="sr-only"
+                        >Download Receipt from July 21, 2021</span
+                      >
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>June 21, 2021</td>
+                  <td>Sponsored Post</td>
+                  <td>
+                    <button
+                      class="btn--secondary btn--icon"
+                      title="Download Receipt"
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        aria-hidden="true"
+                        focusable="false"
+                      >
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M9 8.25H7.5a2.25 2.25 0 0 0-2.25 2.25v9a2.25 2.25 0 0 0 2.25 2.25h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25H15M9 12l3 3m0 0 3-3m-3 3V2.25"
+                        />
+                      </svg>
+                      <span class="sr-only"
+                        >Download Receipt from June 21, 2021</span
+                      >
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colspan="3">
+                    <button class="btn--secondary">
+                      Load more <span class="sr-only">Receipts</span>
+                    </button>
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </section>
+        <section>
+          <div class="section__header">
+            <h2>Payment Method</h2>
+            <p>Manage your payment method.</p>
+          </div>
+          <div class="section__content">
+            <div class="payment-method">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z"
+                />
+              </svg>
+              <div class="payment-method__name">Visa ending in 2255</div>
+              <button class="btn--secondary">Remove</button>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
