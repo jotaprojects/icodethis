@@ -1,0 +1,140 @@
+/* https://www.smashingmagazine.com/2021/12/create-custom-range-input-consistent-browsers/ */
+/* https://troll-winner.com/blog/one-more-dual-range-slider */
+
+.range-wrapper {
+  --_thumb-size: 1.6rem;
+  --_track-height: 0.65rem;
+  --_track-bg: var(--clr-neutral-900);
+  --_track-fill: var(--clr-neutral-100);
+
+  padding: var(--space-100);
+  margin-block: 4rem var(--space-100);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-100);
+}
+
+.range {
+  position: relative;
+  width: 100%;
+}
+
+/* Labels */
+.range::before,
+.range::after {
+  position: absolute;
+  inset-block-end: auto;
+  inset-block-start: -3.5rem;
+  content: "";
+  z-index: 1;
+  background-color: var(--clr-neutral-100);
+  border-radius: calc(var(--border-radius) / 2);
+  padding: var(--space-50);
+  transform: translateX(-50%);
+  line-height: 1;
+  box-shadow: 0 0 0.3rem 0rem var(--box-shadow-clr);
+}
+
+.range::before {
+  content: attr(data-from-value);
+  inset-inline-start: var(--percent-min);
+}
+
+.range::after {
+  content: attr(data-to-value);
+  inset-inline-start: var(--percent-max);
+}
+
+.range-labels {
+  padding: var(--space-50) var(--space-100);
+  background-color: var(--clr-neutral-100);
+  border-radius: calc(var(--border-radius) / 2);
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-100);
+}
+
+.range__label::before {
+  content: "$";
+}
+
+.range-wrapper datalist {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.range-track-double {
+  width: 100%;
+  height: var(--_track-height);
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  border: 1px solid hsl(var(--clr-neutral-900-hsl), 0.1);
+  border-radius: var(--border-pill);
+  background-color: var(--_track-bg);
+  background-image: linear-gradient(
+    90deg,
+    var(--_track-fill) 0%,
+    var(--_track-fill) var(--percent-min, 20%),
+    var(--_track-bg) var(--percent-min, 20%),
+    var(--_track-bg) var(--percent-max, 80%),
+    var(--_track-fill) var(--percent-max, 80%),
+    var(--_track-fill) 100%
+  );
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  pointer-events: none;
+  margin: auto;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+input[type="range"]::-moz-range-track {
+  -moz-appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: var(--_thumb-size);
+  aspect-ratio: 1;
+  border-radius: var(--border-rounded);
+  border: 2px solid var(--clr-neutral-100);
+  background-color: var(--clr-neutral-900);
+  cursor: pointer;
+  pointer-events: auto;
+  position: relative;
+  inset-block-start: 50%;
+  transform: translateY(-50%);
+}
+
+input[type="range"]::-moz-range-thumb {
+  -moz-appearance: none;
+  width: var(--_thumb-size);
+  aspect-ratio: 1;
+  border-radius: var(--border-rounded);
+  border: 2px solid var(--clr-neutral-100);
+  background-color: var(--clr-neutral-900);
+  cursor: pointer;
+  pointer-events: auto;
+  position: relative;
+  inset-block-start: 50%;
+  transform: translateY(-50%);
+}
