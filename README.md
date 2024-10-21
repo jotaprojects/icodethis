@@ -63,6 +63,7 @@
 - User Feedback (Iteration thoughts: Something more fun with smilies, Read up on keyboard accessibility, focus on dialog/states)
 - Circle Team (WIP, Iteration thoughts: Responsive, No magic numbers, Nicer text when active);
 - Billing (Iteration thoughts: Dark theme, add interactivity, Load table with js)
+- Webshop Components 2 (Iteration thoughts: Add loading state, add functionally to range and items per page, clean up double code)
 
 ## Requirements
 
