@@ -64,6 +64,7 @@
 - Circle Team (WIP, Iteration thoughts: Responsive, No magic numbers, Nicer text when active);
 - Billing (Iteration thoughts: Dark theme, add interactivity, Load table with js)
 - Webshop Components 2 (Iteration thoughts: Add loading state, add functionally to range and items per page, clean up double code)
+- Blog Header (Iteration thoughts: Play around with fonts and spacing, fix blog image)
 
 ## Requirements
 
