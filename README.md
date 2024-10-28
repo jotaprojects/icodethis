@@ -55,7 +55,7 @@
 - Links Section 2 (Iteration thoughts: improve on the responsive design, small animations, might be too flashy on card hover)
 - Domain Landing Page (WIP)
 - Repositories List (Iteration thoughts: Add search, clean up code)
-- Search Comps (Iteration thoughts: Build a selection of choosing one-way (No need for return), multi-way (Select departure and return) and plan trip (Add multiple departures and returns), think of how the selection of dates is built, at start we are reading Departure Departure for screen-readers)
+- Search Comps (Iteration thoughts: Build a selection of choosing one-way (No need for return), multi-way (Select departure and return) and plan trip (Add multiple departures and returns), think of how the selection of dates is built, at start we are reading Departure Departure for screen-readers, change cursor on trip selection)
 - Big Footer (TODO: Add purrson icon)
 - Tabbed Ui (Iteration thoughts: Transition animation between tabs)
 - Countdown
@@ -65,6 +65,7 @@
 - Billing (Iteration thoughts: Dark theme, add interactivity, Load table with js)
 - Webshop Components 2 (Iteration thoughts: Add loading state, add functionally to range and items per page, clean up double code)
 - Blog Header (Iteration thoughts: Play around with fonts and spacing, fix blog image)
+- Rent A Car (Iteration thoughts: Add some interactivity, add custom datetime picker)
 
 ## Requirements
 
