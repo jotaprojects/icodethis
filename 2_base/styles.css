@@ -1,12 +1,19 @@
 @import "../0_css/base/normalize.css";
 @import "../0_css/base/button.css";
-@import "../0_css/utils/helpers.css";
 
 :root {
   --clr-neutral-100-hsl: 0, 0%, 100%;
+  --clr-neutral-200-hsl: 0, 15%, 95%;
+  --clr-neutral-300-hsl: 0, 15%, 90%;
+  --clr-neutral-700-hsl: 0, 0%, 20%;
+  --clr-neutral-800-hsl: 0, 0%, 10%;
   --clr-neutral-900-hsl: 0, 0%, 0%;
 
   --clr-neutral-100: hsl(var(--clr-neutral-100-hsl));
+  --clr-neutral-200: hsl(var(--clr-neutral-200-hsl));
+  --clr-neutral-300: hsl(var(--clr-neutral-300-hsl));
+  --clr-neutral-700: hsl(var(--clr-neutral-700-hsl));
+  --clr-neutral-800: hsl(var(--clr-neutral-800-hsl));
   --clr-neutral-900: hsl(var(--clr-neutral-900-hsl));
 
   --body-bg: var(--clr-neutral-900);
@@ -34,10 +41,26 @@
   --space-fluid-200: 2rem;
 
   --border-radius: 1rem;
+  --border-radius-sm: 0.5rem;
   --border-rounded: 50%;
   --border-pill: 100vw;
 
   --box-shadow-clr: hsl(var(--clr-neutral-900-hsl), 0.2);
+
+  --transition-duration: 350ms;
+  --transition-timing-function: ease-in-out;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
 body {
