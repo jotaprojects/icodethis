@@ -25,6 +25,8 @@ button,
   color: var(--_btn-base-color);
   cursor: var(--_btn-cursor);
   display: inline-flex;
+  align-items: center;
+  justify-content: center;
   padding: var(--_btn-padding);
   transition: var(--_btn-transition);
 }

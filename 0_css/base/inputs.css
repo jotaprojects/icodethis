@@ -1,3 +1,13 @@
+/* Inputs */
+
+input[type="text"],
+input[type="date"],
+input[type="time"] {
+  border: 1px solid transparent;
+  border-radius: 0.5em;
+  padding: var(--space-50, 0.5rem) var(--space-100, 1rem);
+}
+
 input[type="radio"] + label,
 input[type="checkbox"] + label {
   cursor: pointer;
@@ -7,13 +17,16 @@ input[type="checkbox"] + label {
 /* https://moderncss.dev/pure-css-custom-styled-radio-buttons/ */
 /* https://moderncss.dev/pure-css-custom-checkbox-style/ */
 
-input[type="radio"] {
+input[type="radio"],
+input[type="checkbox"] {
   --_bg: var(--clr-neutral-100, #fff);
   --_size: 1.15em;
   --_border: 0.15em solid var(--clr-neutral-900, #000);
   --_fill-size: 0.65em;
   --_fill-color: var(--clr-neutral-100, #fff);
   --_outline-size: 0.15em;
+  --_transition-duration: 120ms;
+  --_transition-timing-function: ease-in-out;
 
   margin: 0;
   -webkit-appearance: none;
@@ -24,28 +37,53 @@ input[type="radio"] {
   width: var(--_size);
   aspect-ratio: 1;
   border: var(--_border);
-  border-radius: var(--border-rounded, 50%);
   display: grid;
   place-content: center;
-  transition: width 250ms ease-in-out;
 }
 
-input[type="radio"]::before {
-  background-color: var(--_fill-color);
+input[type="radio"] {
   border-radius: var(--border-rounded, 50%);
+}
+
+input[type="radio"]::before,
+input[type="checkbox"]::before {
+  background-color: var(--_fill-color);
   content: "";
   width: var(--_fill-size);
   aspect-ratio: 1;
+}
+
+input[type="radio"]::before {
+  border-radius: var(--border-rounded, 50%);
   transform: scale(0);
-  transition: transform 120ms ease-in-out;
+  transition: transform var(--_transition-duration)
+    var(--_transition-timing-function);
+}
+
+input[type="checkbox"]::before {
+  clip-path: polygon(
+    14% 44%,
+    0 65%,
+    50% 100%,
+    100% 16%,
+    80% 0%,
+    43% 62%
+  ); /* Check */
+  opacity: 0;
+  transition: opacity var(--_transition-duration)
+    var(--_transition-timing-function);
 }
 
 input[type="radio"]:checked::before {
   transform: scale(1);
 }
 
-/* Consider to use focus-visible instead */
-input[type="radio"]:focus {
+input[type="checkbox"]:checked::before {
+  opacity: 1;
+}
+
+input[type="radio"]:focus-visible,
+input[type="checkbox"]:focus-visible {
   outline: var(--_outline-size) solid currentColor;
   outline-offset: var(--_outline-size);
 }
