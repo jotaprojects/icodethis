@@ -15,79 +15,206 @@
   </head>
   <body>
     <div class="wrapper">
-      <div class="table-header">
-        <div class="form-group">
-          <span>Show</span>
-          <select>
-            <option value="10">10</option>
-            <option value="20">20</option>
-            <option value="30">30</option>
-            <option value="40">40</option>
-          </select>
-          <span>entries</span>
-        </div>
-        <div class="form-group">
-          <label for="search">Search</label>
-          <input type="text" id="search" name="search" />
-        </div>
+      <h1>List of Users</h1>
+      <div class="search-wrapper">
+        <form id="search">
+          <div class="form__group">
+            <label for="search-query" class="sr-only">Search</label>
+            <div class="input-preon">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                focusable="false"
+                arid-hidden="true"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
+                />
+              </svg>
+
+              <input
+                type="text"
+                id="search-query"
+                name="search-query"
+                placeholder="Search"
+              />
+            </div>
+          </div>
+        </form>
       </div>
-      <table>
-        <caption>
-          List of Users
-        </caption>
-        <thead>
-          <tr>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Email</th>
-            <th>Created At</th>
-            <th>Actions</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Sample Data Rows -->
-          <tr>
-            <td data-label="First Name">John</td>
-            <td data-label="Last Name">Doe</td>
-            <td data-label="Email">john.doe@example.com</td>
-            <td data-label="Created At">2023-01-01</td>
-            <td><button>Action</button></td>
-          </tr>
-          <tr>
-            <td data-label="First Name">Jane</td>
-            <td data-label="Last Name">Smith</td>
-            <td data-label="Email">jane.smith@example.com</td>
-            <td data-label="Created At">2023-02-15</td>
-            <td><button>Action</button></td>
-          </tr>
-          <tr>
-            <td data-label="First Name">Michael</td>
-            <td data-label="Last Name">Brown</td>
-            <td data-label="Email">michael.brown@example.com</td>
-            <td data-label="Created At">2023-03-20</td>
-            <td><button>Action</button></td>
-          </tr>
-          <tr>
-            <td data-label="First Name">Emily</td>
-            <td data-label="Last Name">Davis</td>
-            <td data-label="Email">emily.davis@example.com</td>
-            <td data-label="Created At">2023-04-10</td>
-            <td><button>Action</button></td>
-          </tr>
-          <tr>
-            <td data-label="First Name">David</td>
-            <td data-label="Last Name">Wilson</td>
-            <td>david.wilson@example.com</td>
-            <td data-label="Created At">2023-05-25</td>
-            <td><button>Action</button></td>
-          </tr>
-          <!-- Add more rows up to 50 -->
-          <!-- ... -->
-        </tbody>
-      </table>
-      <div class="table-footer">
-        <button>< Previous</button>
-        <button>Next ></button>
+      <div class="sorting">
+        <label for="sort">Sort by</label>
+        <select id="sort" name="sort">
+          <option value="first-name">First Name</option>
+          <option value="last-name">Last Name</option>
+          <option value="email">Email</option>
+          <option value="created-at">Created At</option>
+        </select>
+      </div>
+      <div class="main">
+        <div class="pagination">
+          <div class="pagination__perpage">
+            <span>Show</span>
+            <select id="perpage-start" name="perpage">
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="25">25</option>
+              <option value="50">50</option>
+            </select>
+            <span>entries</span>
+          </div>
+          <div class="pagination__nav">
+            <button>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15.75 19.5 8.25 12l7.5-7.5"
+                />
+              </svg>
+              <span class="btn__text">Previous</span>
+            </button>
+            <button>
+              <span class="btn__text">Next</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th scope="col">First Name</th>
+              <th scope="col">Last Name</th>
+              <th scope="col">Email</th>
+              <th scope="col">Created At</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td data-label="First Name">John</td>
+              <td data-label="Last Name">Doe</td>
+              <td data-label="Email">
+                <span class="text-short">john.doe@example.com</span>
+              </td>
+              <td data-label="Created At">2023-01-01</td>
+              <td><button>Action</button></td>
+            </tr>
+            <tr>
+              <td data-label="First Name">Jane</td>
+              <td data-label="Last Name">Smith</td>
+              <td data-label="Email">
+                <span class="text-short">jane.smith@example.com</span>
+              </td>
+              <td data-label="Created At">2023-02-15</td>
+              <td><button>Action</button></td>
+            </tr>
+            <tr>
+              <td data-label="First Name">Michael</td>
+              <td data-label="Last Name">Brown</td>
+              <td data-label="Email">
+                <span class="text-short">michael.brown@example.com</span>
+              </td>
+              <td data-label="Created At">2023-03-20</td>
+              <td><button>Action</button></td>
+            </tr>
+            <tr>
+              <td data-label="First Name">Emily</td>
+              <td data-label="Last Name">Davis</td>
+              <td data-label="Email">
+                <span class="text-short">emily.davis@example.com</span>
+              </td>
+              <td data-label="Created At">2023-04-10</td>
+              <td><button>Action</button></td>
+            </tr>
+            <tr>
+              <td data-label="First Name">David</td>
+              <td data-label="Last Name">Wilson</td>
+              <td data-label="Email">
+                <span class="text-short">david.wilson@example.com</span>
+              </td>
+              <td data-label="Created At">2023-05-25</td>
+              <td><button>Action</button></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="pagination">
+          <div class="pagination__perpage">
+            <span>Show</span>
+            <select id="perpage-end" name="perpage">
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="25">25</option>
+              <option value="50">50</option>
+            </select>
+            <span>entries</span>
+          </div>
+          <div class="pagination__nav">
+            <button>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M15.75 19.5 8.25 12l7.5-7.5"
+                />
+              </svg>
+              <span class="btn__text">Previous</span>
+            </button>
+            <button>
+              <span class="btn__text">Next</span>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+                focusable="false"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="m8.25 4.5 7.5 7.5-7.5 7.5"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </body>

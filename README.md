@@ -39,7 +39,7 @@
 - Search Comps 2
 - FAQ
 - Poll
-- Table (WIP)
+- Table (Iteration thoughts: Add interactivity)
 - Pagination
 - Signup Form 1
 - Agency Search
