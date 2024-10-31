@@ -66,6 +66,7 @@
 - Webshop Components 2 (Iteration thoughts: Add loading state, add functionally to range and items per page, clean up double code)
 - Blog Header (Iteration thoughts: Play around with fonts and spacing, fix blog image)
 - Rent A Car (Iteration thoughts: Add some interactivity, add custom datetime picker)
+- Sign in Form (Iteration thoughts: Add sign up, forgot password views)
 
 ## Requirements
 
