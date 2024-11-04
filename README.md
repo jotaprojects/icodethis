@@ -67,6 +67,7 @@
 - Blog Header (Iteration thoughts: Play around with fonts and spacing, fix blog image)
 - Rent A Car (Iteration thoughts: Add some interactivity, add custom datetime picker)
 - Sign in Form (Iteration thoughts: Add sign up, forgot password views)
+- Coming Soon (Iteration thoughts: Add step by step animation for title, add "tooltip" for links + add animation with scale in, Add of components list (animation in x-axel))
 
 ## Requirements
 
