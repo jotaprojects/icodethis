@@ -1,11 +1,11 @@
 @import "./0_css/base/normalize.css";
 
 :root {
-  --clr-neutral-100: hsl(0, 0%, 100%);
-  --clr-neutral-900: hsl(0, 0%, 0%);
-
-  --clr-neutral-100-hsl: 0, 0%, 100%;
+  --clr-neutral-100-hsl: 0, 0%, 95%;
   --clr-neutral-900-hsl: 0, 0%, 0%;
+
+  --clr-neutral-100: hsl(var(--clr-neutral-100-hsl));
+  --clr-neutral-900: hsl(var(--clr-neutral-900-hsl));
 
   --body-bg: hsl(var(--clr-neutral-900-hsl), 0.8);
   --clr-text: var(--clr-neutral-100);
@@ -23,9 +23,12 @@
 
   --space-50: 0.5rem;
   --space-100: 1rem;
+  --space-150: 1.5rem;
+  --space-200: 2rem;
 
   --space-fluid-50: 0.5rem;
   --space-fluid-100: 1rem;
+  --space-fluid-150: 1.5rem;
   --space-fluid-200: 2rem;
 
   --border-radius: 1rem;
@@ -40,7 +43,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  min-block-size: 100vh;
   margin: 0;
   padding: var(--space-100);
   font-family: var(--ff-base);
@@ -62,25 +65,27 @@ a:hover {
 }
 
 h1 {
-  margin-top: 0;
+  margin-block: 0 var(--space-100);
 }
 
 ul {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
   gap: 0 var(--space-50);
+  margin: 0;
+  padding: 0;
+  list-style-position: inside;
 }
 
 ul li {
-  padding: var(--space-50) 0;
+  padding: var(--space-50);
 }
 
 .wrapper {
   max-width: 1180px;
-  width: 80%;
+  width: 100%;
   margin: 0 auto;
   background-color: hsl(var(--clr-neutral-900-hsl), 0.3);
-  padding: var(--space-fluid-100);
+  padding: var(--space-fluid-200);
   box-shadow: 0 0 0.5rem 0.5rem hsl(var(--clr-neutral-900-hsl), 0.1);
   border-radius: var(--border-radius);
 
@@ -89,10 +94,20 @@ ul li {
   gap: var(--space-fluid-50);
 }
 
+@media screen and (min-width: 40em) {
+  ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media screen and (min-width: 60em) {
   :root {
     --space-fluid-50: 1rem;
     --space-fluid-100: 2rem;
     --space-fluid-200: 4rem;
+  }
+
+  ul {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
