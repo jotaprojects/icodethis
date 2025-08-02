@@ -1,8 +1,18 @@
+const STATE_NAV = "state-nav";
+const NAV_TRIGGER_SELECTOR = "[data-trigger='nav']";
+const NAV_CONTAINER_SELECTOR = ".nav-container";
+
 const links = document.querySelectorAll("a");
 
 links.forEach((link) => {
   link.addEventListener("click", (e) => {
     e.preventDefault();
+
+    if (link.classList.contains("menu__link")) {
+      document.body.classList.remove(STATE_NAV);
+      trigger.setAttribute("aria-label", "Open menu");
+    }
+
     // Credits to Blackwolf and clevermissfox
     const linkTarget = link.getAttribute("href");
 
@@ -16,11 +26,11 @@ links.forEach((link) => {
   });
 });
 
-const trigger = document.querySelector("[data-trigger]");
+const trigger = document.querySelector(NAV_TRIGGER_SELECTOR);
 
 trigger.addEventListener("click", () => {
-  document.body.classList.toggle("state--nav");
-  if (document.body.classList.contains("state--nav")) {
+  document.body.classList.toggle(STATE_NAV);
+  if (document.body.classList.contains(STATE_NAV)) {
     trigger.setAttribute("aria-label", "Close menu");
   } else {
     trigger.setAttribute("aria-label", "Open menu");
@@ -28,12 +38,12 @@ trigger.addEventListener("click", () => {
 });
 
 document.body.addEventListener("click", (e) => {
-  if (e.target.closest(".nav-container")) return;
+  if (e.target.closest(NAV_CONTAINER_SELECTOR)) return;
 
-  if (e.target.matches("[data-trigger]")) return;
+  if (e.target.matches(NAV_TRIGGER_SELECTOR)) return;
 
-  if (document.body.classList.contains("state--nav")) {
-    document.body.classList.remove("state--nav");
-    trigger.ariaLabel("aria-label", "Open menu");
+  if (document.body.classList.contains(STATE_NAV)) {
+    document.body.classList.remove(STATE_NAV);
+    trigger.setAttribute("aria-label", "Open menu");
   }
 });

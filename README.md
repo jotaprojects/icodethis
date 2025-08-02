@@ -69,6 +69,10 @@
 - Sign in Form (Iteration thoughts: Add sign up, forgot password views)
 - Coming Soon (Iteration thoughts: Add step by step animation for title, add "tooltip" for links + add animation with scale in, Add of components list(https://pro.chakra-ui.com/components) (animation in x-axel))
 
+## Roadmaps
+
+- Jo's Burger
+
 ## Requirements
 
 - [Node.js](https://nodejs.org/en) for running the project and start script.
